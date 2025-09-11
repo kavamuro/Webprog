@@ -1,0 +1,50 @@
+body{
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-size: 18px;
+
+}
+h1,h2,h3{
+    color: rgb(163, 17, 17);
+}
+h1{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    text-shadow: -3px -2px rgb(228, 103, 103);
+}
+h2{
+    font-variant: small-caps;
+    font-size: 35px;
+    
+}
+h3{
+    font-style: italic;
+    text-decoration: underline;
+
+}
+ol{
+    margin-left: 20vw;
+}
+li{
+    margin-top: 5px;
+}
+div{
+    width: 75vw;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin: 0 auto;
+    padding: 20px 30px 20px 30px;
+    border: 5px ridge rgb(163, 17, 17);
+    border-radius: 10px;
+
+}
+.bekezdes{
+    text-align: justify;
+    text-indent: 20px;
+
+}
+.bekezdes2{
+    margin: 0px 20px 0px 20px;
+    line-height: 200%;
+    word-spacing: 5px;
+}

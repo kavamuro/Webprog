@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattanó labda</title>
+    <style>
+        * { box-sizing: border-box;}
+
+        #terulet {
+            width: 80vw;
+            height: 80vh;
+            background-color: aqua;
+            border: 1px solid black;
+            margin: auto;
+            position: relative;
+        }
+
+        h1 { text-align: center; }
+
+        @keyframes v-alak {
+            0% {
+                top: 0%;
+                left: 0%;
+            }
+            50% {
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%,-100%);
+            }         
+            100% {
+                top: 0%;
+                left: 100%;
+                transform: translateX(-100%);
+            }
+        }
+
+        #labda {
+            width: 0px;
+            height: 0px;
+            position: absolute;   
+            border: 50px solid black;
+            border-color: red yellow green blue;
+            border-radius: 50%;
+            animation-name: v-alak;
+            animation-duration: 4s;
+            animation-iteration-count: 3;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Pattanó labda</h1>
+    
+    <div id="terulet">
+        <div id="labda"></div>
+    </div>
+
+
+</body>
+
+</html>

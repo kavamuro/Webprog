@@ -1,0 +1,136 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  font-size: 14px;
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  background-color: #BBB;
+  font-family: Helvetica, sans-serif;
+  padding-bottom: 100px;
+}
+
+h2, h3 {
+  margin: 0 0 .75em 0;
+}
+
+/* első példa */
+.container {
+  max-width: 750px;
+  margin: 20px auto 0 auto;
+  padding: 30px;
+  background-color: #FFF;
+}
+
+.urlap_sor {
+  padding: 10px 0;
+}
+
+.urlap_sor label {
+  padding-right: 10px;
+}
+
+.urlap_sor input {
+}
+
+/*  második példa */
+.oszlopos_rendezes {
+  max-width: 1300px;
+  background-color: #FFF;
+  margin: 40px auto 0 auto;
+  line-height: 1.65;
+  padding: 20px 50px;
+}
+
+.fo_elem {
+
+}
+
+.oldalsav1 {
+
+}
+
+.oldalsav2 {
+
+}
+
+/* harmadik példa */
+.container_tavolitott {
+  max-width: 1400px;
+  margin: 40px auto 0 auto;
+}
+
+.tavoli {
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 900px) {
+  .container_tavolitott {
+  }
+}
+
+.tavoli:nth-child(1) {background-color: #c0dbe2;}
+.tavoli:nth-child(2) {background-color: #cdf1c3;}
+.tavoli:nth-child(3) {background-color: #ccb9da;}
+
+/* negyedik példa */
+.container_fixalt {
+  max-width: 1400px;
+  margin: 40px auto 0 auto;
+  background-color: #FFF;
+  padding: 30px 0;
+}
+
+.fix_meret {
+  width: 150px;
+  height: 100px;
+  background-color: #990b47;
+  color: #FFF;
+  line-height: 100px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+/* ötödik példa */
+.fej {
+  height: 400px;
+  max-width: 700px;
+  margin: 40px auto 40px auto;
+  background-color: #2a2a2a;
+}
+
+.kozepen {
+  color: #FFF;
+  font-size: 50px;
+}
+
+/* hatodik példa */
+.container_beagyazott {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.o1 {
+  background-color: #FFF;
+  padding: 20px;
+}
+
+.o2 {
+  background-color: yellow;
+}
+
+.o2_fent {
+  background-color: #c0dbe2;
+}
+
+.o2_lent {
+  background-color: #cdf1c3;
+}

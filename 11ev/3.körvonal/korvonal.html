@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Körvonal</title>
+    <link rel="stylesheet" href="korvonal_stilus.css">
+</head>
+
+<body>
+    <h1>Körvonal (outline)</h1>
+
+    <h2>A körvonallal kapcsolatos információk:</h2>
+
+    <p>A <span class="kiemelt">körvonal (kontúr, outline)</span> tulajdonság valamilyen elem (pl. gomb, kép) vizuális kihangsúlyozására szolgál.</p>
+
+    <p>További információk: <a href="https://www.w3schools.com/css/css_outline.asp" target="_blank">w3schools CSS outline</a></p>
+
+    <p>Bár kódolásában és megjelenítésében nagyon hasonlít a standard vonaltípusú szegélyekre, mégis vannak lényeges eltérések:</p>
+    <ul>
+        <li><em>csak szögletesek lehetnek</em> (border esetén van border-radius)</li>
+        <li><em>nem foglalnak el helyet - a HTML elem területén jelennek meg, ezért nem növelik annak méretét, de letakarják a széleit</em> (a border alapértelmezésben hozzászámítódik a content nagyságához, a padding és a margin értékeihez)</li>
+        <li>tetszőleges alakú elemekhez mindig <em>négyzetként illeszkednek</em></li>
+        <li><em>az egyes oldalait nem lehet külön-külön formázni</em> (a border esetén a 4 oldal akár egymástól teljesen eltérő vastagságú, stílusú és színű lehet)</li>
+    </ul>
+
+	<p><strong>A körvonal szintaxisa:</strong> <span class="szint">outline: outline-width outline-style outline-color|initial|inherit;</span></p>
+	
+    <p>A körvonal tulajdonságai:</p>
+    <ul>
+        <li>
+            <span class="tul">outline-color</span>: a körvonal színe (megadható a szín nevével, rgb() függvénnyel, hexakóddal - minden korábban tanult módszerrel)
+             <br>példa: <span class="pl">#szines { outline-color: rgb(1278,254,110); }</span>
+        </li>
+        <li>
+            <span class="tul">outline-style</span>: a körvonal stílusa (a szegélynél megismert megnevezésekkel használható: pl. solid, dotted, dashed, double, groove, ridge, inset, outset, hidden)
+            <br>példa: <span class="pl">#dupla { outline-style: double; }</span>
+        </li>
+        <li>
+            <span class="tul">outline-width</span>: a körvonal vastagsága (szélessége), megadható mértékegységgel (in, px, pt, cm, em ...) vagy szövegesen (thin, medium, thick)
+            <br>példa: <span class="pl">#vastag { outline-width: thick; }</span>
+        </li>    
+    </ul>
+
+    <p>A körvonal fenti három tulajdonsága összevontan is megadható (hasonlóan a border tulajdonsághoz): <span class="tul">outline</span>,<br> példa: <span class="pl">#kiemeles { outline: 5px solid yellow;} </span></p>
+
+    <p>A körvonal alapértelmezetten a szegély élén jelenik meg (ha nincsen szegély, akkor is matematikailag létezik ez a hely 0 szegélyszélességgel), de ezt a helyzetet az <span class="tul">outline-offset</span> tualjdonsággal befolyásolni tudjuk:</p>
+    <ul>
+        <li>negatív értékkel: az elemhez közelebbre,</li>
+        <li>pozitív étékkel: az elemtől távolabbra lehet eltolni.</li>
+    </ul>
+
+    <h2>Mintapéldák:</h2>
+
+    <p class="feladat">Készítsen fekete színű, 5 képpont vastag, egyszerű körvonalat a barna színű "ellipszis" elemhez úgy, hogy az 15 képpontal közelebb legyen az elemhez az eredeti helyéhez képest!</p>
+    <div id="ellipszis"></div>
+
+    <p class="feladat">Készítsen piros színű, közepes vastagságú, szaggatott körvonalat a piszkossárga koronghoz úgy, hogy a körvonal az alapértelemezett helyen jelenjen meg!</p>
+    <div id="korong"></div>
+
+    <p class="feladat">Készítsen kék színű, dupla vonalas, vékony (vagy 2 képpont vastag) körvonalat a zöld színű ovális elemhez úgy, hogy a körvonal az eredeti helyétől kifelé néhány képponttal távolabb legyen!</p>
+     <div id="ovalis"></div>
+
+</body>
+
+</html>

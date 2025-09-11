@@ -1,0 +1,29 @@
+body{
+    background-color: #FF6347;
+    color: black;
+}
+h1{
+    font-size: 50px;
+    letter-spacing: 8px;
+    text-align: center;
+    margin: inset round FireBrick 4px ;
+    background-color: bisque;
+    padding: 15px;
+    margin-bottom: 50px;
+}
+p{
+    font-size: 25px;
+    font-weight:900 bold;
+    text-align: center;
+    letter-spacing: 10px;
+}
+.alcim{
+    font-size: 30px;
+    font-style: italic;
+    text-transform: uppercase;
+}
+div{
+    border-style: inset FireBrick;
+    border:  4px ;
+    background-color: bisque;
+}

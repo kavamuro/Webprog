@@ -1,0 +1,27 @@
+https://www.freecodecamp.org/learn/responsive-web-design/
+
+https://www.w3schools.com/css/css3_flexbox.asp
+
+https://www.tutorialstonight.com/css/css-flexbox.php
+
+Learn Flexbox in 15 Minutes
+https://www.youtube.com/watch?v=fYq5PXgSsbE
+
+gyakorló a flexboxhoz:
+https://flexboxfroggy.com/#hu
+(megoldások: https://www.youtube.com/watch?v=3x8P_wqeKQI
+vagy: https://www.youtube.com/watch?v=GAkXwzx5AJY)
+
+jó videó a flexbox lényegi részének megtanulásához:
+https://hddrecover.ru/hu/total/flexbox-primery-verstki-prakticheskoe-primenenie-flexbox-napravlenie-glavnoi/
+
+https://www.youtube.com/watch?v=-DNLYk5uzl8
+
+*** gyakorlati mintához videó ***
+Flexbox Tutorial (CSS): Real Layout Examples (https://www.youtube.com/watch?v=k32voqQhODc)
+
+videósorozat: 
+CSS Flexbox Tutorial #1 - Introduction (https://www.youtube.com/watch?v=Y8zMYaD1bz0)
+
+minták a flexbox segítségével készített struktúrákhoz:
+http://iktblog.hu/2020/06/25/flexbox-mintak/

@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@keyframes gurit {
+    from{position: absolute; top: 0; left: 0;}
+    to{position: absolute;top: 0;left: 100%;transform: translateX(-100%) rotate(720deg) ;
+    border-color: aquamarine darkgoldenrod slateblue greenyellow;}
+}
+div{
+    width: 0px;
+    height: 0px;
+    border: 100px solid black;
+    background-color: black;
+    border-color: red yellow blue green;
+    border-radius: 50%;
+    animation-name: gurit;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+}

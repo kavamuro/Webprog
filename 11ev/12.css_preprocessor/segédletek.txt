@@ -1,0 +1,11 @@
+freeCodeCamp oldalán:
+CSS Preprocessors Explained - CSS előfeldolgozók magyarázata
+https://www.freecodecamp.org/news/css-preprocessors/
+
+Sass Tutorial a w3schools oldalán:
+Sass Tutorial
+https://www.w3schools.com/sass/default.php
+
+A CSS előfordító fő előnyei:
+What is a CSS Preprocessors & Why Use Them
+https://sherocommerce.com/what-is-a-css-preprocessors-why-use-them/

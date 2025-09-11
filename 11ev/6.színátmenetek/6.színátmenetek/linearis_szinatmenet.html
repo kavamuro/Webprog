@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lineáris színátmenetek</title>
+    <link rel="stylesheet" href="szinatmenetek_stilus.css">
+    <link rel="stylesheet" href="gy_linearis_szinatmenetek.css">
+</head>
+
+<body>
+
+     
+    <h1>A lineáris színátmenet (linear-gradient)</h1>
+
+    <h2>A LINEÁRIS színátmenettel kapcsolatos általános információk:</h2>
+
+    <p>A <span class="kiemelt">lineáris színátmenet (linear-gradient)</span> egy színátmenet-vonallal (gradient-line) és a rajta elhelyezett színekkel lehet specifikálni. A gradiens vonalra merőlegesen elhelyezkedő, egymáshoz illeszkedő, egymáshoz illeszkedő vonalak színe megegyezik a színátmenet-vonallal való metszéspontjukban lévő színnel, így a színátmenet-vonal színelőírásait követő, végtelen méretű vászon jön létre a színes vonalakból. (1. kép)</p>
+
+    <figure>
+        <img src="kep1.png" alt="Lineáris színátmenet vonala" title="Lineáris színátmenet vonala">
+        <figcaption>1. kép: a lineáris színátmenet vonala</figcaption>
+    </figure>
+    
+    <figure>
+        <img src="kep2.png" alt="Lineáris színátmenet szöge" title="Lineáris színátmenet szöge">
+        <figcaption>2. kép: a lineáris színátmenet szöge</figcaption>
+    </figure>
+    
+    <figure>
+        <img src="kep3.png" alt="Lineáris színátmenet kezdő- és végpontja" title="Lineáris színátmenet kezdő- és végpontja">
+        <figcaption>3. kép: a lineáris színátmenet kezdő- és végpontja</figcaption>
+    </figure>
+	
+	<p id="sz"><strong>A lineáris gradiens háttérképként történő meghatározásának szintaxisa:</strong><br>
+		<span class="szint">background-image: linear-gradient(direction, color-stop1, color-stop2, ...);</span></p>	
+
+    <p>A gradins-vonal adja meg tehát a színátmenet irányát és  rajta helyezkedenek el a színinformációk. <span class="tul">A gradiens-vonal mindig áthalad a doboz közepén, tehát a középpontját nem kell megadni, iránya és kezdő-, illetve végpontja kétféle módon specifikálható:</span></p>
+
+    <ul>
+        <li><strong><em>Szöggel történő megadás</em></strong>
+            <ul>
+                <li><strong>Irányát</strong> a függőlegessel bezárt szögével adhatjuk meg: a 0&deg; felfelé mutat, a 90&deg; jobbra, a pozitív szögek az óramutató járásával megegyező irányban mozognak (2. kép). </li>
+                <li><strong>Kezdő- és végpontja</strong> pedig úgy jön létre, hogy a doboz közepétől mindkét irányban meghosszabbítjuk a gradiens-vonalat a megadott szögben, és a kezdő- és végpont ott van, ahol a vonalra húzott merőleges a doboz sarkát metszi (3. kép).</li>
+				<li>Ha nincs megadva szög, akkor mindig fentről lefelé mutató függőleges gradienst alkalmaz a böngésző. </li>
+            </ul>
+        </li>
+        <li><strong><em>A doboz sarkának vagy oldalával történő megadás a célhelyre</em></strong>
+			<ul>
+				<li>A doboznak azt a <strong>sarkát vagy oldalát</strong> adjuk meg, ahonnal a gradiens-vonal indul, ekkor a gradiens automatikusan az ellentétes sarokba vagy oldalra irányul. (Valójában a gradiens konvertálódik az előző, szögben megadott formulába.)</li>
+				<li>Az egyes <strong>oldalakat szöveggel is megadhatjuk</strong>: to top (teteje felé), to right (jobb oldal felé), to bottom (alja felé) vagy to left (bal oldal felé), ezek megfelelnek a (rendre a 0&deg;, a 90&deg;, a 180&deg; vagy a 270&deg; szögértékeknek.</li>
+				<li>A <strong>sarkokhoz van szöveges meghatározás</strong>: to top left (bal felső sarok), to top right (jobb felső sarok), to bottom left (bal alsó sarok) és to bottom right (jobb alsó sarok). Ezek is megfelelnek szögeknek, pontosan olyannak, mint amilyet a középponton és az adott sarkon áthaladó egyenes definiálna.</li>
+			</ul>
+        </li>
+    </ul>
+
+	<p><span class="tul">A gradins-vonal definiálása után a kezdő- és a zárószínt kell megadni, egymástól vesszővel és szóközzel kell elválasztani azokat.</span> (A színek megadásához a tanult módszerek alkalmazhatók.)</p>
+	
+	<p>A színek sorrendje a megadott kiindulási ponttól függ, <span class="tul">a színek helye pedig megadható a gradiens-vonalon a szín neve mögötti szóközt követő %-érték megadásával történik:</span><br>
+	<span class="pl">kijelölő { background-image: linear-gradient(red 20%, white 65%, green); }</span></p>
+	
+
+	<h2>Gyakorlati feladatok</h2>
+
+    <p class="feladat">Készítsen szabadon választott színek felhasználásával, LINEÁRIS színátmenetes háttereket az itt látható mezőkbe úgy, hogy azok valamelyik OLDALRÓL induljanak ki és ...</p>
+    
+    <p class="feladat rf">1-2. blokk:<br> két / több színből, FENTRŐL indulva, EGYENLETESEN terjedjenek</p>
+    <div class="blokk" id="bl-1"></div>
+	<div class="blokk" id="bl-2"></div>
+    
+    <p class="feladat rf">3-4. blokk:<br> két / több színből, LENTRŐL indulva, NE EGYENLETESEN terjedjenek</p>
+	<div class="blokk" id="bl-3"></div>
+	<div class="blokk" id="bl-4"></div>
+	
+    <p class="feladat rf">5-6. blokk:<br> két / több színből, JOBBRÓL indulva, NE EGYENLETESEN terjedjenek</p>
+    <div class="blokk" id="bl-5"></div>
+	<div class="blokk" id="bl-6"></div>
+
+    <p class="feladat rf">7-8. blokk:<br> két / több színből, BALRÓL indulva, EGYENLETESEN terjedjenek</p>
+    <div class="blokk" id="bl-7"></div>
+	<div class="blokk" id="bl-8"></div>
+    
+    <p class="feladat">Készítsen szabadon választott színek felhasználásával, LINEÁRIS színátmenetes háttereket az itt látható mezőkbe úgy, hogy azok valamelyik SAROKBÓL induljanak ki és ...</p>
+
+    <p class="feladat rf">9-10. blokk:<br> két / több színből, BAL ALSÓ SAROKBÓL indulva, EGYENLETESEN terjedjenek</p>
+    <div class="blokk" id="bl-9"></div>
+    <div class="blokk" id="bl-10"></div>
+    
+    <p class="feladat rf">11-12. blokk:<br> két / több színből, JOBB ALSÓ SAROK FELÉ irányulva, NE EGYENLETESEN terjedjenek</p>
+    <div class="blokk" id="bl-11"></div>
+    <div class="blokk" id="bl-12"></div>
+
+    <p class="feladat rf">13-14. blokk:<br> két / több színből, BAL ALSÓ SAROK FELÉ irányulva, EGYENLETESEN terjedjenek</p>
+    <div class="blokk" id="bl-13"></div>
+    <div class="blokk" id="bl-14"></div>
+
+    <p class="feladat rf">15-16. blokk:<br> két / több színből, JOBB ALSÓ SAROKBÓL indulva, NE EGYENLETESEN terjedjenek</p>
+    <div class="blokk" id="bl-13"></div>
+    <div class="blokk" id="bl-14"></div>
+
+    <p class="feladat">Készítsen szabadon választott színek felhasználásával, LINEÁRIS színátmenetes háttereket az itt látható mezőkbe úgy, hogy azok választott fokértékkel elforgatott egyenes mentén terjedjenek és ...</p>
+
+    <p class="feladat rf">17. blokk:<br> több színből, a gradiens-vonalat 30 fokkal elforgatva, EGYENLETESEN terjedjenek</p>
+    <div class="blokk" id="bl-17"></div>
+
+    <p class="feladat rf">18. blokk:<br> két színből, a gradiens-vonalat -60 fokkal elforgatva, NE EGYENLETESEN terjedjenek</p>
+    <div class="blokk" id="bl-18"></div>
+
+    <p class="feladat">Készítsen szabadon választott színek felhasználásával, ISMÉTLŐDŐ LINEÁRIS színátmenetes háttereket az itt látható mezőkbe úgy, hogy azok...</p>
+    <p class="feladat rf">19. blokk:<br> két színből kialakítva, BALRÓL JOBBRA irányítva, legalább 3-szor ismétlődve, EGYENLETESEN terjedjenek</p>
+    <div class="blokk" id="bl-19"></div>
+
+    <p class="feladat rf">20. blokk:<br> kettőnél több színből kialakítva, valamilyen fokértékkel elforgatott gradiensvonal mentén irányítva, legalább kétszer ismétlődve, NE EGYENLETESEN terjedjenek</p>
+    <div class="blokk" id="bl-19"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+Feladatok az átmenetek alkalmazásához
+
+A tavasz.jpg képfájl felhasználásával készítsünk olyan oldalt, amelyen
+- alaphelyzetben csak a kép legyen látható a nézetablaknak egy adott arányú méretében (pl. 30%-ában),
+- a képre történő rámutatáskor valamilyen átmenet alkalmazásával váljon láthatóvá a képre nyílva egy szöveg,
+- a megjelenő szöveg ugyanakkora felületet fedjen le, mint amekkora területet lefed alaphelyzetben a kép.
+
+Átmeneti típusok:
+
+1.Adott oldaltól a másik oldalig
+- fentről lefelé (azaz a kép tetejéről a kép aljáig) nyílik le
+- lentről felfelé (azaz a kép aljáról a kép tetejéig) nyílik fel
+- balról jobbra (azaz a kép bal oldalától a kép jobb oldaláig) nyílik ki
+- jobbról balra (azaz a kép jobb oldalától a kép bal oldaláig) nyílik ki
+a szöveget tartalmazó elem
+
+2. Sarokból sarokba
+- a bal felső sarokból a jobb alsó sarokba
+- a jobb felső sarokból a bal alsó sarokba
+- a bal alsó sarokból a jobb felső sarokba
+- a jobb alsó sarokból a bal felső sarokba
+nyílik ki a szöveget tartalmazó elem
+
+3. Zoom
+- a kép közepéből a négy sarok felé azonos mértékben
+- a kép széleitől a kép közepe felé azonos mértékben
+jeleníti meg a szöveget tartalmazó elemet
+
+4. Függönyszerű szétnyílás vagy összecsukás megjelenése
+- középről indulva balra és jobbra kifelé húzódjon ki a függöny
+- balról és jobbról középre húzódon be a függöny
+- középről indulva felfelé és lefelé húzódjon ki a függöny
+- fentről és lentről középre húzódon be a függöny
+
+5. Képkockás megjelenés
+- a kép területét osszuk fel négy részre: bal felső, jobb felső, bal alsó és jobb alsó rész
+- a bal felső rész fentről lefelé
+- a jobb alsó rész lentről felfelé
+- a jobb felső rész jobbról balra
+- a bal alsó rész balról jobbra
+nyíljon, majd miután az egész rész lefedett, jelenjen meg a szöveg

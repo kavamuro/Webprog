@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pszeudo</title>
+    <link rel="stylesheet" href="komb_kij_stilus.css">
+</head>
+
+<body>
+    <h1>Pszeudo-osztályok és pszeudo-elemek</h1>
+
+    <p><span class="kiemelt">A dokumentumoknak lehetnek olyan elemei vagy az elemek részei, amelyek formázást igényelnek, de az eddigi kijelölőkkel nem tudjuk őket elérni, de nem tartozik hozzájuk önálló elem</span>, pl. az állapotuk alapján akarjuk elérni (rámutattunk, ki van jelölve, letiltott, bejelölt), vagy a struktúrában elfoglalt helyük alapján szeretnénk kiválasztani, vagy az objektumnak csak egy részét szeretnénk formázni.  </p>
+
+    <p>További információk:<br>
+    <a href="https://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">w3schools CSS Pseudo-classes</a><br>
+    <a href="https://www.w3schools.com/css/css_pseudo_elements.asp" target="_blank">w3schools CSS Pseudo-element</a>
+    </p>
+
+    <h2>Pszeudo-osztályok</h2>
+
+    <p><span class="tul">A pszeudo-osztályokat használjuk az egyes elemek bizonyos állapotban történő eléréséhez</span>.<br> Két nagy csoportba soroljuk ezeket: dinamikus és struktúra szerinti elérés alapján.<br> Szintaxisa: <span class="szint">szelektor:pszeudo-osztály { meghatározásblokk }</span></p>
+
+    <h3>Dinamikus pszeudo-osztályok: állapot szerinti elérés</h3>
+
+    <ul>
+        <li>
+            <strong>:link, :visited, :active</strong> - a linkek állapotai szerinti elérés<br>
+            példa: <span class="pl">a:active { color: ....; }</span>
+        </li>
+        <li>
+            <strong>:hover</strong> - az elemre történő egérrel való rámutatás állapota<br>
+            példa: <span class="pl">div:hover { font-size: 200%; }</span>
+        </li>
+        <li>
+            <strong>:focus</strong> - az elem a fókuszba kerül (pl. egy input tagba visszük a kurzort)<br>
+            példa: <span class="pl">input[type="number"]:focus { background-color: yellow; }</span>
+        </li>
+        <li>
+            <strong>:target</strong> - az elért célpont formázása (pl. belső, oldalon belül linkelt elemekhez)<br>
+            példa: <span class="pl">a[href^="#fejezet"]:target { font-weight: bolder; }</span>
+        </li>
+        <li>
+            <strong>:enabled</strong> - engedélyezett állapotú elemekhez (pl. űrlapokhoz)<br>
+            példa: <span class="pl">input[type="text"]:enabled { color: green; }</span>
+        </li>
+        <li>
+            <strong>:disabled</strong> - tiltott állapotú elemekhez (pl. űrlapokhoz)<br>
+            példa: <span class="pl">input[type="text"]:disabled { background-color: red; }</span>
+        </li>
+        <li>
+            <strong>:checked</strong> - bejelölt állapotú elemekhez (pl. űrlapoknál a "radio" és a "checkbox" típusokhoz)<br>
+            példa: <span class="pl">input[type="text"]:disabled { background-color: red; }</span>
+        </li>
+    </ul>
+
+    <h3>Struktúrális pszeudo-osztályok: a HTML-struktúrában elfoglalt hely alapján történő elérés</h3>
+
+    <ul>
+        <li>
+            <strong>:root</strong> - a html elem formázásához (a body ehhez képest lehet kisebb!)
+        </li>
+        <li>
+            <strong>:empty</strong> - olyan html elemekhez, amelyeknek nincs tartalma (pl. &lt;div&gt; &lt;/div&gt;)<br>
+            példa: <span class="pl">div:empty { width: 100px; height: 100px; border: 1px dashed red; }</span>
+        </li>
+        <li>
+            <strong>:nth-child(x)</strong> - a megadott tagok közül az x. testvér<br> (x lehet pl. 3n+2 alakú is, használható az odd (=páratlan) és az even (=páros) kifejezés is)<br>
+            példa-1: felsorolás negyedik bejegyzése: <span class="pl">li:nth-child(4) { ... }</span><br>
+            példa-2: a táblázat páros sorai: <span class="pl">tr:nth-child(even) { ... }</span>
+        </li>
+        <li>
+            <strong>:first-child</strong> - a megadott tagok közül az 1. testvér<br>
+            példa-1: táblázat első sora: <span class="pl">tr:first-child { ... }</span><br>
+            példa-2: az összes bekezdés első dőlt gyermeke: <span class="pl">p > i:first-child</span>
+        </li>
+        <li>
+            <strong>:last-child</strong> - a megadott tagok közül az utolsó testvér<br>
+            példa-1: táblázat utolsó oszlopa: <span class="pl">td:last-child { ... }</span><br>
+            példa-2: a body elem gyermekei közül az utolsó: <span class="pl">body :last-child { ... }</span>
+        </li>
+        <li>
+            <strong>:nth-last-child(x)</strong> - a megadott tagok közül hátulról számolva az x. testvér<br>
+            példa: táblázatnak hátulról a 3. oszlopa: <span class="pl">td:nth-last-child(3) { ... }</span>
+        </li>
+        <li>
+            <strong>:only-child</strong> - olyan elem, amelynek nincs testvére vagyis a szülőnek ő az egyetlen gyermeke<br>
+            példa: olyan bekezdés, amelynek nincs testvére: <span class="pl">p:only-child { ... }</span>
+        </li>
+        <li>
+            <strong>:nth-of-type(x)</strong> - egy szülő gyermekeinél a megadott típusú tagok közül az x. testvér<br> (x lehet pl. 3n+2 alakú is, használható az odd (=páratlan) és az even (=páros) kifejezés is)<br>
+            példa: div elemek közül minden harmadik testvér (lehet más típusú testvére (pl. p) is, ): <span class="pl">div:nth-of-type(3n) { ... }</span><br>
+        </li>
+        <li>
+            <strong>:first-of-type</strong> - egy szülő gyermekinél a megadott típusú tagok közül az 1. testvér<br>
+            példa: a szülő gyermekei közül az első p elem: <span class="pl">p:first-child { ... }</span>
+        </li>
+        <li>
+            <strong>:last-of-type</strong> - egy szülő gyermekinél a megadott típusú tagok közül az utolsó testvér<br>
+            példa: a szülő gyermekei közül az utolsó h2 elem: <span class="pl">h2:last-child { ... }</span>
+        </li>
+        <li>
+            <strong>:nth-last-of-type(x)</strong> - egy szülő gyermekinél a megadott típusú tagok közül hátulról számolva az x. testvér<br>
+            példa: a szülő gyermekei közül hátulról a 2. kép: <span class="pl">img:nth-last-of-type(2) { ... }</span>
+        </li>
+        <li>
+            <strong>:only-of-type</strong> - egy szülő adott típusú gyermeke, amelynek nincs testvére<br>
+            példa: a body olyan leszármazott bekezdései, amelyeknek nincs testvére: <span class="pl">body p:only-child { ... }</span>
+        </li>
+    </ul>
+
+    <h2>Pszeudo-elemek</h2>
+
+    <p><span class="tul">A pszeudo-elemeket használjuk arra, hogy az egyes elemek részeit el tudjuk érni.</span><br> Szintaxisa: <span class="szint">szelektor::pszeudo-elem { meghatározásblokk }</span></p>
+    
+    <ul>
+        <li>
+            <strong>::first-letter</strong> - az elem első betűje<br>
+            példa: a div elemek első betűje: <span class="pl">div::first-letter { ... }</span>
+        </li>
+        <li>
+            <strong>::first-line</strong> - az elem első sora<br>
+            példa: a bekezdések első sora: <span class="pl">p::first-line { ... }</span>
+        </li>
+        <li>
+            <strong>::selection</strong> - a felhasználó által kijelölt rész (tartalom) formázása<br>
+            példa: a bekezdésekben a felhasználó kijelöl egy szövegrészt, akkor inverz legyen (fekete alapon fehér színű): <br><span class="pl">p::selection { background-color: black; color: white; }</span>
+        </li>
+        <li>
+            <strong>::before</strong> - tartalmat helyez el az adott elem elé<br>
+            példa: a h4 címsorok elé elhelyezi a rajz.gif képet: <span class="pl">h4::before { content: url("rajz.gif"); }</span>
+        </li>
+        <li>
+            <strong>::after</strong> - tartalmat helyez el az adott elem mögé<br>
+            példa: a div elemek mögé elhelyezi a rajz.gif képet: <span class="pl">div::after { content: url("rajz.gif"); }</span>  
+        </li>
+        <li>
+            <strong>::marker</strong> - lista jelének (számozásának vagy felsorolásjelének) formázásához<br>
+            példa: <span class="pl">::marker { color: green; font-size: 150%; }</span>
+        </li>
+    </ul>
+
+</body>
+
+</html>

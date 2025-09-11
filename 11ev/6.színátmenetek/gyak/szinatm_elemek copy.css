@@ -1,0 +1,51 @@
+* { box-sizing: border-box; }
+
+body {
+    background-image: linear-gradient(to bottom right, green, white, green);
+}
+
+#kulso {
+    width: 80vw;
+    height: 80vh;
+    background-image: linear-gradient(green, white, green);
+    margin: 10vh auto;
+}
+
+body>div:nth-child(2) ,body>div:nth-child(3), body>div:nth-child(4) ,body>div:nth-child(5), body>div>div {
+    width: 25vw;
+    height: 25vh;
+    position: absolute;
+}
+
+body>div:nth-child(2), body>div>div:first-child{
+    background-image: linear-gradient(to bottom right, red, yellow);
+    top: 0;
+    left: 0;
+}
+
+body>div:nth-child(3), body>div>div:nth-child(2){
+    background-image: linear-gradient(to bottom left, red, yellow);
+    top: 0;
+    right: 0;
+}
+
+body>div:nth-child(4), body>div>div:nth-child(3){
+    background-image: linear-gradient(to top right, red, yellow);
+    bottom: 0;
+    left: 0;
+}
+
+body>div:nth-child(5), body>div>div:nth-child(4){
+    background-image: linear-gradient(to top left, red, yellow);
+    bottom: 0;
+    right: 0;
+}
+
+body>div:last-child{
+    width: 50vw;
+    height: 50vh;
+    position: absolute;
+    top: 25vh;
+    left: 25vw;
+}
+

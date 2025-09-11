@@ -1,0 +1,37 @@
+body{
+    background-color: rgb(186, 200, 216);
+    margin: 30px;
+}
+#cim{
+    border-bottom: 2px solid rgb(15,79,151);
+    border-right: 2px solid rgb(15,79,151);
+    border-bottom-right-radius: 15px;
+    background-color: rgb(157,198,245);
+    box-shadow: 3px 3px rgb(15,79,151);
+    text-align: center;
+    vertical-align: middle;
+    font-size: 40px;
+}
+
+#left{
+    width: 65%;
+    display: inline-block;
+}
+
+#right{
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 20px;
+}
+.bongeszo{
+    font-size: 20px;
+    color: rgb(14,54,235);
+    text-shadow: 2px 2px rgb(157,198,245);
+    font-weight: bold;
+
+}
+p{
+    line-height: 160%;
+    text-align: justify;
+}

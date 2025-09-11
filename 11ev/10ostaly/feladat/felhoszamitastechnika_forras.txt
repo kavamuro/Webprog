@@ -1,0 +1,75 @@
+Mi a felhő-számítástechnika?
+Egyszerű megfogalmazással élve a felhő-számítástechnika a számítási szolgáltatások – például kiszolgálók, tárolás, adatbázisok, hálózatkezelés, szoftverek, elemzés, intelligencia – elérhetővé tétele az interneten keresztül (a „felhőben”), a gyorsabb innováció, a rugalmas erőforrások és a méretgazdaságosság érdekében. Általában csak a felhasznált felhőszolgáltatásokért fizet, így csökkentheti üzemeltetési költségeit, hatékonyabban működtetheti infrastruktúráját, és át is méretezheti, ha üzlete igényei megváltoznak.
+
+A felhő-számítástechnika főbb előnyei
+
+A felhő-számítástechnika jelentős elmozdulást jelent az informatikai erőforrásokról kialakult hagyományos üzleti szemlélettől. Íme hét meggyőző érv, amiért a szervezeteknek érdemes átállniuk a felhőszolgáltatásokra:
+Költség
+Globális méretezhetőség
+Teljesítmény
+Biztonság
+Gyorsaság
+Termelékenység
+Megbízhatóság
+
+Költség
+
+A felhő-számítástechnika révén mentesülhet azon befektetések alól, amelyeket a hardver- és szoftvervásárlás, valamint a helyi adatközpontok beállítása és működtetése (a kiszolgálóállványok, a non-stop tápellátáshoz és hűtéshez szükséges áram, az infrastruktúrát felügyelő informatikusok) igényelnek. Mindezek együttesen komoly összeget tehetnek ki.
+
+Globális méretezhetőség
+
+A felhőszolgáltatások további előnye a rugalmas skálázhatóság. Felhő-számítástechnikai nyelven ez a megfelelő mennyiségű informatikai erőforrás – például több vagy kevesebb számítási teljesítmény, tárolókapacitás, sávszélesség – megfelelő időben és megfelelő földrajzi helyről történő biztosítását jelenti.
+
+Teljesítmény
+
+A legnagyobb felhőszolgáltatások olyan biztonságos adatközpontok globális hálózatában futnak, amelyeket gyors, hatékony, legújabb generációs számítástechnikai hardvereszközök működtetnek. Ez a vállalati adatközponthoz képest számos előnyt biztosít, így például kisebb késést az alkalmazások esetében és hatékonyabb skálázhatóságot.
+
+Biztonság
+
+Számos felhőszolgáltató kínálatában szerepel az általános biztonságot általában megerősítő, az adatok, alkalmazások és az infrastruktúra támadások elleni védelmét segítő szabályzatok, technológiák és vezérlők széles köre.
+
+
+Gyorsaság
+
+A legtöbb felhőszolgáltatás önkiszolgáló és igény szerinti, így percek alatt, általában néhány kattintással nagy mennyiségű számítási erőforrást is üzembe helyezhet, ami nagyfokú rugalmasságot biztosít a cégeknek, és csökkenti a kapacitástervezésre nehezedő nyomást.
+
+
+Termelékenység
+
+A telephelyi adatközpontok kialakítása hardverbeállítási, szoftverjavítási, valamint számos egyéb munka- és időigényes IT-felügyeleti teendőt foglal magában. A felhő-számítástechnika révén e feladatok jó része alól mentesülhet, így informatikusainak több ideje jut a fontosabb üzleti célok megvalósítására.
+
+
+Megbízhatóság
+
+A felhő-számítástechnika megkönnyíti és olcsóbbá teszi az adatok biztonsági mentését, a vészhelyreállítást és a folyamatos üzletmenet biztosítását, mivel az adatok több redundáns helyre tükrözhetők a felhőszolgáltató hálózatában.
+
+
+
+A felhő-számítástechnika típusai
+
+Nem minden felhő egyforma, és a felhő-számítástechnika nem minden típusa felel meg mindenkinek. Számos különböző modell, típus és szolgáltatás fejlődött ki, hogy az Ön igényeinek megfelelő megoldást kínálhassunk.
+
+Először azt a felhőbeli üzembe helyezési típust vagy felhő-számítástechnikai architektúrát kell meghatároznia, amelyen felhőszolgáltatásait megvalósítja. A felhőszolgáltatások háromféleképpen: nyilvános, magán- vagy hibridfelhőben helyezhetők üzembe. További információ a nyilvános, a magán- és a hibrid felhőről.
+
+Nyilvános felhő
+Magánfelhő
+Hibridfelhő
+
+
+A nyilvános felhő
+A nyilvános felhő a külső szolgáltatók által a nyilvános interneten kínált, bárki által használható vagy megvásárolható számítástechnikai szolgáltatások halmazaként definiálható. A szolgáltatások lehetnek ingyenesek vagy igény szerinti díjszabásúak, ahol az ügyfelek csak a ténylegesen felhasznált processzorciklusokért, tárhelyért vagy sávszélességért fizetnek.
+
+A magánfelhőkkel ellentétben a nyilvános felhők révén a cégek megspórolhatják a helyszíni hardveres és alkalmazásinfrastruktúra tetemes beszerzési, üzemeltetési és fenntartási költségét – a rendszer minden felügyeleti és fenntartási feladatáért a felhőszolgáltató felel. A nyilvános felhő gyorsabban üzembe helyezhető, mint a helyszíni infrastruktúra, és szinte végtelenül skálázható platformot kínál. A felhőt a cég összes dolgozója ugyanazzal az alkalmazással érheti el bármelyik irodából vagy telephelyről, tetszése szerinti eszközről, ha van internetkapcsolata. Bár a nyilvánosfelhő-alapú környezeteket biztonsági szempontból sok kritika éri, egy jól implementált nyilvános felhő ugyanolyan biztonságos lehet, mint a leghatékonyabban felügyelt magánfelhő-implementáció, amennyiben a szolgáltató megfelelő biztonsági eszközöket használ, például behatolásérzékelő és -megelőző (IDP) rendszereket.
+
+A magánfelhő
+A magánfelhő a nagyközönség helyett csak meghatározott felhasználóknak kínált, az interneten vagy belső magánhálózaton keresztül elérhető számítástechnikai szolgáltatások halmazaként definiálható. A belső vagy vállalati felhőként is ismert magánfelhő a nyilvános felhők számos előnyét biztosítja a cégeknek – például az önkiszolgáló jelleget, a skálázhatóságot és a rugalmasságot – a helyszínen üzemeltetett IT-infrastruktúrán elérhető dedikált erőforrások jelentette szélesebb körű szabályozási és testreszabási lehetőségek mellett. Ezenfelül a magánfelhő a céges tűzfalak és a belső üzemeltetés révén jobb biztonságot és adatvédelmet kínál, így biztosítja, hogy külső szolgáltatók ne férjenek hozzá a napi működéssel kapcsolatos vagy bizalmas adatokhoz. Hátránya ugyanakkor, hogy a magánfelhő üzemeltetésének költsége és feladatai a cég IT-részlegét terhelik – a magánfelhő tehát ugyanolyan személyzeti, felügyeleti és fenntartási költségeket jelent, mint a hagyományos adatközpontok birtoklása.
+
+Magánfelhőben kétféle felhőszolgáltatást lehet nyújtani. Az első az infrastruktúra-szolgáltatás (IaaS), amely révén a cég infrastrukturális erőforrásokat (például számítási, hálózati vagy tárkapacitást) használhat szolgáltatásként. A második a platformszolgáltatás (PaaS), amely révén a cég alkalmazásokat szolgáltathat, az egyszerű felhőalapú alkalmazásoktól egészen a kifinomult vállalati megoldásokig. A magánfelhőt nyilvános felhőkkel kombinálva hibrid felhő is kialakítható, amellyel a cég a felhőbeli tartalékkapacitásra alapozva több helyet szabadíthat fel, és a számítási szolgáltatásokat a nyilvános felhőben skálázhatja fel, ha megnövekszik a számítási igény.
+
+Mi az a hibrid felhő?
+A hibrid felhő (más néven felhőhibrid) olyan számítástechnikai környezet, amely úgy kombinál egy helyi adatközpontot (más néven privát felhőt) és egy nyilvános felhőt, hogy az adatok és az alkalmazások megoszthatók a kettő között. A hibrid felhő egyes definíciói a többfelhős konfigurációkat is magukban foglalják, amelyek során a vállalkozás több nyilvános felhőt is használ a helyi adatközpont mellett.
+
+Mik a hibrid felhő előnyei?
+A hibrid felhő definíciójától függetlenül annak előnyei ugyanazok: Ha a számítási és feldolgozási igények meghaladják a helyi adatközpont képességeit, a vállalkozásokat a felhő segítségével azonnal felfelé vagy lefelé skálázhatják a kapacitást a hatékony kezeléshez. Emellett megspórolhatók az új kiszolgálók vásárlásának, telepítésének és karbantartásának költségei és ideje, hiszen ezekre nem is mindig van szükség.
+
+forrás: https://azure.microsoft.com/hu-hu/overview/what-is-cloud-computing/#benefits

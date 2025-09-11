@@ -1,0 +1,25 @@
+body{
+    background-color: #ff6c6a;
+    width: 960px;
+    margin: auto;
+}
+
+header h1{
+    text-align: right;
+}
+#content{
+    border-left: 5px double red;
+    border-right: 5px double red;
+}
+.hasab{
+    float: left;
+    background-color: #d4453e;
+    color: darkred;
+    width: 260px;
+}
+p{
+    text-align: justify;
+}
+.hires{
+    background-color: #ff6c6a;
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<title>Transzformáció eredete</title>
+<meta charset="utf-8">
+<style type="text/css">
+section {
+     height: 200px;
+     margin:20px 20px 60px 20px;
+     position: relative;
+     width: 200px;
+     float:left;
+}
+.kocka {
+     height: 100%;
+     position: absolute;
+     transform: translateZ(-100px);
+     transform-style: preserve-3d;
+     width: 100%;
+}
+.kocka div {
+     display: block;
+     position: absolute;
+     width: 196px;
+     height: 196px;
+     border: 2px solid black;
+     line-height: 196px;
+     font-size: 100px;
+     text-shadow:2px 2px 2px black;
+     font-weight: bold;
+     color: white;
+     text-align: center;
+     margin:0;
+     font-family:Verdana, Geneva, sans-serif;
+     color:white;
+}
+.kocka .eleje {
+     background-color: rgba(210, 255, 169, 0.4);
+     transform: translateZ(100px);
+}
+.kocka .hatulja {
+     background-color: rgba(139, 223, 255, 1);
+     transform: rotateX(0deg) translateZ(-100px);
+}
+.kocka .jobboldala {
+     background-color: rgba(255, 169, 232, 1);
+     transform: rotateY(90deg) translateZ(100px);
+}
+.kocka .baloldala {
+     background-color: rgba(208, 169, 255, 1);
+     transform: rotateY(-90deg) translateZ(100px);
+}
+.kocka .teteje {
+     background-color: rgba(254, 255, 169, 1);
+     transform: rotateX(90deg) translateZ(100px);
+}
+.kocka .alja {
+     background-color: rgba(155, 155, 155, 1);
+     transform: rotateX(-90deg) translateZ(100px);
+}
+ section:nth-child(1) {
+ perspective: 300px;
+ perspective-origin: 50% 50%;
+}
+ section:nth-child(2) {
+ perspective: 100px;
+ perspective-origin: 0% 0%;
+}
+ section:nth-child(3) {
+ perspective: 100px;
+ perspective-origin: 30% 50%;
+}
+ section:nth-child(4) {
+ perspective: 100px;
+ perspective-origin: 70% 50%;
+}
+ section:nth-child(5) {
+ perspective: 100px;
+ perspective-origin: 10% 90%;
+}
+ section:nth-child(6) {
+ perspective: 100px;
+ perspective-origin: 90% 10%;
+}
+figcaption {
+     padding:10px;
+     position:absolute;
+     bottom:-130px;
+     display:block;
+     font-size:110%;
+}
+</style>
+<body>
+<section>
+  <figure  class="kocka">
+    <div class="eleje">1</div>
+    <div class="hatulja"></div>
+    <div class="jobboldala"></div>
+    <div class="baloldala"></div>
+    <div class="teteje"></div>
+    <div class="alja"></div>
+  </figure>
+</section>
+<section>
+  <figure  class="kocka">
+    <div class="eleje">2</div>
+    <div class="hatulja"></div>
+    <div class="jobboldala"></div>
+    <div class="baloldala"></div>
+    <div class="teteje"></div>
+    <div class="alja"></div>
+  </figure>
+</section>
+<section>
+  <figure  class="kocka">
+    <div class="eleje">3</div>
+    <div class="hatulja"></div>
+    <div class="jobboldala"></div>
+    <div class="baloldala"></div>
+    <div class="teteje"></div>
+    <div class="alja"></div>
+  </figure>
+</section>
+<section>
+  <figure  class="kocka">
+    <div class="eleje">4</div>
+    <div class="hatulja"></div>
+    <div class="jobboldala"></div>
+    <div class="baloldala"></div>
+    <div class="teteje"></div>
+    <div class="alja"></div>
+  </figure>
+</section>
+<section>
+  <figure  class="kocka">
+    <div class="eleje">5</div>
+    <div class="hatulja"></div>
+    <div class="jobboldala"></div>
+    <div class="baloldala"></div>
+    <div class="teteje"></div>
+    <div class="alja"></div>
+  </figure>
+</section>
+<section>
+  <figure  class="kocka">
+    <div class="eleje">6</div>
+    <div class="hatulja"></div>
+    <div class="jobboldala"></div>
+    <div class="baloldala"></div>
+    <div class="teteje"></div>
+    <div class="alja"></div>
+  </figure>
+</section>
+</body>
+</html>

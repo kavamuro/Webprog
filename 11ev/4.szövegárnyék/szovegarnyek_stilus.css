@@ -1,0 +1,106 @@
+.tul {
+    font-weight: bold;
+    color: red;
+}
+
+.pl {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 80%;
+}
+
+.kiemelt {
+    font-style: italic;
+    font-weight: bold;
+    background-color:yellow;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.szint {
+	background-color: green;
+	color: white;
+	font-weight: bold;
+	font-family: 'Courier New';
+}
+
+/* példákhoz: Elemezzük ki! */
+
+#pelda1 {
+    font-size: 500%;
+    color: #000;
+    text-shadow: 0 6px 6px silver;
+    margin-left: 50px;
+}
+
+#pelda2 {
+    font-size: 500%;
+    color: #504f4f;
+    text-shadow: 2px 2px 0px #eee, 4px 4px 0 #707070;
+    margin-left: 50px;
+}
+
+#pelda3 {
+    font-size: 500%;
+    color: rgb(218, 193, 193);
+    text-shadow: 2px 2px 0 #ffd217, 4px 4px 0 #5ac7ff, 6px 6px 0 #ffd217, 8px 8px 0 #5ac7ff;
+    margin-left: 50px;
+}
+
+#pelda4 {
+    font-size: 500%;
+    height: 200px;
+    width: 700px;
+    line-height: 200px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606,
+    0 -80px 70px #973716, 10px -90px 80px #451b0e;
+}
+
+#pelda5 {
+    font-size: 500%;
+    height: 200px;
+    width: 700px;
+    line-height: 200px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 10px #fff, 0 0 30px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de,
+    0 0 150px #ff00de;
+}
+
+
+/* feladatokhoz */
+
+.feladat {
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    font-style: italic;
+}
+
+.doboz {
+    margin:15px;
+    font-size: 125%;
+}
+
+#d1{
+    text-shadow: 5px 3px 3px purple;
+}
+
+#d2{
+    text-shadow: 0 10px 2px blue, -5px 5px green;
+}
+
+#d3::first-letter{
+    text-shadow:  5px -10px 5px purple;
+}
+
+#d4{
+    text-shadow: -10px 10px 0px darkorchid;
+    background-color: #feec85;
+    width: 50%;
+    padding: 10px;
+}

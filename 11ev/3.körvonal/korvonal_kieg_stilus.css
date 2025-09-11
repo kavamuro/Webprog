@@ -1,0 +1,66 @@
+.tul {
+    font-weight: bold;
+    color: red;
+}
+
+.pl {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 80%;
+}
+
+.kiemelt {
+    font-style: italic;
+    font-weight: bold;
+    background-color:yellow;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.szint {
+	background-color: green;
+	color: white;
+	font-weight: bold;
+	font-family: 'Courier New';
+}	
+
+/* példához */
+
+.feladat {
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    font-style: italic;
+}
+/*Készítsen fekete színű, 5 képpont vastag, egyszerű körvonalat a barna színű "ellipszis" elemhez úgy, hogy az 15 képpontal közelebb legyen az elemhez az eredeti helyéhez képest!*/
+#ellipszis {
+    width: 150px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: brown;
+    margin: 25px 0 0 25px;
+    outline: 5px solid black    ;
+    outline-offset: -15px;
+}
+/*Készítsen piros színű, közepes vastagságú, szaggatott körvonalat a piszkossárga koronghoz úgy, hogy a körvonal az alapértelemezett helyen jelenjen meg!*/
+#korong {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(209, 209, 74);
+    margin: 25px 0 0 25px;
+    outline: medium dashed red;
+
+}
+/*Készítsen kék színű, dupla vonalas, vékony (vagy 2 képpont vastag) körvonalat a zöld színű ovális elemhez úgy, hogy a körvonal az eredeti helyétől kifelé néhány képponttal távolabb legyen!*/
+#ovalis {
+    width: 80px;
+    height: 150px;
+    border-radius: 40%;
+    background-color: lightgreen;
+    margin: 25px 0 0 25px;
+    outline: blue thin double;
+    outline-offset: 5px;
+    
+}
+

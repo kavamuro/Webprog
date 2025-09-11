@@ -1,0 +1,43 @@
+body{
+    color: slategray;
+    background-image: url(hatter_marvany.jpg);
+    font-family: 'Times New Roman', Times, serif;
+}
+#maintitle{
+    font-size: 3rem;
+    font-weight: bolder;
+    font-variant: small-caps;
+
+}
+
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    color: navy;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.info{
+    font-size: 1.2em;
+    font-variant: small-caps;
+    text-decoration: underline;
+    color: navy;
+}
+ul{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+
+}
+.summary{
+    text-align: justify;
+    line-height: 200%;
+    margin: 15px 40px;
+    border: 1px dotted slategray;
+    padding: 10px;
+    width: 65vw;
+}
+.book{
+    width: 80vw;
+    margin: 50px auto;
+
+}

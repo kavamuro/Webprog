@@ -1,0 +1,38 @@
+body{
+    margin: 0 auto;
+    background-color: #3e2b04;
+    color: #e0cea6 ;
+    width: 70vw;
+}
+h1{
+    text-align: center;
+}
+.sortki{
+    text-align: justify;
+}
+a {
+    color: #e6a416; 
+    text-decoration: none; 
+}
+  a:active {
+    color: #e6a416; 
+}
+  a:visited {
+    color: white;
+  }
+  a:hover {
+    color: #59aa2b;
+  }
+img{
+    width: 300px;
+}
+.kisimg{
+    width: 200px;
+}
+.imgtext{
+    text-align: center;
+    font-style: italic;
+}
+.cent{
+    text-align: center;
+}

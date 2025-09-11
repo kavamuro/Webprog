@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribútum kijelölők</title>
+    <link rel="stylesheet" href="komb_kij_stilus.css">
+</head>
+
+<body>
+    <h1>Kijelölés a jellemzők alapján</h1>
+
+    <p><span class="kiemelt">Amikor jellemző kijelölőt alkalmazunk, akkor az adott HTML-elem attribútumainak megléte, illetve az azokban meghatározott értékek alapján történik a kiválasztás</span>, tehát nem az objektum, hanem az objektum egyes jellemzőit veszi figyelembe a böngésző.</p>
+
+    <p>További információk: <a href="https://www.w3schools.com/css/css_attribute_selectors.asp" target="_blank">w3schools CSS Attribute Selectors</a></p>
+
+    <h2>Jellemzőérték alapú kiválasztás: <span class="szint">[attribútum]</span></h2>
+         <p><span class="tul">Az [attribútum] választóval azokat az elemeket választja ki a böngésző, amelyeknek létezik a szögletes zárójelek között megadott tulajdonsága.</span></p>
+         <p><em>Példa: kiválasztja azokat a képeket, amelyeknek megadtunk szélességi értéket:</em><br> <span class="pl"> img[width] { ... } </span></p>
+
+    <h2>A jellemző pontos értékének megadása: <span class="szint">[attribútum="érték"]</span></h2>
+        <p><span class="tul">Az [attribútum="érték"] választóval azokat az elemeket választja ki a böngésző, amelyeknek létezik a szögletes zárójelek között megadott tulajdonsága és pontosan azzal az értékkel rendelkezik, amelyet megadtunk.</span></p>
+        <p><em>Példa: kiválasztja azokat az input mezőket, amelyek number típusúak:</em><br> <span class="pl"> input[type="number"] { ... } </span></p>
+
+    <h2>Részleges jellemzőérték: <span class="szint">[attribútum~="érték"]</span></h2>
+        <p><span class="tul">Az [attribútum~="érték"] választóval azokat az elemeket választja ki a böngésző, amelyeknek létezik a szögletes zárójelek között megadott tulajdonsága és az értékében szerepel a megadott szó.</span> Ennek megfelelően a megadott érték előtt és mögött is szóköznek kell állnia!</p>
+        <p><em>Példa: kiválasztja azokat az input mezőket, amelyek number típusúak:</em><br> <span class="pl"> a[title~="SZTE"] { ... } </span></p>
+
+    <h2>Jellemzőérték eleje: <span class="szint">[attribútum^="érték"]</span></h2>
+        <p><span class="tul">Az [attribútum^="érték"] választóval azokat az elemeket választja ki a böngésző, amelyeknek létezik a szögletes zárójelek között megadott tulajdonsága és annak értéke elején szerepel a megadott karaktersorozat.</span> A karaktersorozatot bármilyen más karakterek követhetik! </p>
+        <p><em>Példa: kiválasztja azokat a div mezőket, amelyeknek az azonosítója a "fej" kifejezéssel kezdődik:</em><br> <span class="pl"> div[id^="fej"] { ... } </span></p>
+        <p>Ha a megadott kifejezést a kötőjel kell hogy kövesse, akkor a ^ jel helyett a | jelet kell használnunk. Ha pl. vannak blokkjaink "top" és "top-" kezdetű osztályokkal is, akkor kizárólag azokat, amelyeknél a "top"-ot kötőjel követi, a <span class="pl">div[class|="top"]</span> kijelölővel tudjuk szelektálni.</p>
+
+    <h2>Jellemzőérték vége: <span class="szint">[attribútum$="érték"]</span></h2>
+        <p><span class="tul">Az [attribútum$="érték"] választóval azokat az elemeket választja ki a böngésző, amelyeknek létezik a szögletes zárójelek között megadott tulajdonsága és annak értéke végén szerepel a megadott karaktersorozat.</span> A karaktersorozatot bármilyen más karakterek előzhetik meg! </p>
+        <p><em>Példa: kiválasztja azokat a p mezőket, amelyeknek az osztálya a "teszt" kifejezésre végződik:</em><br> <span class="pl"> p[class$="teszt"] { ... } </span></p>
+
+    <h2>Jellemzőérték tartalma (részlete): <span class="szint">[attribútum*="érték"]</span></h2>
+        <p><span class="tul">Az [attribútum*="érték"] választóval azokat az elemeket választja ki a böngésző, amelyeknek létezik a szögletes zárójelek között megadott tulajdonsága és annak értékében valahol szerepel a megadott érték.</span> A megadott karaktersorozatot megelőzhetnek és követhetnek tetszőleges további karakterek!</p>
+        <p><em>Példa: kiválasztja azokat a linkeket, amelyeknek elérési útjában szerepel a "menu" karaktersorozat:</em><br> <span class="pl"> a[href*="menu"] { ... } </span></p>
+        
+</body>
+
+</html>

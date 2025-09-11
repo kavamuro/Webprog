@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugárirányú színátmenetek</title>
+    <link rel="stylesheet" href="szinatmenetek_stilus.css">
+    <link rel="stylesheet" href="gy_sugaras_szinatmenetek.css">
+</head>
+
+<body>
+    <h1>A sugárirányú színátmenet (radial-gradient)</h1>
+
+    <h2>A SUGÁRIRÁNYÚ színátmenettel kapcsolatos általános információk</h2>
+
+    <p><strong><span class="kiemelt">A sugárirányú színátmenet (radial-gradient) egy előre meghatározott pontból kiindulva ellipszis (speciális esetben kör) alakban alakulnak ki.</span> Meg kell adni a gradens középpontját (ez lesz a 0%-os ellipszis), amely a lineárissal ellentétben tetszőleges helyen lehet, majd specifikálni kell az ellipszis alakját és méretét, végül az alkalmazott színeket és azok zárópozícióját (color-stop). A paraméterek alapján a középpont és a végső ellipszis között koncentrikus ellipszisek alakulnak ki a színeknél meghatározottak szerint.</strong></p>
+	
+	<p><strong>A sugárirányú színátmenet háttérképként történő meghatározásának szintaxisa:</strong><br>
+	<span class="szint">background-image: radial-gradient(alak méret at pozíció, szín-1 pozíció-1, szín-2 pozíció-2..., szín-n pozíció-n);</span></p>	
+
+    <h3>A sugárirányú színátmenet paraméterei</h3>
+
+    <ul>
+        <li><span class="tul"><em>Az 1-2. paraméter<strong> a végső ellipszis alakját és méretét definiálja definiálja</strong></em></span>, amely kétféle módon adható meg:
+            <ul>
+                <li><strong>implicit módon a <span class="pl">shape</span> (alak) és a <span class="pl">size</span> (méret) szavaival:</strong>
+                    <ul>
+                        <li>a <span class="pl">shape</span> lehet: circle (kör) vagy ellipse (ellipszis) - csak vízszintes és függőleges irányú tengelyekkel, ferdékkel nem<br>(ha ez nincs megadva, akkor a böngésző a <span class="pl">shape</span> paraméter alapján dönt: ha csak egy méret van, akkor kört választ, ha pedig két méret van vagy nincs, akkor ellipszist választ)</li>
+                        <li>a <span class="pl">size</span> lehet (kör és ellipszis esetén is):
+                            <ul>
+                                <li><span class="pl">closest-side</span> (legközelebbi oldal): a kör érinti a doboznak a gradiens középpontjához legközelebb eső oldalát, az ellipszis a középpontjához legközelebbi függőleges és vízszintes dobozoldalakat. (Ha a középpont a dobozon kívül van, a doboz oldalait képzeletben meg kell hosszabbítani, hogy az ellipszis érinthesse azokat.)</li>
+                                <li><span class="pl">farthest-side</span> (legtávolabbi oldal): az előző ellentettje, azaz a legtávolabbi oldal(ak)hoz igazodnak az alakzatok</li>
+                                <li><span class="pl">closest-corner</span> (legközelebbi sarok): az alakzat mérete úgy alakul, hogy érinti a középpontjához legközelebbi sarkot</li>
+                                <li><span class="pl">farthest-corner</span> (legtávolabbi sarok): az alakzat mérete úgy alakul, hogy érinti a középpontjához legtávolabbi sarkot - ez az alapértelmezett érték, ha nincs definiálva a <span class="pl">size</span> értéke</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>explicit módon a végső alak mérete és alakja két hosszmérettel vagy százalékos értékkel adható meg</strong>
+                    <ul>
+                        <li>ezek az ellipszis vízszintes és függőleges tengelyeinek a hosszát a középponttól mért hosszát jelentik (tehát kör esetében a sugárt és nem az átmérőt)</li>
+                        <li>százalékos megadáskor az első érték a doboz szélességéhez, a második a doboz magasságához viszonyított értéket jelent</li>
+                        <li>csak nullánál nagyobb érték adható meg!</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>    
+        <li><span class="tul"><em>A 3. paraméter<strong> az ellipszis középpontját (és egyben a gradiens középpontját) definiálja</strong></em></span> a háttérképeknél leírt <span class="pl">background-position</span> tulajdonság szerint. Ha nincs megadva, a böngésző ezt a <span class="pl">center</span> értékként értelmezi. Ennek megfelelően az egyes színek a középtől jobra induló képzeletbeli vonalon helyezkednek el.
+            <ul>
+                <li>a gradiens-vonal végpontja a kezdőpontból a megadott szögben meghúzott egyenesnek a végső ellipszissel alkotott metszéspontja</li>
+                <li>a középpont megadására az alábbi szavakkal leírt lehetőségeket használhatjuk:
+                    <ul>
+                        <li><span class="pl">left top</span>: bal felső sarok</li>
+                        <li><span class="pl">right top</span>: jobb felső sarok</li>
+                        <li><span class="pl">left bottom</span>: bal alsó sarok</li>
+                        <li><span class="pl">left top</span>: bal felső sarok</li>
+                        <li><span class="pl">left center</span>: baloldalon, függőlegesen középen</li>
+                        <li><span class="pl">right center</span>: jobboldalon, függőlegesen középen</li>
+                        <li><span class="pl">center top</span>: fent, vízszintesen középen</li>
+                        <li><span class="pl">center bottom</span>: lent, vízszintesen középen</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Ha a középpontot, az alakot és/vagy a méretet definiáljuk, először az alak, azután a méret, majd a középpont következik az "at" szóval összekötve, például: 
+            <ul>
+                <li>ellipszis a középponttól indulva: <span class="pl">ellipse at center</span></li>
+                <li>a szélesség 30%-tól és a magasság 40%-tól (mint középpontból) indulva a legtávolabbi sarokig: <span class="pl">farthest-corner at 30% 40%</span></li>
+                <li>a bal széltől 40px-re és a felső széltől 60px-re elhelyezett középpontból indulva a legközelebbi oldalig: <span class="pl">closest-side at 40px 60px</span></li>
+                <li>a bal alsó sarokból (mint középpontból) a távolabbi oldalig tartó: <span class="pl"> farthest-side at left bottom</span></li>
+            </ul>
+        </li>
+        <li><span class="tul"><em>Az utolsó paraméterek<strong> a színeket és azok megállítási helyét (color-stop) határozzák meg</strong></em></span> a lineáris színátmenetnél látottakkal analóg módon.
+            <ul>
+                <li>a színek az átmenet középpontjából húzott képzeletbeli vonalon helyezkednel el, a 0%-os pont van a középpontban és a 100%-os pont a vonal és a végső ellipszis metszéspontjában</li>
+                <li>100%-nál nagyobb érték és negatív hossz is lehetséges, de ekkor az átmenetből a kezdőpont előtti színek nem látszódnak</li>
+            </ul>
+        </li>  
+    </ul>
+
+    <h3>Periodikusan ismétlődő színátmenetek</h3>
+
+    <p>A színátmenet nemcsak egyszeri lehet, hanem periodikusan is ismétlődhet ugyanúgy, mind a lineáris színátmenetes hátterek esetében. Ebben az esetben a <span class="pl">repeating-radial-gradient</span> tulajdonságot használjuk. </p>
+
+    <ul>
+        <li>A színátmenetek értelmezése és értékei megegyeznek a korábban ismertetett, nem periodikus átmenetekével.</li>
+        <li>A color-stop-ok mindkét irányban végtelenül ismétlődnek az utolsó color-stop és az első color-stop helyzete különbségének többszörösével eltolt pozícióval.</li>
+        <li>Az első és az utolsó color-stop mindig egybeesik az ismétlődő átmenetcsoporotok határán, így az éles átmenetet okozhat, ha a színátmenet nem ugyanazzal a színnel indul és fejeződik be.</li>
+        <li>példa: <span class="pl">background-image: repeating-radial-gradient(green, yellow 20px, blue 40px); </span></li>
+    </ul>
+
+    <p id="mintakodok">
+        <a href="minta_sugaras_szinatmenet.html"target="_blank">Példák és kódok sugaras színátmenetes hátterekre</a>
+    </p>
+
+	<h2>Gyakorló feladatok</h2>
+
+    <p class="feladat">Készítsen két, szabadon választott szín felhasználásával, ELLIPSZIS alakú sugaras színátmenetes háttereket az itt látható mezőkbe úgy,<br>hogy azok rendre középről (1), egy negyedelőpontból (2), egy %-ban megadott (3), egy képpontban megadott helyről (4) mint középpontból egyenletesen terjedjenek ki!</p>
+    <div class="blokk" id="bs-1"></div>
+	<div class="blokk" id="bs-2"></div>
+    <div class="blokk" id="bs-3"></div>
+	<div class="blokk" id="bs-4"></div>
+	
+	<p class="feladat">Most módosítsa az előzőeket úgy, hogy az itt látható mezőkben megjelenő sugaras színátmenetes hátterek KÖR alakúak legyenek<br>és/vagy NE egyenletesen terjedjenek ki ÉS valamelyik SAROKBÓL mint középpontból induljanak ki!</p>
+    <div class="blokk" id="bs-5"></div>
+	<div class="blokk" id="bs-6"></div>
+    <div class="blokk" id="bs-7"></div>
+	<div class="blokk" id="bs-8"></div>
+
+    <p class="feladat">Készítsen kettőnél több, szabadon választott szín felhasználásával, sugaras színátmenetes háttereket az itt látható mezőkbe úgy,<br>hogy azok egy szabadon választot helyről mint középpontból induljanak ki és a közelebbi sarokig (1), távolabbi oldalig (2), közelebbi oldalig (3), illetve a távolabbi sarokig (4) terjedjenek ki úgy, hogy ELLIPSZIS (1-2) vagy KÖR (3-4) alakúak legyenek!</p>
+    <div class="blokk" id="bs-9"></div>
+	<div class="blokk" id="bs-10"></div>
+	<div class="blokk" id="bs-11"></div>
+	<div class="blokk" id="bs-12"></div>
+
+	
+	<p class="feladat">Készítsen kettőnél több, szabadon választott szín felhasználásával, sugaras színátmenetes háttereket az itt látható mezőkbe úgy,<br>hogy azok PERIODIKUSAN ISMÉTLŐDJENEK és középről (1), a jobb felső sarokból (2), a bal oldal felezőpontjából (3), illetve az alsó oldal második harmadolópontjából (4) terjedjenek ki KÖR (1-2) vagy ELLIPSZIS (3-4) alakban!</p>
+    <div class="blokk" id="bs-13"></div>
+	<div class="blokk" id="bs-14"></div>
+	<div class="blokk" id="bs-15"></div>
+	<div class="blokk" id="bs-16"></div>
+
+</body>
+
+</html>

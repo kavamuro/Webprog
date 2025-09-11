@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@keyframes gurit {
+    0%{position: absolute; top: 0; left: 0;}
+    25%{position: absolute;top: 0;left: 100%;transform: translateX(-100%) rotate(360deg) ;
+    border-color: aquamarine darkgoldenrod slateblue greenyellow;}
+    50%{position: absolute; top: 100%; left: 100%;
+    transform: translate(-100%,-100%) rotate(720deg);}
+    75%{position: absolute; top: 100%; left: 0%;
+        transform: translateY(-100%)rotate(1080deg)}
+    100%{position: absolute; top: 0; left: 0;
+    transform: translate(1440deg);}
+}
+div{
+    width: 0px;
+    height: 0px;
+    border: 100px solid black;
+    background-color: black;
+    border-color: red yellow blue green;
+    border-radius: 50%;
+    animation-name: gurit;
+    animation-duration: 3s;
+    animation-direction: normal;
+    animation-iteration-count: 5;
+   
+}

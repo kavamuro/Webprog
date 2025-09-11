@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="flexbox_alapok.css">
+    <title>Flexbox alapok</title>
+</head>
+
+<body>
+    <h1>Flexbox alapszintű használata</h1>
+
+    <p>A kezdéshez szükségünk van egy tárolóra, amely további elemeket tartalmaz.</p>
+
+    <h2>Elemek főtengely mentén való vízszintes elrendezése</h2>
+
+    <p>A külső tárolóra alkalmazzuk a <strong><em>display: flex;</em></strong> beállítást és a belső elemek egymás mellé csúsznak. Mivel a flexbox főtengelyének alapértelmezett iránya a vízszintes, a konténer elemei is így rendeződnek el és szélességi értéküket a böngésző a beállított értékek (padding, margin, font-size, ...) alapján számolja ki. Az is látható, hogy az elemek nem töltik ki automatikusan a rendelkezésre álló területet, a konténer viszont igen:</p>
+    <div id="kulso1">
+        <div class="belso1">E-1</div>
+        <div class="belso1">E-2</div>
+        <div class="belso1">E-3</div>
+        <div class="belso1">E-4</div>
+		<div class="belso1">E-5</div>
+		<div class="belso1">E-6</div>
+		<div class="belso1">E-7</div>
+		<div class="belso1">E-8</div>
+		<div class="belso1">E-9</div>
+		<div class="belso1">E-10</div>
+		<div class="belso1">E-11</div>
+    </div>
+	
+    <p>Ha a külső tárolóra a <strong><em>display: inline-flex;</em></strong> beállítást használjuk, akkor a külső tároló csak olyan széles lesz, mint amennyit az egymás mellé csúsztatott elemek igényelnek:</p>
+    <div id="kulso2">
+        <div class="belso1">E-1</div>
+        <div class="belso1">E-2</div>
+        <div class="belso1">E-3</div>
+        <div class="belso1">E-4</div>
+		<div class="belso1">E-5</div>
+		<div class="belso1">E-6</div>
+    </div>
+
+    <p>Egy-egy itemre beállíthatunk más szélességi értéket is, mint amit a böngésző kiszámít, vagy amit alapértékként mi állítottunk be (ld. width érté): ehhez az elemnél a <strong><em>flex-basis: ...px;</em></strong> beállítás kell használni.</p>
+    <div id="kulso3">
+        <div class="belso1">E-1</div>
+        <div class="belso1">E-2</div>
+        <div class="belso1">E-3</div>
+        <div class="belso1">E-4</div>
+    </div>
+
+    <p>Ha a külső tároló függőleges méretét megnöveljük, a beágyazott elemek mérete is ezt követi, de egy-egy elemre egyedi méret is megadható:</p>
+    <div id="kulso4">
+        <div class="belso1">E-1</div>
+        <div class="belso1">E-2</div>
+        <div class="belso1" id="egyedi">E-3</div>
+        <div class="belso1">E-4</div>
+		<div class="belso1">E-5</div>
+		<div class="belso1">E-6</div>
+		<div class="belso1">E-7</div>
+    </div>
+
+	<h2>A főtengely irányának megváltoztatása</h2>
+
+	<p>A főtengely iránya, azaz a <strong><em>flex-directon</em></strong> négyféle lehet: egymás melletti, tehát sorszerű (row) és ennek fordított változata (row-reverse) vagy egymás alatti, vagyis oszlopszerű (column) és ennek fordított változata (column-reverse)</p>
+	
+	<p>egymás mellett sorban, ahogyan definiáltuk (row)</p>
+	<div id="kulso5">
+        <div class="belso1">E-1</div>
+        <div class="belso1">E-2</div>
+        <div class="belso1">E-3</div>
+        <div class="belso1">E-4</div>
+		<div class="belso1">E-5</div>
+    </div>
+	
+	<p>egymás mellett fordított sorrendben kezdve, azaz a szülőelem jobb szélétől (row-reverse)</p>
+	<div id="kulso6">
+        <div class="belso1">E-1</div>
+        <div class="belso1">E-2</div>
+        <div class="belso1">E-3</div>
+        <div class="belso1">E-4</div>
+		<div class="belso1">E-5</div>
+    </div>
+	
+	<p>egymás alatt olyan sorrendben, ahogyan definiáltuk (column)</p>
+	<div id="kulso7">
+        <div class="belso1">E-1</div>
+        <div class="belso1">E-2</div>
+        <div class="belso1">E-3</div>
+        <div class="belso1">E-4</div>
+		<div class="belso1">E-5</div>
+    </div>
+	
+	<p>egymás alatt ellentétes sorrendben, mint ahogyan definiáltuk, azaz alul kezdve a legelsővel (column-reverse)</p>
+	<div id="kulso8">
+        <div class="belso1">E-1</div>
+        <div class="belso1">E-2</div>
+        <div class="belso1">E-3</div>
+        <div class="belso1">E-4</div>
+		<div class="belso1">E-5</div>
+    </div>
+
+	<h2>Az elemek közötti sortörés</h2>
+	
+	<p>Mi történik, ha a főtengely mentén nem férnek el az elemek az oldalon? Méretezzük át az oldalt úgy, hogy a fenti példákban a konténer elemei vízszintesen (vagyis alaphelyzetben a főtengely mentén) nem férnek el! Figyeljük meg, hogy mi történik a kilógó elemekkel! Azt tapasztaljuk, hogy jelen esetben elég csúnyán kilógnak az oldalból. Ennek megoldására használjuk a <strong><em>flex-wrap</em></strong> tulajdonságot:</p>
+	
+	<p>túllógó elemek tördelésének beállítása</p>
+	<div id="kulso9">
+        <div class="belso1">E-1</div>
+        <div class="belso1">E-2</div>
+        <div class="belso1">E-3</div>
+        <div class="belso1">E-4</div>
+		<div class="belso1">E-5</div>
+		<div class="belso1">E-6</div>
+		<div class="belso1">E-7</div>
+		<div class="belso1">E-8</div>
+		<div class="belso1">E-9</div>
+		<div class="belso1">E-10</div>
+    </div>
+	
+	<h2>Az elemek igazítása a szülőelemen belül a főtengely mentén</h2>
+	
+	<p>Annak érdekében, hogy az elemek igazítását megértsük, érdemes levenni az elemekre beállított margó értékét. Margó nélkül az elemek alapértelmezés szerint szorosan egymás mellett, balról jobbra helyezkednek el a vízszintes főtengely mentén. Ekkor van értelme alkalmazni a szülőelemre a <strong><em>justify-content</em></strong> tulajdonságot:</p>
+	
+	<p>minden elem középen legyen</p>
+	<div id="kulso10">
+        <div class="belso3">E-1</div>
+        <div class="belso3">E-2</div>
+        <div class="belso3">E-3</div>
+        <div class="belso3">E-4</div>
+		<div class="belso3">E-5</div>
+    </div>
+	
+	<p>minden elem középen jobb oldalon legyen</p>
+	<div id="kulso11">
+        <div class="belso3">E-1</div>
+        <div class="belso3">E-2</div>
+        <div class="belso3">E-3</div>
+        <div class="belso3">E-4</div>
+		<div class="belso3">E-5</div>
+    </div>
+	
+	<p>az elemek között legyen egyenletes távolság, de a két szélső elem előtt/mögött csak feleakkora</p>
+	<div id="kulso12">
+        <div class="belso3">E-1</div>
+        <div class="belso3">E-2</div>
+        <div class="belso3">E-3</div>
+        <div class="belso3">E-4</div>
+		<div class="belso3">E-5</div>
+    </div>
+	
+	<p>az elemek között legyen egyenletes távolság, de a két szélső elem legyen kint a széleken</p>
+	<div id="kulso13">
+        <div class="belso3">E-1</div>
+        <div class="belso3">E-2</div>
+        <div class="belso3">E-3</div>
+        <div class="belso3">E-4</div>
+		<div class="belso3">E-5</div>
+    </div>
+	
+	<p>az elemek között legyen egyenletes távolság, még a széleken is</p>
+	<div id="kulso14">
+        <div class="belso3">E-1</div>
+        <div class="belso3">E-2</div>
+        <div class="belso3">E-3</div>
+        <div class="belso3">E-4</div>
+		<div class="belso3">E-5</div>
+    </div>
+	
+	<h2>Az elemek igazítása a keresztirányú tengely mentén</h2>
+	
+	<p>Ebben az esetben az <strong><em>align-items</em></strong> tulajdonságot kell használni a szülőelemre:</p>
+
+	<p>az elemek megnyújtása</p>
+	<div id="kulso15">
+        <div class="belso3">E-1</div>
+        <div class="belso3">E-2</div>
+        <div class="belso3">E-3</div>
+        <div class="belso3">E-4</div>
+		<div class="belso3">E-5</div>
+    </div>
+	
+	<h2>Az egyedi elemek igazítása a keresztirányú tengely mentén</h2>
+	
+	<p>Az egyes elemek egyedi igazításához a szülőelemen belül az <strong><em>align-self</em></strong> tulajdonságot kell használni (az adott elemre):</p>
+
+</body>
+
+</html>

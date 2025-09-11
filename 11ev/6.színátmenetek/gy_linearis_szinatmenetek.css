@@ -1,0 +1,105 @@
+/* Készítsen szabadon választott színek felhasználásával, LINEÁRIS színátmenetes háttereket az itt látható mezőkbe úgy, hogy azok valamelyik OLDALRÓL induljanak ki és ... */
+
+/* 1-2. blokk:
+   két / több színből, FENTRŐL indulva, EGYENLETESEN terjedjenek */
+#bl-1 {
+   background-image: linear-gradient(red, blue);
+    
+}
+#bl-2 {
+   background-image: linear-gradient(yellow, white, grey, blue)
+}
+
+/* 3-4. blokk:
+   két / több színből, LENTRŐL indulva, NE EGYENLETESEN terjedjenek */
+#bl-3 {
+   background-image: linear-gradient(to top,red 20%, blue);
+}
+#bl-4 {
+   background-image: linear-gradient(to top,yellow, white, grey, blue)
+}
+
+/* 5-6. blokk:
+   két / több színből, JOBBRÓL indulva, NE EGYENLETESEN terjedjenek */
+#bl-5 {
+   background-image: linear-gradient(to left,red 20%, blue);
+}
+#bl-6 {
+   background-image: linear-gradient(to left,yellow, white, grey, blue)
+}
+
+/* 7-8. blokk:
+    két / több színből, BALRÓL indulva, EGYENLETESEN terjedjenek */
+#bl-7 {
+   background-image: linear-gradient(to right,red , blue);
+}
+#bl-8 {
+   background-image: linear-gradient(to right,yellow, white, grey, blue)
+} 
+
+/* Készítsen szabadon választott színek felhasználásával, LINEÁRIS színátmenetes háttereket az itt látható mezőkbe úgy, hogy azok valamelyik SAROKBÓL induljanak ki és ... */
+
+/* 9-10. blokk:
+   két / több színből, BAL ALSÓ SAROKBÓL indulva, EGYENLETESEN terjedjenek */
+#bl-9 {
+   background-image: linear-gradient(to top right,red , blue);
+}
+#bl-10 {
+   background-image: linear-gradient(to bottom right,yellow, white, grey, blue)
+}
+
+/* 11-12. blokk:
+   két / több színből, JOBB ALSÓ SAROK FELÉ irányulva, NE EGYENLETESEN terjedjenek */
+#bl-11 {
+
+}
+#bl-12 {
+   background-image: linear-gradient(17deg,yellow, white, grey, blue)
+}
+
+/* 13-14. blokk:
+   két / több színből, BAL ALSÓ SAROK FELÉ irányulva, EGYENLETESEN terjedjenek */
+#bl-13 {
+
+}
+#bl-14 {
+
+}
+
+/* 15-16. blokk:
+   két / több színből, JOBB ALSÓ SAROKBÓL indulva, NE EGYENLETESEN terjedjenek */
+ #bl-15 {
+
+}
+#bl-16 {
+
+}
+
+/* Készítsen szabadon választott színek felhasználásával, LINEÁRIS színátmenetes háttereket az itt látható mezőkbe úgy, hogy azok választott fokértékkel elforgatott egyenes mentén terjedjenek és ... */
+
+/* 17. blokk:
+   több színből, a gradiens-vonalat 30 fokkal elforgatva, EGYENLETESEN terjedjenek */
+#bl-17 {
+
+}
+
+/* 18. blokk:
+   két színből, a gradiens-vonalat -60 fokkal elforgatva, NE EGYENLETESEN terjedjenek */
+#bl-18 {
+
+}
+
+/* Készítsen szabadon választott színek felhasználásával, ISMÉTLŐDŐ LINEÁRIS színátmenetes háttereket az itt látható mezőkbe úgy, hogy azok... */
+
+/* 19. blokk:
+   két színből kialakítva, BALRÓL JOBBRA irányítva, legalább 3-szor ismétlődve, EGYENLETESEN terjedjenek */
+#bl-19 {
+
+}
+
+/* 20. blokk:
+   kettőnél több színből kialakítva, valamilyen fokértékkel elforgatott gradiensvonal mentén irányítva, legalább kétszer ismétlődve, NE EGYENLETESEN terjedjenek */
+#bl-20 {
+
+}
+

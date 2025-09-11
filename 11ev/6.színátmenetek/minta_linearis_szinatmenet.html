@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lineáris színátmenetek (minták)</title>
+    <style>
+        * { box-sizing: border-box; }
+        h1, h2, h3 { clear: both; color: red; }
+        h3 { font-style: italic; }
+        div.elem { 
+            width: 350px;
+            height: 400px;
+            float: left;
+            border: 1px solid black;
+            background-color: lightgoldenrodyellow;
+            margin: 5px 10px 25px;
+         }
+        div.doboz {
+            width: 90%;
+            height: 65%;
+            border: 1px solid black;
+            margin: auto;
+        }
+        p { text-align: center; margin: 5px; }
+        p.cim { 
+            font-style: italic;
+            font-weight: 600;
+        }
+        p.kod {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 85%;
+            padding: 5px;
+        }
+        #d1 { background-image: linear-gradient(blue, green); }
+        #d2 { background-image: linear-gradient(to top, blue 75%, green); }
+        #d3 { background-image: linear-gradient(yellow, red, blue, green, black); }
+
+        #d4 { background-image: linear-gradient(90deg, blue, green); }
+        #d5 { background-image: linear-gradient(-90deg, blue 35%, green 75%); }
+        #d6 { background-image: linear-gradient(90deg, yellow 10%, red 50%, blue 75%, green 80%, black 90%); }
+
+        #d7 { background-image: linear-gradient(to bottom right, blue, green, yellow, red); }
+        #d8 { background-image: linear-gradient(to bottom left, blue, green, yellow, red); }
+        #d9 { background-image: linear-gradient(15deg, blue 10%, green 30%, yellow 90%, red); }
+
+        #d9a { background-image: linear-gradient(rgba(0,0,255,1), rgba(0,0,255,0)); }
+        #d9b { background-image: linear-gradient(45deg, rgba(0,0,0,0) 35%, rgba(0,0,0,1)); }
+        #d9c { background-image: linear-gradient(to right, rgba(255,0,0,0.2), rgba(255,0,0,1) 50%, rgb(255,255,255), rgba(0,255,0,1) 80%, rgba(0,255,0,0.2)); }
+
+
+        #d10 { background-image: repeating-linear-gradient(90deg,red,yellow 5%,green 15%); }
+        #d11 { background-image: repeating-linear-gradient(red,yellow 5%,green 15%); }
+        #d12 { background-image: repeating-linear-gradient(135deg, red,yellow 5%,green 15%); }
+        #d13 { background-image: repeating-linear-gradient(to bottom left, red,yellow 5%,green 15%); }
+    </style>
+</head>
+<body>
+    <h1>Minták lineáris színátmenetekre</h1>
+
+    <h2>Egyszerű lineáris színátmenetek</h2>
+
+    <h3>Függőleges színátmenetek</h3>
+
+    <div class="elem">
+        <p class="cim">Függőlegesen, egymás alatti két színből álló lineáris színátmenet</p>
+        <p class="kod">background-image:<br>linear-gradient(blue, green);</p>
+        <div class="doboz" id="d1"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Függőlegesen, egymás alatti két színből álló, alulról induló lineáris színátmenet nem egyenletes átmenet (color-stop)</p>
+        <p class="kod">background-image:<br>linear-gradient(to top, blue 75%, green);</p>
+        <div class="doboz" id="d2"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Függőlegesen, egymás alatti több színből álló, fentről lefelé tartó lineáris, egyenletes színátmenet</p>
+        <p class="kod">background-image: linear-gradient<br>(yellow, red, blue, green, black);</p>
+        <div class="doboz" id="d3"></div>
+    </div>
+
+    <h3>Vízszintes színátmenetek</h3>
+
+    <div class="elem">
+        <p class="cim">Vízszintesen, egymás melletti két színből álló lineáris, egyenletes színátmenet</p>
+        <p class="kod">background-image:<br>linear-gradient(90deg, blue, green);</p>
+        <div class="doboz" id="d4"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Vízszintesen, egymás melletti két színből álló lineáris, nem egyenletes színátmenet (color-stop)</p>
+        <p class="kod">background-image: linear-gradient<br>(-90deg, blue 35%, green 75%);</p>
+        <div class="doboz" id="d5"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Vízszintesen, egymás melletti több színből álló lineáris, nem egyenletes színátmenet</p>
+        <p class="kod">background-image: linear-gradient<br>(90deg, yellow 10%, red 50%, blue 75%, green 80%, black 90%);</p>
+        <div class="doboz" id="d6"></div>
+    </div>
+
+    <h3>Adott irányú (nem vízszintes és nem függőleges) színátmenetek</h3>
+
+    <div class="elem">
+        <p class="cim">Átlós (bal felső sarokból induló és a jobb alsó sarokba tartó), egymás melletti több színből álló lineáris, egyenletes színátmenet</p>
+        <p class="kod">background-image: linear-gradient<br>(to bottom right, blue, green, yellow, red);</p>
+        <div class="doboz" id="d7"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Átlós (jobb felső sarokból induló és a bal alsó sarokba tartó), egymás melletti több színből álló lineáris, egyenletes színátmenet</p>
+        <p class="kod">background-image: linear-gradient<br>(to bottom left, blue, green, yellow, red);</p>
+        <div class="doboz" id="d8"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">+15 fokos gradiens-vonallal (vagyis -75&deg;-os irányban lévő), egymás melletti több színből álló lineáris, nem egyenletes színátmenet</p>
+        <p class="kod">background-image: linear-gradient(15deg, blue 10%, green 30%, yellow 90%, red);</p>
+        <div class="doboz" id="d9"></div>
+    </div>
+
+    <h3>Átlátszósággal támogatott színátmenetek</h3>
+
+    <div class="elem">
+        <p class="cim">Egyetlen szín alkalmazása átlátszósággal kombinálva</p>
+        <p class="kod">background-image: linear-gradient<br>(rgba(0,0,255,1), rgba(0,0,255,0));</p>
+        <div class="doboz" id="d9a"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Egyetlen szín alkalmazása átlátszósággal és<br>szín-stoppal kombinálva</p>
+        <p class="kod"> background-image: linear-gradient(45deg, rgba(0,0,0,0) 35%, rgba(0,0,0,1));</p>
+        <div class="doboz" id="d9b"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Több szín alkalmazása átlátszósággal kombinálva, nem egyenletes átmenettel</p>
+        <p class="kod">background-image: linear-gradient<br>(to right, rgba(255,0,0,0.2), rgba(255,0,0,1) 50%, rgb(255,255,255), rgba(0,255,0,1) 80%, rgba(0,255,0,0.2));</p>
+        <div class="doboz" id="d9c"></div>
+    </div>
+
+    <h2>Periodikusan ismétlődő lineáris színátmenetek</h2>
+
+    <div class="elem">
+        <p class="cim">Vízszintesen, egymás melletti ismétlődés:</p>
+        <p class="kod">background-image:<br>repeating-linear-gradient<br>(90deg,red,yellow 5%,green 15%); </p>
+        <div class="doboz" id="d10"></div>
+    </div>
+
+    <div class="elem">
+         <p class="cim">Függőlegesen, egymás alatti ismétlődés</p>
+         <p class="kod">background-image:<br>repeating-linear-gradient<br>(red,yellow 5%,green 15%);</p>
+         <div class="doboz" id="d11"></div>
+    </div>     
+
+    <div class="elem">
+        <p class="cim">Átlósan a bal felső saroktól a jobb alsó sarok irányába, egymás melletti ismétlődés</p>
+        <p class="kod">background-image:<br>repeating-linear-gradient<br>(135deg, red,yellow 5%,green 15%);</p>
+        <div class="doboz" id="d12"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Átlósan a jobb felső saroktól a bal alsó sarok irányába, egymás melletti ismétlődés</p>
+        <p class="kod">background-image:<br>repeating-linear-gradient<br>(to bottom left, red, yellow 5%,green 15%);</p>
+        <div class="doboz" id="d13"></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Színátmenetek</title>
+    <link rel="stylesheet" href="szinatmenetek_stilus.css">
+</head>
+
+<body>
+    <h1>Színátmenetek (gradients)</h1>
+
+    <h2>A színátmenetekkel kapcsolatos általános információk</h2>
+
+    <p><strong><span class="kiemelt">A színátmenet (gradient) tulajdonság segítségével egyenletes átmenet jeleníthető meg két vagy több megadott szín között és ezt a színhatást a böngésző automatikusan maga hozza létre a CSS-kód alapján.</span></strong></p>
+    <p>További információk: <a href="https://www.w3schools.com/css/css3_gradients.asp" target="_blank">w3schools CSS Gradients</a></p>
+
+    <h3>Milyen területeken érdemes alkalmazni a színátmeneteket?</h3>
+   
+    <p>A színátmenetes megoldás <span class="tul">háttérképként vagy felsorolásjel képeként</span> egyaránt felhasználható, előállításához nincsen szükség képszerkesztő programra, rugalmasan illeszkedik a tartalom elrendezéséhez és a valódi képekhez képest sokkal kisebb fájlméret adódik. (A színátmenetnek nincsen saját mérete, tehát ha háttérképnek használjuk, a háttér mindenkori területe, ha felsorolásjel képeként alkalmazzuk, akkor a szokásos 1em-es négyzet lesz a mérete.)</p>
+
+    <p>Legfontosabb alkalmazási területei ezzel összhangban <span class="tul">a weblapok különböző gombjainak és geometrikus háttérképeinek a kialakítása</span>, de a színátmenetekkel a <span class="tul">HTML-elemek hátterénél 3D-s hatásokat</span> is létrehozhatunk.</p>
+
+    <p>További példák:</p>
+    <ul>
+        <li>kiindulás: egyszínű háttérrel ellátott doboz, amelyet gombként akarun használni &gt; &gt; &gt; alulról felfelé világosodó / középről lefelé és felfelé sötétető gomb</li>
+        <li>többszörös háttérképekkel és gradiensekkel változatos, periodikusan ismétlődő, geometrikus alakzatú hátterek alakíthatók ki (képek alkalmazása nélkül): sakktábla, gyémántalak, pöttyös, skótminta, havazás (ez utóbbit animációval kiegészítve)</li>
+    </ul>
+
+    <h3>A színátmenetek típusai</h3>
+
+    <p><span class="tul">Két alakzat szerint alakíthatók ki a színátmenetek: egy egyenes vonal mentén (linear-gradient) vagy ellipszis alakban (radial-gradient).</span> (A kör alakú színátmenet az ellipszis azon speciális esete, amikor a vízszintes és a függőleges tengely egyenlő.</p>
+
+    <p>A színátmenet megadásának kódolási lehetőségei, ahol a zárójelbe az átmenetek paraméterei kerülnek:</p>
+    <ul>
+        <li><em><strong>lineáris színátmenettel:</strong></em>
+            <ul>
+                <li>háttérképként: <span class="pl szint">kijelölő1 { background-image: linear-gradient(...); }</span></li>
+                <li>felsorolásjelként: <span class="pl szint">kijelölő2 { list-style-image: linear-gradient(...); }</span></li>
+            </ul>
+        </li>
+        <li><em><strong>sugárirányban változó színátmenettel:</strong></em>
+            <ul>
+                <li>háttérképként: <span class="pl szint">kijelölő3 { background-image: radial-gradient(...); }</span></li>
+                <li>felsorolásjelként: <span class="pl szint">kijelölő4 { list-style-image: radial-gradient(...); }</span></li>
+            </ul>
+        </li>
+    </ul>
+ 
+    <h2>Minták és példák az egyes színátmenetekre</h2>
+
+    <table>
+        <tr>
+            <th>Példa képe</th>
+            <th>Magyarázat, leírás</th>
+            <th>Példa képe</th>
+            <th>Magyarázat, leírás</th>
+        </tr>
+        <tr>
+            <td><div id="div1"><p>1. példa</p></div></td>
+            <td>1. példa:<br>Lineáris színátmenet két színnel<br>(kékből sárgába),<br>felülről lefelé függőleges irányban.<br></td>
+            <td><div id="div2"><p>2. példa</p></div></td>
+            <td>2. példa:<br>Lineáris színátmenet két színnel<br>(kékből sárgába),<br>balról jobbra vízszintes irányban.</td>
+        </tr>
+        <tr>
+            <td><div id="div3"><p>3. példa</p></div></td>
+            <td>3. példa:<br>Lineáris színátmenet több színnel<br>(pirosból fehérbe, majd onnan zöldbe),<br>átlós irányba jobb lefelé, egyenletes mértékben.</td>
+            <td><div id="div4"><p>4. példa</p></div></td>
+            <td>4. példa:<br>Lineáris színátmenet több színnel<br>(pirosból fehérbe, majd onnan zöldbe),<br>átlós irányba bal lefelé,<br>nem egyenletes mértékben.</td>
+        </tr>
+        <tr>
+            <td><div id="div5"><p>5. példa</p></div></td>
+            <td>5. példa:<br>Középről induló sugárirányú színátmenet<br> két színnel<br>(kékből sárgába).</td>
+            <td><div id="div6"><p>6. példa</p></div></td>
+            <td>6. példa:<br>Középről induló sugárirányú színátmenet<br>több színnel<br>(pirosból fehérbe, majd onnan zöldbe, <br>kívülről befelé).</td>
+        </tr>
+        <tr>
+            <td><div id="div7"><p>7. példa</p></div></td>
+            <td>7. példa:<br>Megadott pozícióból induló sugárirányú színátmenet két színnel<br>(kékből sárgába, majd újra kékbe).</td>
+            <td><div id="div8"><p>8. példa</p></div></td>
+            <td>8. példa:<br>Sarokból induló sugárirányú színátmenet<br>több színnel (piros-fehér-zöld),<br>nem egyenletes mértékű elosztással.</td>
+        </tr>
+        <tr>
+            <td><div id="div9"><p>9. példa</p></div></td>
+            <td>9. példa:<br>Periodikusan ismétlődő,<br>lineáris színátmenet<br> három színnel</td>
+            <td><div id="div10"><p>10. példa</p></div></td>
+            <td>10. példa:<br>Periodikusan ismétlődő,<br>sugárirányú (ellipszis típusú) színátmenet<br>több színnel (piros-fehér-zöld),<br>nem egyenletes mértékű elosztással.</td>
+        </tr>
+
+    </table>
+
+    <h3>További információk a kétféle színátmenet alkalmazásával kapcsolatban</h3>
+    
+    <ul>
+        <li><a href="linearis_szinatmenet.html" target="_blank">lineáris színátmenet</a> és <a href="minta_linearis_szinatmenet.html"target="_blank">példák lineáris színátmenetekre</a></li>
+        <li><a href="sugaras_szinatmenet.html" target="_blank">sugárirányú színátmenet</a> és <a href="minta_sugaras_szinatmenet.html"target="_blank">példák sugaras színátmenetekre</a></li>
+    </ul>
+
+</body>
+
+</html>

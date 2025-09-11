@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobozárnyék</title>
+    <link rel="stylesheet" href="dobozarnyek_stilus.css">
+</head>
+
+<body>
+    <h1>Doboz árnyéka (box-shadow)</h1>
+
+    <h2>A dobozárnyékkal kapcsolatos információk:</h2>
+
+    <p>A <span class="kiemelt">dobozárnyék (box-shadow)</span> tulajdonság egy vagy több vetett árnyékot csatol egy dobozhoz. A külső árnyék a szegélyen kívülre vetődik, mintha a szegélydoboz átlátszatlan lenne. A belső árnyék a belső margó szélétől befelé vetődik, mindtha attól kifelé lenne minden átlátszatlan. Ha a doboznak lekerekített szegélyei vannak, az árnyék alakja is követi a lekerekítéseket.</p>
+
+    <p>További információk: <a href="https://www.w3schools.com/css/css3_shadows_box.asp" target="_blank">w3schools CSS Box Shadow</a></p>
+
+    <p><span class="tul">A dobozárnyék tulajdonság árnyékok vesszővel elválasztott listájából áll</span>, amelyben mindegyik árynék 2-4 db hosszúság értéket, színt és az opcionális "inset" kulcsszót tartalmazza. A kihagyott hosszúságok 0-nak értendők, ha nincsen szín megadva, a böngésző a szabvány szerintit rendeli hozzá (a gyakorlatban viszont nem mindig, ezért érdemes mindig megadni a színt is).</p>
+	
+    <p>Az egyes árnyékok komponensei:</p>
+    <ul>
+        <li><em>az 1. hosszúság <strong>az árnyék vízszintes kiterjedése</strong></em>: pozitív értéknél a doboztól jobbra, negatív értéknél a doboztól balra rajzolódik ki az árnyék</li>
+        <li><em>a 2. hosszúság <strong>az árnyék függőleges kiterjedése</strong></em>: pozitív értéknél a doboztól lefelé, negatív értéknél a doboztól felfelé rajzolódik ki az árnyék</li>
+        <li><em>a 3. hosszúság <strong>az életlenítési (blue) távolság</strong></em>: negatív érték nem megengedett; ha 0 az értéke, akkor az árnyék széles éles, egyébként pedig minél nagyobb pozitív érték, annál inkább eléletlenedik az árnyék</li>
+        <li><em>a 4. hosszúság <strong>a szórás/kiterjedés/nyílásszög (spread) távolság</strong></em>: pozitív értéknél az árnyék alakja minden irányban kiterjed a megadott sugárban, negatív értéknál összehúzódik</li>
+        <li><em><strong>az árnyék színe</strong></em>: a color tulajdonságnál megtanult módszerekkel</li>
+        <li>az <em><strong>inset kulcsszó</strong></em> segítségével megváltoztatható a külcső árnyék belső árnyékká</li>
+    </ul>
+	
+	<p><strong>A dobozárnyék szintaxisa:</strong> <span class="szint">box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;</span></p>
+
+    <p>Példa: <span class="pl">#arnyekolt {box-shadow: 10px 0px 10px 2px #444444;}</span></p>
+    
+    <p>Megjegyzések:</p>
+    <ul>
+        <li>Több árnyék esetén azok elölről hátrafelé haladva látszódnak, azaz az első van legfelül, a többi árnyék pedig alárétegződik.</li>
+        <li>Az árnyék átnyúlhat más dobozokba vagy más dobozok árnyékaiba.</li>
+        <li>Egy elem belső árnyékai az elem háttere fölé és a szegélye alá, a külső árnyékok az elem háttere alá kerülnek.</li>
+    </ul>
+
+    <h2>Mintapéldák:</h2>
+
+    <p class="feladat">Készítsen árnyékot a "d1" azonosítójú elemhez úgy, hogy az a jobb alsó sarok felé kifelé jelenjen meg, a doboz kitöltésétől eltérő színnel, és legyen elmosódása!</p>
+    <div class="doboz" id="d1"></div>
+
+    <p class="feladat">Készítsen árnyékot a "d2" azonosítójú elemhez úgy, hogy az a bal felső sarok felé kifelé jelenjen meg, a doboz kitöltésétől eltérő színnel, és ne legyen elmosódása!</p>
+    <div class="doboz" id="d2"></div>
+
+    <p class="feladat">Készítsen árnyékot a "d3" azonosítójú elemhez úgy, hogy az a jobb felső sarok felé befelé jelenjen meg, a doboz kitöltésétől eltérő színnel, és legyen elmosódása!</p>
+    <div class="doboz" id="d3"></div>
+
+    <p class="feladat">Készítsen árnyékot a "d4" azonosítójú elemhez úgy, hogy az a bal alsó sarok felé befelé jelenjen meg, a doboz kitöltésétől eltérő színnel, és ne legyen elmosódása!</p>
+    <div class="doboz" id="d4"></div>
+
+    <p class="feladat">Készítsen két árnyékot a "d5" azonosítójú elemhez az alábbi beállításokkal: az első esetén csak függőleges irányú kiterjedés legyen életlenítéssel, szóródás nélkül, fehér színnel és 80%-os átlátszósággal (rgba() fg-nyel), a második esetén hasonló feltételekkel, de az elsőnek beállított értékektől eltérő számértékekkel!</p>
+    <div class="doboz" id="d5">
+        <div class="header">
+            <h1>15</h1>
+        </div>
+        <div class="container">
+            <p>2021. március 15.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

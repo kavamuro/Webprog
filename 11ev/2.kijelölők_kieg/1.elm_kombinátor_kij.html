@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kombinátorok</title>
+    <link rel="stylesheet" href="komb_kij_stilus.css">
+</head>
+
+<body>
+    <h1>Kombinátor kijelölők</h1>
+
+    <p><span class="tul">A háttértárolóink könyvtárszerkezetéhez hasonló módon a HTML oldalakat felépítő elemek kapcsolatát is faszerkezetben szokás ábrázolni.</span> <span class="kiemelt">A kombinátorokkal a böngésző egy-egy elemnek a fa szerkezetben (dokumentumfán) elfoglalt helye ismeretében határozza meg miként kell az egyes elemeknek megjelenítenniük.</span> Az adott elem tulajdonságainak meghatározásánál a webfejlesztőnek is ismerni kell az elemek dokumentumfán elfoglalt helyzetét. Ennek alapján lehet például csak egy meghatározott elem belsejében lévő (a dokumentumfán alatta elhelyezkedő) elemeknek egy adott tulajdonságát beállítani. </p>
+
+    <p>További információk: <a href="https://www.w3schools.com/css/css_combinators.asp" target="_blank">w3schools CSS Combinators</a></p>
+
+    <h2>HTML gyökérelem</h2>
+        
+    <p><span class="kiemelt">Minden HTML5 dokumentum gyökér eleme, egyben az összes többi elem őse a html elem.</span> Tudjuk, hogy a gyökér elem nyitó és záró címkéi közé egy head és egy body elemet ágyazunk be. Ezek az ő gyermekei. <span class="tul">A html elem pedig a head és a body szülő eleme.</span> A dokumentumfejbe (head) ágyazott további elemek nem kerülnek megjelenítésre a weboldal tartalmaként, így ezekhez nem tartoznak stílusdefiníciók. A dokumentumtörzsben (body) található a megjelenítendő tartalom, így a továbbiakban a body elembe ágyazott elemek stílusjellemzőivel foglalkozunk.</p>
+
+    <h2>Leszármazott kijelölő (szóköz)</h2>
+
+    <p>Egy HTML5 dokumentumban minden elem a html elem leszármazottja, mivel minden elem a &lt;html&gt;..&lt;/html&gt; címkék között helyezkedik el. A html elem hierarchiába legfelső szintjén helyezkedik el, minden más elem alatta van. <span class="tul">A html elem, így minden más elem őse, a többiek pedig az ő leszármazottja.</span> A hierarchia következő szintjén a body elem található. A &lt;body&gt; és &lt;/body&gt; címkék által közrefogott elemek a body elem leszármazottjai, amelyekbe további elemek ágyazhatók. Ezek mind a body leszármazottjai.    Általánosságban elmondható, hogy <span class="kiemelt">minden elem leszármazottja minden a hierarchiában felette álló elemnek</span>. (Az ősök nyitó és záró címkéi között helyezkedik el.)
+    </p>
+        
+    <p><span class="tul">A leszármazott kijelölővel az adott elem összes leszármazottját, vagyis a fában az adott ágon található elemet kijelölhetjük.</span> Jele a szóköz.</p>
+
+    <p><strong>A leszármazott kijelölő szintaxisa:</strong> <span class="szint">szelektor1 szelektor2 { meghatározásblokk }</span>, ahol a szelektor1 a szülőelem, a szelektor2 pedig a szelektor1 valamilyen szintű leszármazottja.</p> 
+    
+    <p><em>Példa: a div elemek összes span leszármazottja:</em> <span class="pl"> div span { ... } </span></p>
+
+    <h2>Gyermek kijelölő ( > )</h2>
+
+    <p><span class="kiemelt">Ha a dokumentumfán egymás alatt helyezkedik el két elem, akkor a hierarchiában feljebb lévő a szülő eleme a alatta elhelyezkedőnek.</span> Ha egy páros címkével jelölt HTML elem nyitó és záró címkéi közé helyezünk (beágyazunk) egy másik HTML elemet, akkor a beágyazott elem az őt befogadó elem gyermeke lesz. Body gyermeke minden olyan elem, amely &lt;body&gt;..&lt;/body&gt; címkék között található, de nincs beágyazva más elembe.</p>
+
+    <p><span class="tul">A gyermek kijelölővel az adott elem összes elsőszintű leszármazottját, azaz gyermekét, vagyis a fában az adott ágon található első szint elemeit kijelölhetjük.</span> Jele a >.</p>
+
+    <p><strong>A gyermek kijelölő szintaxisa:</strong> <span class="szint">szelektor1 > szelektor2 { meghatározásblokk }</span>, ahol a szelektor1 a szülőelem, a szelektor2 pedig a szelektor1 elem gyermeke.</p> 
+
+    <p><em>Példa: a div elemek összes p gyermeke:</em> <span class="pl"> div > p { ... } </span>
+
+    <h2>Közvetlen testvér kijelölő ( + )</h2>
+
+    <p><span class="kiemelt">A szomszédos testvér választóval olyan elemet lehet kiválasztani, amelyik közvetlenül egy másik konkrét elem után következik és a két elem egymásnak testvére.</span> <span class="tul">A testvérelemeknek tehát ugyanannak a szülőnek a gyermekei, a szomszédos pedig azt jelenti, hogy a két elem között más nem lehet, tehát közvetlenül követik egymást.</span> A két elemnek nem kell azonos típusúnak lennie!</p>
+
+    <p><strong>A közvetlen testvér kijelölő szintaxisa:</strong> <span class="szint">szelektor1 +  szelektor2 { meghatározásblokk }</span>, ahol a szelektor1 elemet közvetlenül követi a szelektor2-vel megjelölt elem</p> 
+
+    <p><em>Példa: a képeket követő bekezdések:</em> <span class="pl"> img + p { ... } </span>
+
+    <h2>Általános testvér ( ~ )</h2>
+
+    <p><span class="kiemelt">Az általános testvér választó minden olyan elemet kiválaszt, amely egy adott elem testvére, bárhol is legyen.</span ><span class="tul">Az általános testvérelemeknek tehát ugyanannak a szülőnek a gyermekei, az általános pedig azt jelenti, hogy a két elem között más elemek (akár újabb testvérek is) lehetnek, tehát nem kell közvetlenül követniük egymást.</span> A két elemnek nem kell azonos típusúnak lennie!</p>
+
+    <p><strong>Az általános testvér kijelölő szintaxisa:</strong> <span class="szint">szelektor1 ~  szelektor2 { meghatározásblokk }</span>, ahol a szelektor1 elemet követi a szelektor2-vel megjelölt elem</p> 
+
+    <p><em>Példa: div és p testvérek formázása:</em> <span class="pl"> div ~ p { ... } </span>
+
+</body>
+
+</html>

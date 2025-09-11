@@ -1,0 +1,56 @@
+html {
+	background-color: #fff;
+}
+
+body {
+	border-left     : 2px solid #a52a2a;
+	border-right    : 2px solid #a52a2a;
+	padding         : 0 20px;
+	width			: 960px;
+	margin			: 0 auto;
+	background-color: #d2691e;
+}
+
+h1 {
+	margin       	: 0;
+	padding      	: 0 0 10px;
+	border-bottom	: 2px solid #a52a2a;
+}
+
+h2 {
+	padding         : 10px;
+	width: 96%;
+	background-color: #cd853f;
+	font-style: italic;
+}
+
+
+.hasab {
+	margin			: 0 2.5%;
+}
+
+footer {
+	clear     		: both;
+	padding   		: 10px 0;
+	border-top		: 2px solid #a52a2a;
+}
+
+img {
+	margin			: 10px;
+	float: left;
+	width: 100px;
+	border: 2px solid #a52a2a;
+}
+li{
+	display: inline-block;
+	min-width: 50px;
+	border-right: 2px solid #a52a2a;
+	padding: 6px;
+	color: white;
+}
+ul{
+	list-style-type: none;
+}
+p{
+	text-align: justify;
+}

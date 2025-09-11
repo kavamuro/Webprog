@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szövegárnyék</title>
+    <link rel="stylesheet" href="szovegarnyek_stilus.css">
+</head>
+
+<body>
+    <h1>Szöveg árnyéka (text-shadow)</h1>
+
+    <h2>A szövegárnyékkal kapcsolatos információk:</h2>
+
+    <p>A <span class="kiemelt">szövegárnyék (text-shadow)</span> tulajdonsággal egy vagy több, különböző színű, nagyságú, irányú és életlenítési/elhalványulási távolságú árnyék rendelhető egy szöveghez. Az árnyék(ok) az esetleges szövegdíszítést is követi(k) és elfedi(k) a háttérszínt és/vagy háttérképet (ha van ilyen), de nem fedik el a szöveget, ha arra vetülnek. Több árnyék egyidejű alkalmazása esetén az első árnyék van legfelül és takarja a sorban következő(ket)t.</p>
+    
+    <p>További információk: <a href="https://www.w3schools.com/css/css3_shadows.asp" target="_blank">w3schools CSS Text Shadow</a></p>
+
+    <p><span class="tul">A szövegárnyék tulajdonsághoz egy árnyék esetén a szabvány egy színt és 3 db hosszúsági értéket ír elő.</span> A kihagyott hosszúsági értékek 0-nak értendői, de érdemes az első kettőt ennek ellenére 0 számjeggyel azért kiírni.</p>
+
+    <p>Egy szövegárnyék komponensei:</p>
+    <ul>
+        <li><em>az 1. hosszúság <strong>az árnyék vízszintes kiterjedése</strong></em>: pozitív értéknél a szövegtől jobbra, negatív értéknél a szövegtől balra rajzolódik ki az árnyék</li>
+        <li><em>a 2. hosszúság <strong>az árnyék függőleges kiterjedése</strong></em>: pozitív értéknél a szövegtől lefelé, negatív értéknél a szövegtől felfelé rajzolódik ki az árnyék</li>
+        <li><em>a 3. hosszúság <strong>az életlenítési (blue) távolság</strong></em>: negatív érték nem megengedett; ha 0 az értéke, akkor az árnyék széles éles, egyébként pedig minél nagyobb pozitív érték, annál inkább eléletlenedik az árnyék széle</li>
+        <li><em>utolsó érték <strong>az árnyék színe</strong></em></li>
+    </ul>
+	
+	<p><strong>A szövegárnyék szintaxisa:</strong> <span class="szint">text-shadow: h-shadow v-shadow blur-radius color|none|initial|inherit;</span></p>
+
+    <p>Példa: <span class="pl">#szovegarnyek { text-shadow: 6px 6px 15px red;}</span></p>
+
+    <p>Több árnyék esetén az egyes árnyékok étékeinek vesszővel elválasztott listájából áll a többes árnyék definiálása:<br> <span class="pl">#tobbes_szovegarnyek { text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; }</span>.</p>
+    
+    <h2>Elemezzük ki!</h2>
+
+    <p class="feladat">Süllyesztett szegélyú (inset, letterpress) szöveg:</p>
+    <div id="pelda1">Helló világ!</div>
+    
+    <p class="feladat">Retro szöveg:</p>
+    <div id="pelda2">Ez egy retro formázású szöveg.</div>
+
+    <p class="feladat">A szövegtől egyenleteen növekvő távolságra két szín váltakozásával létrehozott, életlenítés nélküli négy árnyékkal ellátott szöveg:</p>
+    <div id="pelda3">Próbál6 társasjáték</div>
+
+    <p class="feladat">Hét árnyék, különböző dőlési szöggel és életlenítéssel, színskálájuk a vakító fehértől a sárga, narancs és sötétebb borostyán árnyalatok felé meg át, így a lángok benyomását kelti.</p>
+    <div id="pelda4">Lángoló szöveg</div>
+
+    <p class="feladat">A szövegtől távolodva egyre nagyobb életlenítésű és fehérből lilás színárnyalatba átmenő nyolc árnyék.</p>
+    <div id="pelda5">Neon szöveg</div>
+
+    <h2>Mintapéldák:</h2>
+
+    <p class="feladat">Készítsen egyszerű árnyékot a "d1" azonosítójú elemhez úgy, hogy az a jobb alsó sarok felé kifelé jelenjen meg, piros színnel, és legyen elmosódása!</p>
+    <div class="doboz" id="d1">Ez itt egy egyszerű szövegárnyékolt szöveg.</div>
+
+    <p class="feladat">Készítsen kétféle árnyékot a "d2" azonosítójú elemhez úgy, hogy az egyik kék színnel lefelé, a másik zöld színnel a bal alsó sarok irányában jelenjen meg, az egyik elmosódással, a másik éles módon!</p>
+    <div class="doboz" id="d2">Ez itt egy kettősen szövegárnyékolt szöveg.</div>
+
+    <p class="feladat">Készítsen árnyékot a "d3" azonosítójú elemhez úgy, hogy az csak az első betűre (::first-letter) hasson és a job felső irányba vetődjön valamilyen nagyon elmosott színnel!</p>
+    <div class="doboz" id="d3">Ez itt csak az első betűre legyen szövegárnyékkal ellátott szöveg.</div>
+
+    <p class="feladat">Készítsen árnyékot a "d4" azonosítójú elemhez úgy, hogy az a bal alsó sarok felé befelé jelenjen meg, a doboz kitöltésétől eltérő színnel, és ne legyen elmosódása!</p>
+    <div class="doboz" id="d4">Minta szövege</div>
+
+</body>
+
+</html>

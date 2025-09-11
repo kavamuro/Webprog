@@ -1,0 +1,41 @@
+* { box-sizing: border-box; }
+
+.kulso {
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.kulso img {
+    width: 100%;
+    height: 100%;
+}
+
+.valtozo {
+    width: 100%;
+    height: 100%;
+    background-color: green; 
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    /* ha nem azonnali váltást akarunk: */
+    transition: opacity 5s;
+}
+
+.szoveg {
+    margin: 0;
+    width: 50%;
+    font-size: 30px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.kulso:hover .valtozo {
+    opacity: 1;
+}

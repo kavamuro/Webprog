@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animációk</title>
+    <link rel="stylesheet" href="animaciok_stilus.css">
+</head>
+
+<body>
+    <h1>Az animáció (animation)</h1>
+
+    <div id="mozog"></div>
+
+    <h2>Az animációkkal kapcsolatos általános információk</h2>
+
+    <p><strong>Az animáció az egyszeri, folyamatos átmenet (vagyis a transition) kiterjesztése.</strong> A transition-nél egy vagy több tualjdonság megadott kezdő értékei és végső értékei között a közbenső értékeket a böngésző határozza meg és csak az időbeli lefolyás kódolható az időfüggvénnyel (transition-timing-function), az átmenet időtartamával (transition-duration) és az időzítéssel (transition-delay). <span class="kiemelt">Az animációk (animations) esetében a kezdő és a végső értékek közötti átmenet finomabban / részletesebben meghatározható, az átmenetek többször is végrehajthatók (ismételhető, akár végtelen számban, tehát időkorlát nélkül, akár folyamatosan is), még a lejátszás iránya (mindig elölről kezdi vagy oda-vissza játsza le) is megadható.</span> </p>
+
+    <p>További információk: <a href="https://www.w3schools.com/css/css3_animations.asp" target="_blank">w3schools CSS Animations</a></p>
+
+    <h2>Az átmenet és az animáció kódolásnak összefüggései</h2>
+
+    <p>A fentieknek megfelelően az animáció kódolása részben a folyamatos átmenettel analóg módon történik, részben azonban annál bővebb és részletesebb meghatározási lehetőségeket biztosít. Az alábbi táblázatban ez látható:</p>
+
+    <table>
+        <tr>
+            <th>típus</th>
+            <th>folyamatos átmenet<br>(transition)</th>
+            <th>animáció<br>(animation)</th>
+        </tr>
+        <tr>
+            <th>tulajdonság/név</th>
+            <td>transition-property</td>
+            <td>animation-name</td>
+        </tr>
+        <tr>
+            <th>időtartam</th>
+            <td>transition-duration</td>
+            <td>animation-duration</td>
+        </tr>
+        <tr>
+            <th>időzítés függvénye</th>
+            <td>transition-timing-function</td>
+            <td>animation-timing-function</td>
+        </tr>
+        <tr>
+            <th>időzítés</th>
+            <td>transition-delay</td>
+            <td>animation-delay</td>
+        </tr>
+        <tr>
+            <th>ismétlésszám</th>
+            <td></td>
+            <td>animation-iteration-count</td>
+        </tr>
+        <tr>
+            <th>irány</th>
+            <td></td>
+            <td>animation-direction</td>
+        </tr>
+        <tr>
+            <th>kitöltési mód</th>
+            <td></td>
+            <td>animation-fill-mode</td>
+        </tr>
+    </table>
+
+    <h3>Az egyes tulajdonságok részletezése</h3>
+
+    <ul>
+        <li>A <em>három analóg tulajdonság</em> (duration, timing-function, delay) lehetséges értékei és azok értelmezése az átmenetnél és az animációnál megegyeznek.</li>
+        <li>Az <span class="tul">animation-iteration-count</span> mutatja az <em>ismétlések számát</em>, lehetséges értéke mindig pozitív szám vagy a végtelen (infinite) érték lehet.</li>
+        <li>Az <span class="tul">animation-direction</span> értékei az <em>irány</em> megadására: normal|reverse|alternate|alternate-reverse|initial|inherit
+            <ul>
+                <li>normal: a ciklus végén a megváltoztatott tulajdonságok értéke visszaugrik a kezdő állapotba éa következő ciklus ismét onna indul</li>
+                <li>alternate: a páratlan ciklusok az elejéről, a párosak pedig a végéről (tehát visszafelé) hajtódnak végre</li>
+                <li>alternate-reverse: a páratlan ciklusok a végéről visszafelé, a párosak pedig az elejéről hajtódnak végre (vagyis ez az előző fordítottja)</li> 
+            </ul>
+        </li>
+        <li>Az <span class="tul">animation-fill-mode</span> tulajdonságnak az egyszeri átmenetnél van jelentősége, amikor az átmenet előtti és utáni állapotra lehet megkötést tenni a forward, a backward és a both értékkel (alapértelmezett: none)
+            <ul>
+                <li>forward: az elem megtartja az utolsó kulcskép által beállított stílusértékeket</li>
+                <li>backward: az elem megkapja az első kulcskép által beállított stílusértékeket és azt megtartja az animáció késleltetési ideje alatt is</li>
+                <li>both: az animáció előre és hátra egyaránt követi a szabályokat, kiterjesztve az animáció tulajdonságait mindkét irányban</li>
+                <li>none: az animáció nem alkalmaz semmilyen stílust az elemre a végrehajtás előtt vagy után</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Közbenső értékek definiálása</h2>
+
+    <p>Az animáció során a folyamatos átmenetet azzal haladhatjuk meg, hogy <strong>közbenső értékeket definálunk</strong> a <span class="tul">@keyframes</span> segítségével. Ha ezt meghatározzuk, akkor az ebben megadott névvel (animation-name) kapcsolhatjuk hozzá azt az animációs tulajdonságokhoz.</p>
+    
+    <p><strong>A @keyframes (kulcs képkockák) szintaxisa:</strong><br>
+    <span class="szint">@keyframes animation-name { keyframes-selector {CSS-styles;} }</span></p>
+        
+    <p>Példák a @keyframes-re:</p>    
+   
+    <ul>
+        <li><strong>from ... to ...</strong> módon (a from a kezdő-, a to pedig a zárópontot jelöli):<br>
+            <span class="pl">@keyframes pelda-1 {<br>
+                &nbsp;&nbsp;&nbsp;from { kezdotulajdonsag: ertek-1; }<br>
+                &nbsp;&nbsp;&nbsp;to { zarotulajdonsag: ertek-2; }<br>
+                }</span>
+        </li>
+        <li><strong>százalékokkal</strong>: egy teljes animációs ciklusnak a kezdőpontja a 0%, a végpontja a 100%, a közbenső pontokat pedig a két érték közötti %-ok jelölik (csak a kezdő- és a végpont megadása kötelező, a belső pontoké opcionális)<br>
+            <span class="pl">@keyframes pelda-2 {<br>
+                &nbsp;&nbsp;&nbsp;0% { kezdotulajdonsag: ertek-1; }<br>
+                &nbsp;&nbsp;&nbsp;..% { belsotulajdonsag: ertek-2;}<br>
+                &nbsp;&nbsp;&nbsp;..% { belsotulajdonsag: ertek-3;}<br> 
+                &nbsp;&nbsp;&nbsp;100% { zarotulajdonsag: ertek-z;}<br>
+                }</span>
+        </li>
+    </ul>
+
+    <h3>Példa</h3>
+
+    <p>A "minta" nevű animáció egy piros kis téglalapot átalakít egy zöld lekerekített sarkú nagyobb négyzetté, végül egy óriási kék körré. Az átalakítást 10 másodperc alatt (lineárisan) hajtja végre, majd ezt követően  végtelenszer megismétli, oda-vissza elvégezve azt.</p>
+
+    <p>Elsőként a kulcsképet kódoljuk, vagyis a kezdő-, a közbenső és a végállapotokat:</p>
+    <span class="pl">@keyframes minta {<br>
+        &nbsp;&nbsp;&nbsp;0% { background-color: red; width: 10px; height: 30px; border-radius: 0%;    margin: 10px 0 0 25px; }<br>
+        &nbsp;&nbsp;&nbsp;50% { background-color: green; width: 150px; height: 150px;
+        border-radius: 50px; margin: 10px 0 0 100px; }<br>
+        &nbsp;&nbsp;&nbsp;100% { background-color: blue; width: 500px; height: 500px;
+        border-radius: 250px; margin: 10px 0 0 200px; }<br> 
+        }</span>
+
+    <p>Ezt követően hozzákapcsoljuk a kezdő elemhez az animációt és megadjuk az animáció tulajdonságait:</p>
+
+    <span class="pl">div {<br>
+    &nbsp;&nbsp;&nbsp; animation-name: minta;<br>
+    &nbsp;&nbsp;&nbsp; animation-timing-function: linear;<br>
+    &nbsp;&nbsp;&nbsp; animation-iteration-count: infinite;<br>
+    &nbsp;&nbsp;&nbsp; animation-duration: 10s;<br>
+    &nbsp;&nbsp;&nbsp; animation-direction: alternate;<br>
+    }
+
+    <p>A megoldás a gyakorlatban:</p>
+
+    <div id="mintaf"></div>
+
+</body>
+
+</html>

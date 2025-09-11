@@ -1,0 +1,77 @@
+Böngészőprogramok - ingyenes szoftver 2020 - toplista
+
+Böngészőprogramok - toplista
+Internet Explorer 11.0.11 
+Google Chrome 86.0.4240.111
+Mozilla Firefox 82.0.2
+Opera 72.0.3815.148
+Spotflux 3.2.0
+Safari for Windows 5.1.7
+Avant Browser 2020 build 3
+Mask Surf Pro Everything 2.4
+Maxthon Browser
+Graphic Design 1.0
+SlimBrowser 14.0.0.0
+QBrowser 1.10.1
+SurfOffline 2.2.0
+
+
+
+Internet Explorer 11.0.11
+A gyakran csak IE-ként rövidített Internet Explorer az egyik legelső webböngészőként jelentkezett a piacon, a Microsoft támogatásával, amely akkoriban szinte egyedurakodó volt a fogyasztói piacon, így az IE szinten minden akkoriban elkelt személyi számítógépen telepítésre került. Pár évvel a megjelenése után az IE igen nagy versengéssel találta szembe magát a piacon, mégis, a lehető legtöbbet hozta ki a magából, a népszerűsége idején. Csak az utóbbi időkben esett ki a vásárlók kegyeiből, amikor is a nála népszerűbb Mozilla Firefox és Google Chrome váltották fel a népszerűségi listán.
+
+Az Internet Explorer még mindig igen hasznos lehet és magától értetődő, hogy ha komputerekről, illetve szoftverekről esik szó, kevés olyan vállalat van, amely jobban érti a dolgát, mint a Microsoft. 
+
+
+
+ Google Chrome 86.0.4240.111
+Vörös szőnyeget is teríthetnénk a Google Chrome elé, amely a világ legnépszerűbb internetes böngészője.
+
+A Google technológiai fölénye lehetővé tette a vállalat számára, hogy a világháló szinte minden szegletében megjelenhessen. Ennek pedig az lett az eredménye, hogy a legtöbb szegmensben sikerült is piacvezetővé válnia.
+
+Ezért tehát nem túlzás azt állítani, hogy a Google Chrome a jelenleg elérhető legjobb böngésző.
+
+Először is, a Google Chrome használata rendkívül egyszerű. A felhasználói felületen gond nélkül eligazodik még egy tapasztalatlanabb internetező is. Az eszköztárban mindössze néhány irányítógombot találhatunk, ami szintén az egyszerűség érzetét kelti.
+
+Másodszor, a Chrome villámgyors. Ha összehasonlítanánk a leghíresebb atlétákkal, a Chrome megverné Usain Boltot.
+
+Végül pedig érdemes szót ejteni a Chrome hasznos kiegészítőiről és pluginjeiről. A felhasználók közvetlenül az eszköztáron rögzíthetik a reklámszűrőt, a Grammarly-t, a Google Drive-ot, és más számos más böngésző-kiegészítőt.
+
+Számos oka van annak, hogy miként vált ennyire elterjedté a Google Chrome. A minőségi szolgáltatásnak mindenesetre nagy szerepe van abban, hogy a felhasználók miért választják szívesebben ezt a böngészőt.
+
+
+
+ Mozilla Firefox 82.0.2
+Ki ne szeretné a sebességet, ha technológiáról van szó, igaz?
+
+Gyorsabb böngészés, gyorsabb letöltés és gyorsabb keresés.
+
+Szerencsére a Mozilla Firefox pontosan olyan webböngésző, amely eleget tesz ezeknek az igényeknek.
+
+A Mozilla Firefox egy közösségi alapon fejlesztett, hihetetlenül gyors böngésző. Nyílt forráskódú, úgyhogy a programozók és a webes vállalatok számtalan kiegészítőt és módosítást alkottak hozzá. Ennek eredményeként a felhasználók szinte bármilyen témában és bármilyen célra megtalálhatják az ideális kiegészítőket.
+
+Nyilván negatív hozadéka is van az effajta közösségi alapú projekteknek, jelen esetben a támogatás hiánya. Ezért amikor a felhasználók problémákba ütköznek, kellő eszközök hiányában olykor elég nehézkes azok megoldása.
+
+Ettől függetlenül a Mozilla Firefox rengeteg hasznos funkciót kínál, ami az egyik legversenyképesebb böngészővé teszi.
+
+A felhasználóknak lehetőségük van arra, hogy a lapok bezárása után visszaállítsák a korábbi munkamenetet, blokkolják a felugró ablakokat és a hirdetéseket, sőt, a hatékony böngészés érdekében még az eszköztárat is személyre szabhatják.
+
+Ugyanakkor a böngésző talán legvonzóbb tulajdonsága, hogy rendkívül biztonságos. A vírusokat, trójaiakat, férgeket és a hasonló fenyegetéseket szinte azonnal megfogja, úgyhogy a felhasználók zavartalanul és biztonságosan böngészhetnek a neten.
+
+
+
+ Opera 72.0.3815.148
+Habár az Opera nem olyan népszerű, mint néhány másik böngésző, sok olyan funkciója van, ami miatt kiemelkedik a többi böngésző sorából. A mindenki által elvárt funkciók mellett, mint a lapok és könyvjelzők, az Opera a megnyitott lapok előnézetét is mutatja,ha csak fölévisszük az egeret. Gyorshívó funkciója is van, és a felhasználók által leggyakrabban látogatott lapokról is thumbnailekkel bír. Emellett igen gyors böngésző, olyan minőséggel, amelyet minden felhasználó elvár. Egy másik nagyszerű funkciója az Operának, hogy a keresősáv és a navigációs box ugyanaz. Így egy teljes címet vagy egy keresőkifejezést is beírhatunk - mindenképp célhoz érünk.
+
+De talán a legnagyobb erőssége az Operának abban áll, hogy miként használható a különféle eszközökön, és nem csak az asztali gépeken és laptopokon. KÖnnyedén hazsnálhatjuk okostelefonunkon, tabletünkön, vagy éppen okostévénken vagy set-top boxunkon.Az Opera automatikusan szinkronizálódik mindegyik készülékünkkel, lehetővé téve, hogy egyszerűen váltogassunk közöttük, funkcionális veszteség nélkül. Ezek miatt a nagyszerű funkciók miatt érdemes kipróbálni az Operát. 
+
+
+
+ Spotflux 3.2.0
+Manapság nem tudhatjuk, ki követi az online tevékenységünket és azt sem, hogy ki nézi meg a böngészési eőzményeinket, ha épp nem vagyunk a számítógépnél. Aggasztó lehet ráébredni, hogy ilyen sok személyes információnk szabadon elérhető mások számára, de a Spotflux-szal elűzhetjük az effajta félelmeinket.
+A programot gyorsan lehet telepíteni és egyszerű beállítani. Lehetővé teszi a privát böngészést, garantálva, hogy akármelyik weblapot nyitjuk meg és akármit csinálunk rajta, azt senki nem tudja majd kinyomozni.
+A Spotflux kiszűri az olyan cookie-kat, vírusokat, rosszindulatú programokat és minden más szoftvert, ami telepíteni próbálná magát, miközben böngészeünk a világhálón. 
+
+
+
+

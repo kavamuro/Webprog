@@ -1,0 +1,72 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+header{
+    background-color: #9aac41;
+    position: relative;
+    top: 0;
+}
+
+header img{
+    position: fixed;
+}
+
+header h1{
+    font-weight: 2000;
+    text-align: center;
+}
+
+
+@media (min-width: 992px) {
+    .sidebar {
+        height: 100vh;
+        width: 180px;
+        min-height: 400px;
+        overflow: auto;
+        padding: 10px;
+        position: fixed;
+    }
+}
+
+@media (min-width: 992px) {
+    .main-content {
+        float: right;
+        width: calc(100% - 250px);
+    }
+    footer {
+        float: right;
+        width: calc(100% - 250px);
+    }
+}
+
+section img{
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+section h1{
+    color: #657030;
+}
+
+.section-100 {
+    min-height: 80vh;
+    z-index: 2;
+    position: relative;
+}
+
+.bg-light{
+    min-height: 600px;
+}
+
+.btn{
+    display: inline;
+}
+
+#ertekek{
+    margin-left: 50px;
+}
+
+#ertekek li{
+    color: #657030;
+    width: 300px;
+}

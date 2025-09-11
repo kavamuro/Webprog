@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugaras színátmenetek (minták)</title>
+    <style>
+        * { box-sizing: border-box; }
+        h1, h2, h3 { clear: both; color: red; }
+        h3 { font-style: italic; }
+        div.elem { 
+            width: 400px;
+            height: 350px;
+            float: left;
+            border: 1px solid black;
+            background-color: lightgoldenrodyellow;
+            margin: 5px 10px 25px;
+         }
+        div.doboz {
+            width: 90%;
+            height: 60%;
+            border: 1px solid black;
+            margin: auto;
+        }
+        p { text-align: center; margin: 5px; }
+        p#alapszoveg { text-align: left; }
+        p.cim { 
+            font-style: italic;
+            font-weight: 600;
+        }
+        p.kod {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 85%;
+            padding: 5px;
+        }
+        #d1a { background-image: radial-gradient(yellow, green); }
+        #d1b { background-image: radial-gradient(yellow, green, red); }
+        #d1c { background-image: radial-gradient(yellow 15%, green 40%, red 60%); }
+        #d2a { background-image: radial-gradient(circle, red, blue); }
+        #d2b { background-image: radial-gradient(circle, yellow, green, red, blue); }
+        #d2c { background-image: radial-gradient(circle, yellow 10%, green 25%, red 55%, blue 85%); }
+
+        #d3a { background-image: radial-gradient(circle at 80px 120px, red 10%, yellow 30%, green ); }
+        #d3b { background-image: radial-gradient(ellipse at 75% 60%, blue, green, yellow, red); }
+        #d3c { background-image: radial-gradient(circle at bottom right, blue, yellow, red); }
+        #d3d { background-image: radial-gradient(ellipse at 0 50%, blue 10%, green 20%, yellow 30%, red); }
+        #d3e { background-image: radial-gradient(circle at 75% 0, blue 20%, green 40%, yellow 60%, red); }
+        #d3f { background-image: radial-gradient(ellipse at -150px 65%, blue 25%, yellow 40%, red); }
+
+        #d4a { background-image: radial-gradient(circle closest-side at 75% 75%, yellow, blue, red, green); }
+        #d4b { background-image: radial-gradient(circle farthest-side at 75% 75%, yellow, blue, red, green); }
+        #d4c { background-image: radial-gradient(circle closest-corner at 75% 75%, yellow, blue, red, green); }
+        #d4d { background-image: radial-gradient(circle farthest-corner at 75% 75%, yellow, blue, red, green); }
+
+        #d5a { background-image: radial-gradient(circle, rgba(0,0,255,1), rgba(0,0,255,0)); }
+        #d5b { background-image: radial-gradient(ellipse at right center, rgba(3,0,3,1), rgba(3,0,3,0)); }
+
+        #d6a { background-image: repeating-radial-gradient(circle, red 10%, blue 20% , yellow 30%); }
+        #d6b { background-image: repeating-radial-gradient(ellipse at right top, red 5%,  blue 25%); }
+        #d6c { background-image: repeating-radial-gradient(at 50% 100%, red 5%, blue 10%, yellow 15%, green 30%); }
+    </style>
+</head>
+<body>
+    <h1>Minták sugaras színátmenetekre</h1>
+
+    <h2>Egyszerű sugaras színátmenetek</h2>
+
+    <h3>Középről induló, ELLIPSZIS alakú színátmenetek</h3>
+
+    <div class="elem">
+        <p class="cim">Ellipszis típusú, két színből álló, egyenletes, sugaras színátmenet:</p>
+        <p class="kod">background-image:<br>radial-gradient(yellow, green);</p>
+        <div class="doboz" id="d1a"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Ellipszis típusú, három színből álló, egyenletes, sugaras színátmenet:</p>
+        <p class="kod">background-image:<br>radial-gradient(yellow, green, red);</p>
+        <div class="doboz" id="d1b"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Ellipszis típusú, három színből álló, nem egyenletes, sugaras színátmenet:</p>
+        <p class="kod">background-image:radial-gradient<br>(yellow 15%, green 40%, red 60%);</p>
+        <div class="doboz" id="d1c"></div>
+    </div>
+
+    <h3>Középről induló, KÖR alakú színátmenetek</h3>
+
+    <div class="elem">
+        <p class="cim">Kör típusú, két színből álló, egyenletes, sugaras színátmenet:</p>
+        <p class="kod">background-image: radial-gradient<br>(circle, red, blue);</p>
+        <div class="doboz" id="d2a"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Kör típusú, több színből álló, egyenletes, sugaras színátmenet:</p>
+        <p class="kod">background-image: radial-gradient<br>(circle, yellow, green, red, blue);</p>
+        <div class="doboz" id="d2b"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Kör típusú, több színből álló, nem egyenletes, sugaras színátmenet:</p>
+        <p class="kod">background-image: radial-gradient(circle, yellow 10%, green 25%, red 55%, blue 85%);</p>
+        <div class="doboz" id="d2c"></div>
+    </div>
+
+    <h3>NEM KÖZÉPRŐL induló sugaras színátmenetek</h3>
+
+    <div class="elem">
+        <p class="cim">Képponttal meghatározott középpontból induló, kör alakú, nem egyenletes, sugaras színátmenet:</p>
+        <p class="kod">background-image: radial-gradient(circle at 80px 120px, red 10%, yellow 30%, green );</p>
+        <div class="doboz" id="d3a"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Százalékkal meghatározott középpontból induló, ellipszis alakú, egyenletes, sugaras színátmenet:</p>
+        <p class="kod">background-image: radial-gradient(ellipse at 75% 60%, blue, green, yellow, red);</p>
+        <div class="doboz" id="d3b"></div>
+    </div>
+
+   <div class="elem">
+        <p class="cim">Sarokból induló, kör alakú, egyenletes, sugaras színátmenet:</p>
+        <p class="kod">background-image: radial-gradient<br>(circle at bottom right, blue, yellow, red);</p>
+        <div class="doboz" id="d3c"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Baloldali felezőpontból induló, ellipszis alakú, nem egyenletes sugaras, színátmenet:</p>
+        <p class="kod">background-image: radial-gradient(ellipse at<br>0 50%, blue 10%, green 20%, yellow 30%, red);</p>
+        <div class="doboz" id="d3d"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">A felső szél, harmadik negyedelőpontjából induló, kör alakú, nem egyenletes, sugaras színátmenet:</p>
+        <p class="kod">background-image: radial-gradient(circle at 75% 0, blue 20%, green 40%, yellow 60%, red);</p>
+        <div class="doboz" id="d3e"></div>
+    </div>
+    
+    <div class="elem">
+        <p class="cim">A megadott területen kívüli középpontból induló, ellipszis alakú, nem egyenletes, sugaras színátmenet:</p>
+        <p class="kod">background-image: radial-gradient(ellipse at -150px 65%, blue 25%, yellow 40%, red);</p>
+        <div class="doboz" id="d3f"></div>
+    </div>
+ 
+    <h3>MEGADOTT HELYIG TARTÓ sugaras színátmenetek</h3>
+
+    <p id="alapszoveg">Az alábbi minták közös tulajdonsága, hogy mindegyik sugara színátmenet kör alakú, 4 színből áll, egyenletes átmenettel készült,<br>középpontja pedig mind vízszintesen, mind függőlegesen irányban az oldal harmadik negyedelőppontjának távolságában van.</p>
+
+    <div class="elem">
+        <p class="cim">A középponthoz közelebb eső oldalt (closest-side)<br>érinti a létrejött kör:</p>
+        <p class="kod">background-image: radial-gradient<br>(circle closest-side at 75% 75%,<br>yellow, blue, red, green);</p>
+        <div class="doboz" id="d4a"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">A középponttól távolabb eső oldalt (farthest-side)<br>érinti a létrejött kör:</p>
+        <p class="kod">background-image: radial-gradient<br>(circle farthest-side at 75% 75%,<br>yellow, blue, red, green);</p>
+        <div class="doboz" id="d4b"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">A középponthoz közelebb eső sarkot (closest-corner)<br>érinti a létrejött kör:</p>
+        <p class="kod">background-image: radial-gradient<br>(circle closest-corner at 75% 75%,<br>yellow, blue, red, green);</p>
+        <div class="doboz" id="d4c"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">A középponttól távolabb eső sarkot (farthest-corner)<br>érinti a létrejött kör:</p>
+        <p class="kod">background-image: radial-gradient<br>(circle farthest-corner at 75% 75%,<br>yellow, blue, red, green);</p>
+        <div class="doboz" id="d4d"></div>
+    </div>
+
+    <h3>ÁTLÁTSZÓSÁGGAL támogatott sugaras színátmenetek</h3>
+
+    <div class="elem">
+        <p class="cim">Kör alakú, középről induló, egyetlen szín alkalmazása átlátszósággal kombinált módon, egyenletes, sugaras színátemet</p>
+        <p class="kod">background-image: radial-gradient(circle, rgba(0,0,255,1), rgba(0,0,255,0));</p>
+        <div class="doboz" id="d5a"></div>
+    </div>
+
+    <div class="elem">
+        <p class="cim">Ellipszis alakú, egyetlen szín alkalmazása átlátszósággal kombinált módon, nem egyenletes, jobb felelzőpontból induló, sugaras színátemet</p>
+        <p class="kod"> background-image: radial-gradient<br>(ellipse at right center, rgba(3,0,3,1), rgba(3,0,3,0));</p>
+        <div class="doboz" id="d5b"></div>
+    </div>
+
+    <h2>Periodikusan ismétlődő sugaras színátmenetek</h2>
+
+    <div class="elem">
+        <p class="cim">Kör alakú, középről induló, három színből álló, egyenletesen ismétlődő, sugaras színátmenet</p>
+        <p class="kod">background-image: repeating-radial-gradient<br>(circle, red 10%, blue 20%, yellow 30%); </p>
+        <div class="doboz" id="d6a"></div>
+    </div>
+
+    <div class="elem">
+         <p class="cim">Ellipszis alakú, a jobb felső sarokból induló, két színből álló, periodikusan ismétlődő, sugaras színátmenet</p>
+         <p class="kod">background-image:<br>repeating-radial-gradient(ellipse at right top, red 5%, blue 25%);</p>
+         <div class="doboz" id="d6b"></div>
+    </div>     
+
+    <div class="elem">
+        <p class="cim">Kör alakú, az alsó oldal felezőpontjából induló, négy színből álló, periodikusan ismétlődő, sugaras színátmenet</p>
+        <p class="kod">background-image:<br>repeating-radial-gradient(at 50% 100%, red 5%, blue 10%, yellow 15%, green 30%);</p>
+        <div class="doboz" id="d6c"></div>
+    </div>
+
+</body>
+</html>

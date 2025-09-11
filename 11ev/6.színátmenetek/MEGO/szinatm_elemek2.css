@@ -1,0 +1,83 @@
+/* (1-es számmal jelölt rész:)
+a weboldal teljes háttere: átlós színátmenettel kialakított (fehér-zöld-fehér-zöld) háttérszínnel kitöltve */
+body { 
+    background-image: linear-gradient(to top left, white, green, white, green);
+    margin: 0; padding: 0;}
+
+/* (2-es számmal jelölt rész:) belső blokk "kulso" id-val:
+a weboldal (vízszintesen és függőlegesen) közepén elhelyezett, 80%-os relatív szélességi és magassági méretű blokk, amely vízszintes színátmenettel kialakított (fehér-fekete-fehér-fekete-fehér) háttérszínnel kitöltve */ 
+#kulso {
+    width: 80vw;
+    height: 80vh;
+    margin: 10vh auto;
+    background-image: linear-gradient(to right, white, black, white, black, white);
+}
+
+/* (3-4-5-6-7-8-9-10 számmal jelölt elemek:) a "kulso" id-val rendelkező elemben lévő div blokkok, valamint a középső nagy elemben található blokkban lévő négy div blokk méretezése, pozicionálása és négy sarkának lekerekítése */
+#kulso~div, #kulso~div:last-child>div {
+    width: 25vw;
+    height: 25vh;
+    position: absolute;
+    border-radius: 25%; 
+}
+
+/* (7-8-9-10 számmal jelölt elemek által lefedett rész:) a body utolsó div elemének méretezése a mindenkori ablakméret felére és pontosan az ablak közepére pozicionálása */
+#kulso~div:last-child {
+    width: 50vw;
+    height: 50vh;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+
+/* (3 és 7 számmal jelölt elemek:) a külső bal felső sarki elem és középső rész bal felső sarki elemének pozicionálása, valamint színezése a jobb felső sarokba tartó fehér-tengerészkék-fehér színátmenettel */
+#kulso~div:nth-child(2), #kulso~div:last-child>div:first-child {
+    background-image: linear-gradient(to top right, white, navy, white);
+    top: 0;
+    left: 0;
+}
+
+/* (4 és 8 számmal jelölt elemek:) a külső jobb felső sarki elem és középső rész jobb felső sarki elemének pozicionálása, valamint színezése a bal felső sarokba tartó fehér-tengerészkék-fehér színátmenettel */
+#kulso~div:nth-child(3), #kulso~div:last-child>div:nth-child(2) {
+    background-image: linear-gradient(to top left, white, navy, white);
+    top: 0;
+    right: 0;
+}
+
+/* (5 és 9 számmal jelölt elemek:) a külső bal alsó sarki elem és középső rész bal alsó sarki elemének pozicionálása, valamint színezése a jobb alsó sarokba tartó fehér-tengerészkék-fehér színátmenettel */
+#kulso~div:nth-child(4), #kulso~div:last-child>div:nth-child(3) {
+    background-image: linear-gradient(to bottom right, white, navy, white);
+    bottom: 0;
+    left: 0;
+}
+
+/* (6 és 10 számmal jelölt elemek:) a külső jobb alsó sarki elem és középső rész jobb alsó sarki elemének pozicionálása, valamint színezése a bal alsó sarokba tartó fehér-tengerészkék-fehér színátmenettel */
+#kulso~div:nth-child(5), #kulso~div:last-child>div:nth-child(4) {
+    background-image: linear-gradient(to bottom left,white, navy, white);
+    bottom: 0;
+    right: 0;
+}
+
+/* sarokkerekítések javítása: a korábbiakban beállított { border-radius: 25%; } esetén mind a négy sarok kerekítésre kerül, de a minta alapján pl. a külső bal felső sarki és a belső jobb alsó sarki elemnél a bal felső sarok nincs kerekítve, hasonlóan a többi páros esetén - ezeknél a megfelelő sarok kerekítését érvényteleníteni kell */
+
+/* belső rész bal felső sarki (7) és a külső jobb alsó sarki (6) eleme: jobb alsó sarok nincs kerekítve */
+#kulso~div:last-child>div:first-child, #kulso~div:nth-child(5) {
+    border-bottom-right-radius: 0;
+}
+
+/* belső rész jobb felső sarki (8) és a külső bal alsó sarki (5) eleme: bal alsó sarok nincs kerekítve */
+#kulso~div:last-child>div:nth-child(2), #kulso~div:nth-child(4) {
+    border-bottom-left-radius: 0;
+}
+
+/* belső rész bal alsó sarki (9) és a külső jobb felső sarki (4) eleme: jobb felső sarok nincs kerekítve */
+#kulso~div:last-child>div:nth-child(3), #kulso~div:nth-child(3) {
+    border-top-right-radius: 0;
+}
+
+/* belső rész jobb alsó sarki (10) és a külső bal felső sarki (3) eleme: bal felső sarok nincs kerekítve */
+#kulso~div:last-child>div:nth-child(4), #kulso~div:nth-child(2) {
+    border-top-left-radius: 0;
+}
+
+/* MEGJEGYZÉS: A fenti definíciókat úgy is meg lehetne adni, hogy a 3-7-10-6 számokkal jelzett (vagyis a bal felső sarokból a jobb alsó sarokba tartó átló mentén elhelyezett), valamint a 4-8-9-5 számokkal jelzett (vagyis a jobb felső sarokból a bal alsó sarokba tartó átló mentén elhelyezett) elemek színátmenetes hátterének azonossága miatt egyszerre definiáljuk azokat két csoportos (azaz 4 elemre utaló) szelektorral, majd az azonos helyzetű (3-7, 4-8, 5-9, 6-10) elemek pozicionálását páronként, illetve az azonos sarokkerekítéssel rendelkező elemek (3-10, 4-9, 5-8, 6-7) border-radius értékének megadását szintén páronkénti csoportos szelektorral adjuk meg. */

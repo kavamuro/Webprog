@@ -1,0 +1,76 @@
+* { 
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* (1-es számmal jelölt rész:) a weboldal teljes háttere:
+vízszintes színátmenettel kialakított (fekete-fehér-fekete) háttérszínnel kitöltve */
+body {
+    background-image: linear-gradient(to right, black, white, black);
+}
+
+/* (2-es számmal jelölt rész:) belső blokk "kulso" id-val azonosítva:
+a weboldal (vízszintesen és függőlegesen) közepén elhelyezett, 80%-os relatív szélességi és magassági méretű blokk, amely függőleges színátmenettel kialakított (zöld-fehér-zöld) háttérszínnel kitöltve */
+#kulso {
+    width: 80vw;
+    height: 80vh;
+    background-image: linear-gradient(green, white, green);
+    margin:10vh auto;
+}
+
+/* (3-4-5-6 számokkal, illetve a 7-8-9-10 számokkal jelölt részek:) a külső sarkokban elhelyezett div elemek (azaz a "kulso" id-val rendelkező elem utáni div testvérek közül a következő 4 elem), illetve a body utolsó div-jében lévő négy div elem:
+méretezése és a szülőhöz pozicionálása */
+#kulso~div:nth-child(2), #kulso~div:nth-child(3), #kulso~div:nth-child(4), #kulso~div:nth-child(5),
+#kulso~div:last-child>div
+ {
+    width: 25vw;
+    height: 25vh;
+    position: absolute;
+}
+
+/* (7-8-9-10 számmal jelölt elemek által lefedett rész:) a body utolsó div elemének méretezése a mindenkori ablakméret felére és pontosan az ablak közepére pozicionálása */
+div:nth-child(6) {
+    width: 50vw;
+    height: 50vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* (3 és 7 számmal jelölt elemek:)
+bal felső sarki elemek pozicionálása és színezése a jobb alsó sarokba tartó piros-sárga színátmenettel */
+#kulso~div:nth-child(2),
+#kulso~div:last-child>div:first-child  {
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, red 5%, yellow);
+}
+
+/* (4 és 8 számmal jelölt elemek:)
+jobb felső sarki elemek pozicionálása és színezése a bal alsó sarokba tartó piros-sárga színátmenettel */
+#kulso~div:nth-child(3),
+#kulso~div:last-child>div:nth-child(2)  {
+    top: 0;
+    right: 0;
+    background-image: linear-gradient(to bottom left, red 5%, yellow);
+}
+
+/* (5 és 9 számmal jelölt elemek:)
+jobb alsó sarki elemek pozicionálása és színezése a bal felső sarokba tartó piros-sárga színátmenettel */
+#kulso~div:nth-child(4),
+#kulso~div:last-child>div:nth-child(3)  {
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(to top left, red 5%, yellow);
+}
+
+/* (6 és 10 számmal jelölt elemek:)
+bal alsó sarki elemek pozicionálása és színezése a jobb felső sarokba tartó piros-sárga színátmenettel*/
+#kulso~div:nth-child(5),
+#kulso~div:last-child>div:nth-child(4)  {
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top right, red 5%, yellow);
+}

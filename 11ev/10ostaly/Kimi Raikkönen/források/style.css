@@ -1,0 +1,57 @@
+body {
+    font-family:Verdana, sans-serif;
+}
+
+.container {
+    box-shadow:  5px 5px 10px 10px tomato;
+    padding: 50px;
+}
+
+header>h3 {
+    font-style  : italic;
+    font-size   : 14pt;
+}
+
+img {
+    margin: 10px;
+    border: 2px solid tomato;
+    padding: 1px;
+    width: 100%;
+    border-radius:5px;
+}
+
+.foto {
+    width: 250px;
+    margin-right: 20px;
+    float:left;
+}
+
+.navbar div {
+    border-bottom: 5px solid tomato;
+    justify-content: space-around;
+}
+
+.kiemel {
+    font-weight: bold;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid tomato;
+    clear:both;
+}
+
+.kepalairas {
+    text-align: center;
+    font-style: italic;
+    font-weight:bold;
+}
+p {
+    text-align: justify;
+    line-height: 1.5em;
+    text-indent: 30px;
+}
+a:hover {
+    color: tomato;
+}

@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="utf-8">
+  <title>Transzformációk</title>
+  <link rel="stylesheet" href="transzformaciok.css">
+</head>
+
+<body>
+  <h1>Transzformációk</h1>
+
+  <p>A transzformációk kétféle típusát különböztetjük meg: a síkbeli és a térbeli transzformációkat.</p> 
+
+  <h2>Síkbeli transzformációk</h2>
+  <p id=def><em><strong>Síkbeli transzformáció (2D transform) esetén a vízszintes (X) és/vagy a függőleges (Y) tengely mentén egy elemen
+  <ul id=tipusok>
+	  <li>eltolás,</li>
+	  <li>átméretezés (nagyítás / kicsinyítés),</li>
+	  <li>megdöntés (elferdítés) vagy</li>
+	  <li>elforgatás</li>
+  </ul>	
+  hajtható végre.</strong></em></p>
+  
+  <h2>Térbeli transzformációk</h2>
+  <p id=def><em><strong>Térbeli transzformáció (3D transform) esetén a vízszintes (X), a függőleges (Y)  és harmadik (Z, amely merőleges az X és az Y tengelyek által meghatározott síkra) tengely mentén hajthatjuk végre a transzformációkat a megjelölt elemen.</strong></em></p>
+
+  <h2>A transform tulajdonság és értékei</h2>
+
+  <p>A transzformációkat a <span class="kiemelt">transform</span> tulajdonság értékei definiálják, vagyis azt, hogy milyen művelet végzendő el, a zárójelben megadott szám(ok) pedig az átalakítás(ok) mértékét adja(k) meg.</p>
+  <p>A <span class="kiemelt">transform</span> tulajdonság lehetséges értékei:</p>
+
+  <ul id=lista>
+
+    <li><span class="ertek">translate</span> = áthelyezés, eltolás
+        <ul>
+            <li><span class="ertek2">translateX(szam)</span> = eltolás vízszintesen az X tengely mentén, pozitív szám esetén jobbra, negatív szám esetén balra</li>
+            <li><span class="ertek2">translateY(szam)</span> = eltolás függőlegesen az Y tengely mentén, pozitív szám esetén lefelé, negatív szám esetén felfelé</li>
+            <li><span class="ertek2">translate(szam1,szam2)</span> = eltolás az első értékkel vízszintesen az X, a második értékkel függőlegesen az Y tengely mentén (a két adatot vessző választja el egymástól</li>
+            <li><span class="ertek2">translateZ(szam)</span> = eltolás függőlegesen a Z tengely mentén, pozitív szám a néző felé történő közelítést, a negatív szám pedig a nézőtől történő távolítást jelenti</li>
+            <li><span class="ertek2">translate3d(szam1,szam2,szam3)</span> = a térbeli eltolás összevont alakja, amelyben sorrendben X-Y-Z eltorlási értékeket adunk meg vesszővel elválasztva egymástól (az X- és Y-érték lehet %-os érték, de a Z-érték nem)</li>
+        </ul>
+    </li>
+
+    <h3>Példák az eltolásra (translate)</h3>
+    <div id="eltolas">
+      <div class="belso" id="tol1">balra</div>
+      <div class="belso" id="tol2">jobbra</div>
+      <div class="belso" id="tol3">le</div>
+      <div class="belso" id="tol4">fel</div>
+      <div class="belso" id="tol5">mindkét-1</div>
+      <div class="belso" id="tol6">mindkét-2</div>
+      <div class="belso" id="tol7">3D-eltolás1</div>
+      <div class="belso" id="tol8">3D-eltolás2</div>
+
+    </div>
+
+    <li><span class="ertek">scale</span> = átméretezés (nyújtás, zsugorítás), ahol az 1-nél kisebb érték csökkenti, az 1-nél nagyobb érték növeli az elem méretét
+        <ul>
+            <li><span class="ertek2">scaleX(szam)</span> = vízszintes irányú átméretezés</li>
+            <li><span class="ertek2">scaleY(szam)</span> = függőleges irányú átméretezés</li>
+            <li><span class="ertek2">scale(szam1,szam2)</span> = átméretezés úgy, hogy az első számmal a vízszintes, a másodikkal a függőleges irányban történik a méretváltoztatás</li>
+            <li><span class="ertek2">scaleZ(szam)</span> = a felhasználó irányába történő átméretezés</li>
+            <li><span class="ertek2">scale3d(szam1,szam2,szam3)</span> = a térbeli átméretezés összevont alakja, amelyeben az értékeket a X-Y-Z-tengelyek sorrendjében kell megadni</li>
+        </ul>
+    </li>
+
+    <h3>Példák az átméretezésre (scale)</h3>
+    <div id="atmeretezes">
+      <div class="belso" id="atmer1">x-kicsi</div>
+      <div class="belso" id="atmer2">x-nagy</div>
+      <div class="belso" id="atmer3">y-kicsi</div>
+      <div class="belso" id="atmer4">y-nagy </div>
+      <div class="belso" id="atmer5">mindkét-1</div>
+      <div class="belso" id="atmer6">mindkét-2</div>
+      <div class="belso" id="atmer7">3D-méretezés1</div>
+      <div class="belso" id="atmer8">3D-méretezés2</div>
+
+    </div>
+
+    <li><span class="ertek">skew</span> = megdöntés (ferdítés) fokban megadott értékkel azaz xxdeg (pl. 20deg)
+        <ul>
+            <li><span class="ertek2">skewX(szam)</span> = vízszintes irányú megdöntés úgy, hogy a pozitív érték balra, a negatív érték jobbra dönt</li>
+            <li><span class="ertek2">skewY(szam)</span> = függőleges irányú megdöntés úgy, hogy a pozitív érték lefelé, a negatív érték felfelé dönt </li>
+            <li><span class="ertek2">scale(szam1,szam2)</span> = kétirányú döntés úgy, hogy az első számmal a vízszintes, a másodikkal a függőleges irányú döntés nagyságát határozzuk meg</li>
+            <li>nincs térbeli kiegészítése</li>
+        </ul>
+    </li>
+
+    <h3>Példák a megdöntésre (skew)</h3>
+    <div id="dontes">
+     <div class="belso" id="dont1">x-poz</div>
+      <div class="belso" id="dont2">x-neg</div>
+      <div class="belso" id="dont3">y-poz</div>
+      <div class="belso" id="dont4">y-neg</div>
+      <div class="belso" id="dont5">egyforma1</div>
+      <div class="belso" id="dont6">egyforma2</div>
+      <div class="belso" id="dont7">eltérő1</div>
+      <div class="belso" id="dont8">eltérő2</div>
+    </div>
+
+    <li><span class="ertek">rotate</span> = egy elemet a megadott szöveggel való elforgatását jelenti, ahol a szöget deg-ben adjuk meg (pl. rotate(45deg) és a pozitív érték az óramutató járásával megegyező irányt jelöli)
+      <ul>
+        <li><span class="ertek2">rotate(szogertek)</span> = egy elem középpontja körül adott szöveggel való elforgatást hajt végre</li>
+        <li><span class="ertek2">rotateX(szogertek)</span> = X tengely körüli elforgatás a megadott szöggel</li>
+        <li><span class="ertek2">rotateY(szogertek)</span> = Y tengely körüli elforgatás a megadott szöggel</li>
+        <li><span class="ertek2">rotateZ(szogertek)</span> = Z tengely körüli elforgatás a megadott szöggel, lényegében az X-Y-tengelyek síkjában történő elforgatást jelent (tehát megegyezik a rotate(fok) hatásával) </li>
+        <li><span class="ertek2">rotate3d(x,y,z,deg)</span> = az első három szám az elforgatási tengelyeket adja meg (0=nincs, 1=van) és az elforgatás szögét, ezekkel egyezően történik az elforgatás akár egyszerre több tengely mentén is</li>
+      </ul>
+    </li>
+
+    <h3>Példák a forgatásra (rotate)</h3>
+    <div id="forgatas">
+      <div class="belso" id="forg1">középpont</div>
+      <div class="belso" id="forg2">X-tengely +</div>
+      <div class="belso" id="forg3">X-tengely -</div>
+      <div class="belso" id="forg4">Y-tengely +</div>
+      <div class="belso" id="forg5">Y-tengely -</div>
+      <div class="belso" id="forg6">Z-tengely +</div>
+      <div class="belso" id="forg7">Z-tengely -</div>
+      <div class="belso" id="forg7">3d forgatás</div>
+    </div>
+
+    <li>Egy elemen <strong><em>egyidejűleg több transzformációs művelet is végrehajtható</em></strong>: ebben az esetben 
+      <ul>
+        <li><strong>összevont alakban, vessző nélkül, a műveletek sorrendjében felsorolva</strong> adandók meg a transzformációs függvények és értékeik:<br> pl. transform: translate(80px,80px) scale(1.5,2) rotate(45deg) vagy</li>
+        <li>alkalmazható a <strong>matrix() függvény</strong>, amelynek paraméterében előre meghatározott sorrendben adandók meg az egyes transzformációs beállítások:<br>matrix(scaleX(...),skewY(...),skewX(...),scaleY(...),translateX(...),translateY(...)) </li>
+      </ul>  
+    </li>
+
+    <h3>Példák egyszerre többféle transzformáció alkalmazása</h3>
+
+    <div id="kep1" class="kepes">
+      <img src="korte.png" alt="Körtekép">
+    </div>
+
+    <div id="kep2" class="kepes">
+      <img src="puzzle.jpg" alt="Puzzlekép">
+    </div>
+
+  </ul>
+  
+</body>
+
+</html>
+

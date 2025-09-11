@@ -1,0 +1,138 @@
+/* a leíráshoz tartozó stílusdefiníciók */
+
+#def {
+	margin-bottom: 0;
+}
+
+#tipusok {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.kiemelt, .ertek, .ertek2 {
+   font-weight: bold;
+}
+
+.kiemelt {  
+    color: red;
+}
+
+.ertek {
+    color: green;
+    font-style: italic;
+	background-color: yellow;
+}
+
+.ertek2 {
+    color: orangered;
+    font-style: italic;
+}
+
+#lista>li {
+    margin-top: 10px;
+}
+
+/* a példákhoz tartozó előkészített felület stílusbeállítása*/
+
+div.belso {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 20px;
+    font-size: 60%;
+    text-align: center;
+    line-height: 70px;
+    font-weight: bold;
+    font-style: italic; 
+}
+
+div#eltolas, div#atmeretezes, div#dontes, div#forgatas {
+    width: 90%;
+    border: 1px dashed black;
+    background-color: papayawhip;
+}
+
+#eltolas .belso {
+    background-color: lightgreen;
+}
+
+#atmeretezes .belso {
+    background-color: lightsalmon;
+}
+
+div#dontes .belso {
+    background-color: rgba(255, 0, 255, 0.349);
+}
+
+div#forgatas .belso {
+    background-color: lightskyblue;
+}
+
+img {
+    width: 100px;
+}
+
+.kepes {
+    width: 50%;
+    height: 150px;
+    border: 1px dashed black;
+    background-color: papayawhip;
+    margin-bottom: 20px;
+}
+
+/* a példákhoz tartozó stílusdefiníciókat tartalmazó rész */
+/*eltolasok(translate)*/
+#tol1{
+    transform: translateX(-35px);
+
+}
+
+#tol2{
+    transform: translateX(35px);
+
+}
+
+#tol3{
+    transform: translateY(35px);
+
+}
+
+#tol4{
+    transform: translateY(-35px);
+
+}
+#tol5{
+    transform: translate(-35px,-35px);
+}
+#tol6{
+    transform: translate(35px,35px);
+}
+
+/*atmeretezes(scale)*/
+
+#atmer1{
+    transform: scaleX(0.25);
+}
+#atmer2{
+    transform: scaleX(1.25);
+}
+
+#atmer3{
+    transform: scaleY(0.25);
+}
+#atmer4{
+    transform: scaleY(1.25);
+}
+#atmer5{
+    transform: scale(1.25,0.75);
+}
+
+/*dontesek(skew)*/
+
+#dont1{
+    transform: skewX(45deg);
+}
+#dont2{
+    transform: skewX(-45deg);
+}

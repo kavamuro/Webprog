@@ -1,0 +1,26 @@
+table, td, th{
+    border: 1px solid black;
+}
+
+table{
+    border-collapse: collapse;
+    margin: auto;
+}
+td:nth-of-type(2){
+    background-color: aqua;
+}
+
+th:nth-of-type(2),td:nth-of-type(3){
+    background-color: gold;
+}
+th:nth-of-type(3),td:nth-of-type(4){
+    background-color: silver;
+}
+th:nth-of-type(4),td:nth-of-type(5){
+    background-color: brown;
+    color: white;
+}
+th:nth-of-type(5),td:nth-of-type(6){
+    background-color: black;
+    color: white;
+}

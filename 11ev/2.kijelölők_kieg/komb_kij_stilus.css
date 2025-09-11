@@ -1,0 +1,26 @@
+.kiemelt {
+    font-style: italic;
+    font-weight: bold;
+    background-color:yellow;
+}
+
+.tul {
+    font-weight: bold;
+    color: red;
+}
+
+.pl {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 80%;
+}
+
+.szint {
+	background-color: green;
+	color: white;
+	font-weight: bold;
+	font-family: 'Courier New';
+}
+ul li {
+    margin-top: 10px;
+}
+

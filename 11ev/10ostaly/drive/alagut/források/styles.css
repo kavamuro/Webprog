@@ -1,0 +1,75 @@
+body {
+  font-family: sans-serif;
+  background-color: forestgreen;
+}
+
+#content {
+  background-color: lightyellow;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 40px;
+  border-radius: 40px;
+  overflow: hidden;
+  width: 888px;
+}
+
+p {
+  text-indent: 30px;
+  line-height: 140%;
+  text-align: justify;
+}
+
+#imageright {
+  width: 390px;
+  float: right;
+  padding: 0px 5px 5px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid forestgreen;
+  background-color: beige;
+}
+
+#imageright img {
+  width: 400px;
+  position: relative;
+  left: -5px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+p.kepszoveg {
+  font-size: 0.9em;
+  margin: 5px;
+  line-height: 100%;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  text-indent: 0px;
+}
+
+a {
+  color: forestgreen;
+}
+
+a:hover {
+  color: red;
+}
+.kiemeles{
+  color: #087ac8;
+  font-weight: bold;
+}
+.kiemeles:hover{
+  color: red;
+}
+h1,h2{
+  color: forestgreen;
+}
+h2{
+  font-style: italic;
+}
+#kep{
+  width: 300px;
+  float: right;
+}

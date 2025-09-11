@@ -1,0 +1,72 @@
+Mire való a HTML és mire a CSS?
+HTML egy alap oldal strukturajat es a css pedig a stilusa
+
+Milyen HTML5 szabványnak megfelelő címkéket ismersz a weboldal felépítésére,
+az egyes szerkezeti elemek kialakítására vonatkozóan?
+
+!Doctype 
+<html>
+</html>
+<head>
+title
+meta tagok(karakterek)
+style
+link
+script
+</head>
+<body>
+p
+div
+br
+wbr
+h1-h6
+hr
+b, strong
+i, em
+u, underlined
+marked,
+s, super
+sub,
+span - sorkoz jele
+img
+table
+tr
+td
+th
+caption
+rowspan
+colsspan
+figure - illusztracio, elem
+fig-caption - kep alairas
+</body>
+
+Mi az általános szabály a CSS utasítások szintaxisával kapcsolatban?
+
+font:
+size
+color
+family
+weight
+fe!n
+style - italic
+oblicate
+variant - small caps, 
+
+text:
+transform - upper case,capitalize
+indent- negativ balra, pozitiv jobbra
+
+margin:
+ left, right, top, bottom 
+
+line-height -> konkret szamertek
+
+letter-spacing -> 1232
+
+word-spacing -> bloki
+
+
+content -> padding -> border -> margin
+
+
+

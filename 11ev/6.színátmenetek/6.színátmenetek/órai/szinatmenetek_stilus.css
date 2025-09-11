@@ -1,0 +1,185 @@
+.tul {
+    font-weight: bold;
+    color: red;
+}
+
+.pl {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 80%;
+}
+
+.kiemelt {
+    font-style: italic;
+    font-weight: bold;
+    background-color:yellow;
+}
+
+li {
+    margin-top: 5px;
+}
+
+.szint {
+	background-color: green;
+	color: white;
+	font-weight: bold;
+	font-family:'Courier New';
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 2px;
+}
+
+th:nth-child(2n+1) {
+    width: 18%;
+}
+
+th:nth-child(2n) {
+    width: 32%;
+}
+
+th,td {
+    text-align: center;
+}
+
+/* főoldal mintapéldáihoz */
+
+#div1 {
+    background-image: linear-gradient(blue, yellow);
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    margin: 10px auto;
+} 
+
+#div2 {
+    background-image: linear-gradient(to right, blue, yellow);
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    margin: 10px auto;
+} 
+ 
+#div3 {
+    background-image: linear-gradient(135deg, red, white, green);
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    margin: 10px auto;
+}    
+
+#div4 {
+    background-image: linear-gradient(-135deg, red 15%, white 35%, green);
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+#div5 {
+    background-image: radial-gradient(blue, yellow);
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    margin: 10px auto;
+}  
+
+#div6 {
+    background-image: radial-gradient(green, white, red );
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 50%;
+    text-align: center;
+    color: black;
+    margin: 10px auto;
+} 
+
+#div7 {
+    background-image: radial-gradient(40px 60px at 60px 80px, blue, yellow, blue);
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    color: white;
+    margin: 10px auto;
+} 
+
+#div8 {
+    background-image: radial-gradient(farthest-side at left bottom, red 15%, white 85%, green );
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    color: black;
+    margin: 10px auto;
+}
+
+#div9 {
+    background-image: repeating-linear-gradient(60deg, red,white 5%,green 15%);
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    color: black;
+    margin: 10px auto;
+}
+
+#div10 {
+    background-image: repeating-radial-gradient(blue, yellow 10%, red 25%);
+    width: 150px;
+    height: 100px;
+    line-height: 150px;
+    text-align: center;
+    color: black;
+    margin: 10px auto;
+}
+
+/* lineáris aloldalhoz */
+
+.kepek {
+    width: 35%;
+    float: right;
+}
+
+img { width: 95%; }
+
+
+figure {
+    text-align: center;
+}
+
+figcaption { padding: 1px; }
+
+.feladat {
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    font-style: italic;
+}
+
+.blokk {
+	width: 150px;
+	height: 100px;
+	border: 5px solid black;
+	margin: 10px;
+	display: inline-block;
+}
+
+

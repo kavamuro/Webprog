@@ -1,0 +1,60 @@
+body>div {
+    float:left;
+}
+
+body>div>div {
+    position: relative;
+    height: 1100px;
+    padding: 15px;
+    border:1px solid darkred;
+    margin: 10px;
+}
+
+div img {
+    width: 240px;
+    height: 360px;
+    margin: 10px;
+    clear: both;
+}
+h2 {
+    text-align: right;
+    font-variant: small-caps;
+}
+
+header {
+    width:115%;
+    height: 150px;
+    background-color: black;
+    margin-left:-15%;
+    padding-left:15%;
+    border-radius: 75px;
+    position: relative;
+}
+header>* {
+    color: red;
+    font-variant: small-caps;
+    position: absolute;
+    right: 200px;
+	bottom: 0px;
+    font-size: 4em;
+}
+header img {
+    position: absolute;
+    top:0px;
+    right:0px;
+    height: 150px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.hires {
+    padding: 5px;
+	margin-top: 10px;
+    width: 250px;
+    position: absolute;
+}
+
+a {
+    color:darkred;
+    margin:15px;
+}

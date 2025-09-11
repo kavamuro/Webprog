@@ -1,0 +1,84 @@
+.tul {
+    font-weight: bold;
+    color: red;
+}
+
+.pl {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 80%;
+}
+
+.kiemelt {
+    font-style: italic;
+    font-weight: bold;
+    background-color:yellow;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.szint {
+	background-color: green;
+	color: white;
+	font-weight: bold;
+	font-family: 'Courier New';
+}
+
+
+/* példához */
+
+.feladat {
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    font-style: italic;
+}
+
+.doboz {
+    width: 150px;
+    height: 100px;
+    border: 3px solid red; 
+    margin: 35px 50px;
+}
+
+#d1 {
+    background-color: yellow;
+    box-shadow: 10px 5px 5px 10px green ;
+}
+
+#d2 {
+    border-radius: 35%;
+    background-color: greenyellow;
+    box-shadow: -20px -10px 0 0 blueviolet;
+    
+}
+
+#d3 {
+    border-radius: 15%;
+    background-color:wheat;
+    box-shadow: -5px 10px 0 0 red inset;
+}
+
+#d4 {
+    border-radius: 15% 45%;
+    background-color:paleturquoise;
+    box-shadow: 5px -10px 0 0 purple inset;
+}
+
+#d5 {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    box-shadow: 0 10px 5px 0 rgba(255, 255,255, 0.2), 0, 20px 5px 0 black ;
+}
+  
+div.header {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    font-size: 160%;
+  }
+  
+  div.container {
+    padding: 5px;
+  }
