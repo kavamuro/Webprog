@@ -1,0 +1,30 @@
+div
+{
+    display: flex;
+    height: 300px;
+    width: 800px;
+    flex-wrap: nowrap;
+    background-color: royalblue;
+}
+div>div:nth-child(1)
+{
+    background-color: green;
+    height: 100px;
+    width: 100px;
+    display: none;
+}
+div>div:nth-child(2)
+{
+    height: 100px;
+    width: 100px;
+    background-color: yellow;
+    display: none;
+}
+div>div:nth-child(3)
+{
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    background-color: purple;
+}
