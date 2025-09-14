@@ -1,0 +1,14 @@
+div{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: yellow;
+    list-style-type: none;
+}
+div li{
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+}

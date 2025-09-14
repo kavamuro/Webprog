@@ -1,30 +1,29 @@
-div
-{
-    display: flex;
-    height: 300px;
-    width: 800px;
-    flex-wrap: nowrap;
-    background-color: royalblue;
-}
-div>div:nth-child(1)
-{
-    background-color: green;
-    height: 100px;
-    width: 100px;
-    display: none;
-}
-div>div:nth-child(2)
-{
-    height: 100px;
-    width: 100px;
+body{
     background-color: yellow;
-    display: none;
-}
-div>div:nth-child(3)
-{
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    height: 100px;
+    align-items: center;
+    height: 100vh;
+}
+body > div{
+    width: 800px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body > div > div{
     width: 100px;
+    height: 100px;
     background-color: purple;
+}
+body > div > div:first-child{
+    display: none;
+    background-color: green;
+}
+body > div > div:last-child{
+    display: none;
+    background-color: yellow;
 }
