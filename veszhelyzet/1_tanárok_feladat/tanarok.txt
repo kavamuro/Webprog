@@ -1,0 +1,9 @@
+Név;Szak;Kor;Fizetés;Tapasztalat
+Kis Péter;Német;25;220000;2
+Nagy István;Angol;33;250000;5
+Horváth Péter;Matematika;45;300000;10
+Tóth Ilona;Informatika;39;280000;4
+Németh Ede;Magyar;48;320000;12
+Kocsis Klára;Történelem;55;370000;18
+Borsos Béla;Informatika;58;340000;20
+Kiss Judit;Számvitel;59;256000;24

@@ -1,0 +1,10 @@
+J:\C#\nanezzuk\nezzukmittudok\bin\Debug\nezzukmittudok.exe.config
+J:\C#\nanezzuk\nezzukmittudok\bin\Debug\nezzukmittudok.exe
+J:\C#\nanezzuk\nezzukmittudok\bin\Debug\nezzukmittudok.pdb
+J:\C#\nanezzuk\nezzukmittudok\obj\Debug\nezzukmittudok.csproj.AssemblyReference.cache
+J:\C#\nanezzuk\nezzukmittudok\obj\Debug\nezzukmittudok.Form1.resources
+J:\C#\nanezzuk\nezzukmittudok\obj\Debug\nezzukmittudok.Properties.Resources.resources
+J:\C#\nanezzuk\nezzukmittudok\obj\Debug\nezzukmittudok.csproj.GenerateResource.cache
+J:\C#\nanezzuk\nezzukmittudok\obj\Debug\nezzukmittudok.csproj.CoreCompileInputs.cache
+J:\C#\nanezzuk\nezzukmittudok\obj\Debug\nezzukmittudok.exe
+J:\C#\nanezzuk\nezzukmittudok\obj\Debug\nezzukmittudok.pdb

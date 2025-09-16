@@ -1,0 +1,8 @@
+J:\C#\iskola\school\bin\Debug\school.exe.config
+J:\C#\iskola\school\bin\Debug\school.exe
+J:\C#\iskola\school\bin\Debug\school.pdb
+J:\C#\iskola\school\obj\Debug\school.csproj.AssemblyReference.cache
+J:\C#\iskola\school\obj\Debug\school.csproj.CoreCompileInputs.cache
+J:\C#\iskola\school\obj\Debug\school.exe
+J:\C#\iskola\school\obj\Debug\school.pdb
+J:\C#\iskola\school\obj\Debug\school.exe.config

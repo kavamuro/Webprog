@@ -1,0 +1,7 @@
+J:\C#\1_tanárok_feladat\tanarokfeladat\tanarokfeladat\bin\Debug\tanarokfeladat.exe.config
+J:\C#\1_tanárok_feladat\tanarokfeladat\tanarokfeladat\bin\Debug\tanarokfeladat.exe
+J:\C#\1_tanárok_feladat\tanarokfeladat\tanarokfeladat\bin\Debug\tanarokfeladat.pdb
+J:\C#\1_tanárok_feladat\tanarokfeladat\tanarokfeladat\obj\Debug\tanarokfeladat.csproj.AssemblyReference.cache
+J:\C#\1_tanárok_feladat\tanarokfeladat\tanarokfeladat\obj\Debug\tanarokfeladat.csproj.CoreCompileInputs.cache
+J:\C#\1_tanárok_feladat\tanarokfeladat\tanarokfeladat\obj\Debug\tanarokfeladat.exe
+J:\C#\1_tanárok_feladat\tanarokfeladat\tanarokfeladat\obj\Debug\tanarokfeladat.pdb

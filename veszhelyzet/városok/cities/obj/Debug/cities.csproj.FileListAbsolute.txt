@@ -1,0 +1,7 @@
+J:\C#\városok\cities\bin\Debug\cities.exe.config
+J:\C#\városok\cities\bin\Debug\cities.exe
+J:\C#\városok\cities\bin\Debug\cities.pdb
+J:\C#\városok\cities\obj\Debug\cities.csproj.AssemblyReference.cache
+J:\C#\városok\cities\obj\Debug\cities.csproj.CoreCompileInputs.cache
+J:\C#\városok\cities\obj\Debug\cities.exe
+J:\C#\városok\cities\obj\Debug\cities.pdb
