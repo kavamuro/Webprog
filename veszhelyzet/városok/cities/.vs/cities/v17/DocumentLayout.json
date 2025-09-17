@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "J:\\C#\\v\u00E1rosok\\cities\\",
+  "WorkspaceRootPath": "D:\\susu\\allPrograming\\Webprog\\veszhelyzet\\v\u00E1rosok\\cities\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{534C68BD-0E61-494C-90CE-BE0085009F9E}|cities.csproj|j:\\c#\\v\u00E1rosok\\cities\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{534C68BD-0E61-494C-90CE-BE0085009F9E}|cities.csproj|d:\\susu\\allprograming\\webprog\\veszhelyzet\\v\u00E1rosok\\cities\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{534C68BD-0E61-494C-90CE-BE0085009F9E}|cities.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,17 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "J:\\C#\\v\u00E1rosok\\cities\\Program.cs",
+              "DocumentMoniker": "D:\\susu\\allPrograming\\Webprog\\veszhelyzet\\v\u00E1rosok\\cities\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "J:\\C#\\v\u00E1rosok\\cities\\Program.cs",
+              "ToolTip": "D:\\susu\\allPrograming\\Webprog\\veszhelyzet\\v\u00E1rosok\\cities\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAwwFcAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAA5wF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-10T11:57:19.383Z",
               "EditorCaption": ""
