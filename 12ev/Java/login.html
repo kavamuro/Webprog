@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<style>
+    body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    .container {
+            max-width: 400px;
+            text-align: center;
+        }
+    .btn {
+            border: 1px solid #000;
+            background: none;
+            color: inherit;
+        }
+</style>
+<body>
+        <div class="container">
+        <div id="loginpart" class="border p-3 rounded">
+            <h3>Bejelentkezés</h3>
+            <input type="email" class="form-control my-2" placeholder="Username" id="username">
+            <input type="password" class="form-control my-2" placeholder="Password" id="password">
+            <input type="password" class="form-control my-2" placeholder="Password2" id="password2">
+            <button id="submitButton" class="btn w-100">Log in</button>
+        </div>
+</body>
+<script>
+        const submitButton = document.getElementById("submitButton");
+        const username = document.getElementById("username");
+        const password = document.getElementById("password");
+        const password2 = document.getElementById("password2");
+
+         submitButton.addEventListener("click", () => {
+            if(password.value === password2.value && username.checkValidity()){
+                console.log(`Felhasznalo E-mailja: ${username.value}`)
+                console.log(`Felhasznalo Jelszava: ${password.value}`)
+            }
+            else if(password !== password2)
+            {
+                alert("A ket jelszo nem egyezik")
+            }
+            else
+            {
+                alert("Nem e-mailt adott meg")
+            }
+            })
+        
+</script>
+</html>
