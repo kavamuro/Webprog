@@ -1,0 +1,50 @@
+header
+{
+ background-color: #DAB1DA ;
+ height: 40px;
+ width: 100%;
+ font-size: 30px;
+ text-align: left;
+ vertical-align: middle;
+ font-family: Arial, Helvetica, sans-serif;
+ padding-left: 10px;
+ font-weight: 100;
+}
+body
+{
+    text-align: center;
+    
+    margin: 0;
+    padding: 0;
+
+}
+div
+{
+    font-size: 18px;
+}
+button
+{
+ background-color: #DAB1DA;
+ font-size: 20px;
+ margin: 15px;
+ width: 50px;
+ height: 50px;
+ border-radius: 15px;
+ border: none;
+ box-shadow: 5px 10px 5px grey;
+}
+.spacebetween
+{
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#count
+{
+ 
+    font-size: 24px;
+}
+.fromtop
+{   
+    margin-top: 50px;
+}

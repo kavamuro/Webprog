@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <header>Counter</header>
+    <div>
+    <span class="fromtop">Counter value: </span>
+    <br>
+    <span id="count">0</span>
+    <br>
+    <button onclick="Plus(1)">+</button>
+    <button onclick="Minus(1)">-</button>
+    <br>
+    <button class="spacebetween" onclick="Plus(10)">+10</button>
+    <button class="spacebetween" onclick="Minus(10)">-10</button>
+    </div>
+</body>
+</html>
+<script>
+
+    const count = document.getElementById("count")
+    function Plus(num)
+    {
+        count.textContent = parseInt(count.textContent) + parseInt(num)
+    }
+    function Minus(num)
+    {
+        count.textContent = parseInt(count.textContent) - parseInt(num)
+    }
+
+</script>

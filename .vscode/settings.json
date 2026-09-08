@@ -1,3 +1,5 @@
 {
-    "code-runner.runInTerminal": true
+    "code-runner.runInTerminal": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
 }

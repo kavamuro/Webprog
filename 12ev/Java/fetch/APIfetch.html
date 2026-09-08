@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.card {
+
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 250px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+</style>
+<body>
+    <div class="card" id="mainDiv">
+  <div class="container" id="outputCard">
+
+  </div>
+</div>
+</body>
+<script>
+    
+
+        fetch('https://surveys-5jvt.onrender.com/api/cars/')
+        .then(response => {
+        if (!response.ok) {
+        throw new Error('Network response was not ok');
+        }
+        return display.innerHTML = response.json();
+        })
+
+        .then(users => {
+            console.log(users);
+
+            const mainDiv = document.getElementById('mainDiv')
+            users.forEach(e => {
+                const div = document.getElementById('outputCard')
+                div.innerHTML =
+                    `<h3>${e.id}: ${e.model}</h3>
+                    <p>Brand: ${e.brand}</p>
+                    <p>year: ${e.year}</p>`
+                    mainDiv.appendChild(div)
+            });
+        })
+        
+        .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+        });
+    
+        
+</script>
+</html>

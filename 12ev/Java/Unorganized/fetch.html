@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Fetch</title>
+</head>
+<body>
+    <button onclick="writeOut()">CLICK ME!</button>
+    <p id="display"></p>
+</body>
+<script>
+    const display = document.getElementById("display");
+      
+    function writeOut() {
+        fetch('https://jsonplaceholder.org/users')
+        .then(response => {
+        if (!response.ok) {
+        throw new Error('Network response was not ok');
+        }
+        return display.innerHTML = response.json();
+        })
+
+        .then(users => {
+            console.log(users);
+        })
+        
+        .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+        });
+    }
+    
+</script>
+</html>
