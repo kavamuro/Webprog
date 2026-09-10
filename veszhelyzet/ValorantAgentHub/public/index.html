@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valorant Agent Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-mark">V</div>
+    <div class="logo-text">Agent <span>Hub</span></div>
+  </div>
+  <div class="header-actions">
+    <button class="btn btn-primary" id="btn-add">+ Add Agent</button>
+  </div>
+</header>
+
+<main>
+  <div class="hero-bar">
+    <div>
+      <h1 class="hero-title">Agent <span class="highlight">Roster</span></h1>
+      <p class="hero-subtitle">Valorant — All Agents Database</p>
+    </div>
+    <div id="agent-count"><span id="count-num">0</span> agents</div>
+  </div>
+
+  <div class="controls">
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="search-input" placeholder="Search agent by name..." />
+    </div>
+    <select id="role-filter">
+      <option value="">All Roles</option>
+      <option value="Duelist">Duelist</option>
+      <option value="Controller">Controller</option>
+      <option value="Initiator">Initiator</option>
+      <option value="Sentinel">Sentinel</option>
+    </select>
+  </div>
+
+
+  <div class="agents-grid" id="agents-grid">
+    <div class="spinner-wrap"><div class="spinner"></div></div>
+  </div>
+</main>
+
+<div class="modal-overlay" id="modal-detail">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Agent <span class="accent">Profile</span></span>
+      <button class="modal-close" data-close="modal-detail">✕</button>
+    </div>
+    <div class="modal-body">
+      <img class="detail-agent-img" id="detail-img" src="" alt="" />
+      <div class="detail-meta">
+        <span class="detail-chip chip-id" id="detail-id"></span>
+        <span class="detail-chip chip-role" id="detail-role"></span>
+      </div>
+      <div class="detail-name" id="detail-name"></div>
+      <p class="detail-desc" id="detail-desc"></p>
+      <div class="detail-actions">
+        <button class="btn btn-edit" id="detail-btn-edit">Edit Agent</button>
+        <button class="btn btn-danger" id="detail-btn-delete">Delete Agent</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-form">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title" id="form-modal-title">Add <span class="accent">Agent</span></span>
+      <button class="modal-close" data-close="modal-form">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="api-note">
+        Browse agents on <a href="https://valorant-api.com/v1/agents" target="_blank">valorant-api.com</a> for image URLs and data.
+      </div>
+      <input type="hidden" id="form-agent-id" />
+
+      <div class="form-group">
+        <label class="form-label" for="form-name">Name <span class="req">*</span></label>
+        <input class="form-control" type="text" id="form-name" placeholder="e.g. Jett" />
+        <div class="form-error" id="err-name">Name is required.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="form-role">Role</label>
+        <select class="form-control" id="form-role">
+          <option value="">Select role...</option>
+          <option value="Duelist">Duelist</option>
+          <option value="Controller">Controller</option>
+          <option value="Initiator">Initiator</option>
+          <option value="Sentinel">Sentinel</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="form-image">Image URL <span class="req">*</span></label>
+        <input class="form-control" type="text" id="form-image" placeholder="https://..." />
+        <div class="form-error" id="err-image">Image URL is required.</div>
+        <img class="img-preview" id="img-preview" src="" alt="Preview" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="form-desc">Description</label>
+        <textarea class="form-control" id="form-desc" placeholder="Agent background..."></textarea>
+      </div>
+
+      <div class="form-footer">
+        <button class="btn btn-secondary" data-close="modal-form">Cancel</button>
+        <button class="btn btn-primary" id="form-submit">Save Agent</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-confirm">
+  <div class="modal" style="max-width:380px;">
+    <div class="modal-header">
+      <span class="modal-title">Confirm <span class="accent">Delete</span></span>
+      <button class="modal-close" data-close="modal-confirm">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="confirm-icon">⚠</div>
+      <p class="confirm-msg">Are you sure you want to delete<br><strong id="confirm-name"></strong>?</p>
+      <p class="confirm-msg" style="font-size:.85rem; margin-top:.5rem;">This action cannot be undone.</p>
+      <div class="confirm-actions">
+        <button class="btn btn-secondary" data-close="modal-confirm">Cancel</button>
+        <button class="btn btn-danger" id="btn-confirm-delete" style="font-size:.85rem; padding:8px 18px;">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="toast-container"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
