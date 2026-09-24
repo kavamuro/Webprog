@@ -1,0 +1,71 @@
+id,model,brand,year
+1,Corolla,Toyota,2020
+2,Civic,Honda,2019
+3,Model 3,Tesla,2022
+4,Focus,Ford,2018
+5,A4,Audi,2021
+6,3 Series,BMW,2020
+7,C-Class,Mercedes-Benz,2019
+8,Golf,Volkswagen,2017
+9,Octavia,Skoda,2021
+10,Clio,Renault,2018
+11,308,Peugeot,2020
+12,i30,Hyundai,2019
+13,Ceed,Kia,2022
+14,Impreza,Subaru,2016
+15,CX-5,Mazda,2021
+16,X5,BMW,2023
+17,Mustang,Ford,2022
+18,Camry,Toyota,2021
+19,Accord,Honda,2020
+20,Q7,Audi,2019
+21,GLA,Mercedes-Benz,2022
+22,Tiguan,Volkswagen,2021
+23,Sandero,Dacia,2018
+24,Swift,Suzuki,2017
+25,911,Porsche,2023
+26,XC60,Volvo,2020
+27,Challenger,Dodge,2021
+28,Altima,Nissan,2019
+29,Sorento,Kia,2022
+30,Range Rover Evoque,Land Rover,2021
+31,Fiesta,Ford,2016
+32,CR-V,Honda,2021
+33,RAV4,Toyota,2022
+34,E-Class,Mercedes-Benz,2020
+35,A6,Audi,2019
+36,5 Series,BMW,2021
+37,Passat,Volkswagen,2018
+38,Superb,Skoda,2022
+39,Megane,Renault,2017
+40,208,Peugeot,2021
+41,Elantra,Hyundai,2020
+42,Sportage,Kia,2023
+43,Outback,Subaru,2019
+44,MX-5,Mazda,2018
+45,X3,BMW,2020
+46,Explorer,Ford,2022
+47,Prius,Toyota,2017
+48,Leaf,Nissan,2021
+49,Macan,Porsche,2022
+50,XC90,Volvo,2021
+51,Charger,Dodge,2020
+52,Tahoe,Chevrolet,2019
+53,Wrangler,Jeep,2023
+54,Defender,Land Rover,2022
+55,Giulia,Alfa Romeo,2021
+56,Astra,Opel,2018
+57,Corsa,Opel,2019
+58,508,Peugeot,2023
+59,Santa Fe,Hyundai,2022
+60,Sorento Hybrid,Kia,2024
+61,Qashqai,Nissan,2020
+62,CX-30,Mazda,2021
+63,Bentayga,Bentley,2022
+64,Urus,Lamborghini,2023
+65,Panamera,Porsche,2020
+66,Model S,Tesla,2023
+67,EQC,Mercedes-Benz,2021
+68,iX,BMW,2023
+69,ID.4,Volkswagen,2022
+70,Arteon,Volkswagen,2021
