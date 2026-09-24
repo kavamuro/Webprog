@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class SoutIn {
-    static void main() {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 //        IO.println("Elso pelda kiiratashoz.");
 //        System.out.println("Masodik sor.");
