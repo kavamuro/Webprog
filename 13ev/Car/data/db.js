@@ -14,14 +14,14 @@ db.prepare(
 ).run();
 
 export const getCarByBrand = (brand) =>
-  db.prepare("SELECT * FROM cars where brand = ?").get(brand);
+  db.prepare("SELECT * FROM cars where brand = ?").all(brand);
 
 export const getCarByYear = (year) =>
-  db.prepare("SELECT * FROM cars where year = ?").get(year);
+  db.prepare("SELECT * FROM cars where year = ?").all(year);
 
 export const createCar = (model, brand, year) =>
   db
-    .prepare("INSTERT INTO cars (model,brand,year) VALUES (?,?,?)")
+    .prepare("INSERT INTO cars (model,brand,year) VALUES (?,?,?)")
     .run(model, brand, year);
 
 export const updateCar = (id, model, brand, year) =>

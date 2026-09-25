@@ -15,7 +15,7 @@ app.get("/api/cars/brand/:brand", (req, res) => {
 
   res.status(200).json(cars);
 });
-app.get("/api/cars/brand/:year", (req, res) => {
+app.get("/api/cars/year/:year", (req, res) => {
   const year = +req.params.year;
   const cars = db.getCarByYear(year);
 
