@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autók</title>
+    <link rel="stylesheet" href="index.js" />
+
+    <style>
+      body {
+        background-color: gray;
+        color: white;
+      }
+      li {
+        list-style-type: none;
+        border: ridge white 2px;
+        margin: 5px;
+        padding: 5px;
+      }
+      div {
+        width: 50%;
+        margin: 0 auto;
+        border: ridge red 5px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        text-align: center;
+        padding: 10px;
+        border-radius: 20px;
+      }
+      input {
+        margin: 5px;
+        border: ridge red 5px;
+      }
+
+      button {
+        margin: 10px;
+      }
+      #hozzaad {
+        background-color: lightgreen;
+      }
+      #modosit {
+        background-color: yellow;
+      }
+
+      #betoltes {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <h1>Autó manager weboldal</h1>
+      <input type="number" min="5" id="id" placeholder="Autó sorszáma" /> <br />
+      <input type="text" id="marka" placeholder="Autó márkája" /> <br />
+      <input type="text" id="tipus" placeholder="Autó típusa" /> <br />
+      <input type="text" id="ev" placeholder="Autó évjárata" /> <br />
+
+      <button id="betoltes" onclick="getCar()">Frissités</button>
+      <button id="hozzaad" onclick="postCar()">Hozzáadás</button>
+      <button id="modosit" onclick="putCar()">Módosítás</button>
+
+      <ul id="lista"></ul>
+    </div>
+
+    <script>
+      function clearInputs() {
+        document.getElementById("id").value = "";
+        document.getElementById("marka").value = "";
+        document.getElementById("tipus").value = "";
+        document.getElementById("ev").value = "";
+      }
+
+      function loadCars(cars) {
+        const lista = document.getElementById("lista");
+        lista.innerHTML = "";
+
+        cars.forEach(function (e) {
+          const li = document.createElement("li");
+
+          function setShortFormat() {
+            li.textContent = " Model: " + e.model;
+            li.style.backgroundColor = "";
+            li.style.color = "";
+            li.style.fontWeight = "normal";
+            li.dataset.expanded = "false";
+          }
+
+          function setLongFormat() {
+            li.textContent =
+              "ID: " +
+              e.id +
+              "; Model: " +
+              e.model +
+              "; Brand: " +
+              e.brand +
+              "; Year: " +
+              e.year;
+
+            const btn = document.createElement("button");
+            btn.textContent = "Törlés";
+            btn.style.marginLeft = "10px";
+            btn.style.backgroundColor = "red";
+            btn.style.color = "white";
+
+            btn.onclick = function (event) {
+
+              deleteCar(e.id);
+            };
+
+            if  (e.id >4) 
+            {
+            li.appendChild(btn);
+            }
+            li.style.backgroundColor = "white";
+            li.style.color = "black";
+            li.style.fontWeight = "bold";
+            li.dataset.expanded = "true";
+          }
+
+          setShortFormat();
+
+          li.onclick = function () {
+            if (li.dataset.expanded === "true") {
+              setShortFormat();
+            } else {
+              setLongFormat();
+            }
+          };
+
+          lista.appendChild(li);
+        });
+      }
+
+      function getCar() {
+        const cars = [];
+
+        fetch("https://surveys-5jvt.onrender.com/api/cars/")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network was not ok");
+            }
+            return response.json();
+          })
+          .then((allCar) => {
+            console.log(allCar);
+
+            allCar.forEach((i) => {
+              cars.push(i);
+            });
+
+            loadCars(cars);
+          })
+          .catch((error) => {
+            console.error("There was a problem", error);
+          });
+      }
+
+      function postCar() {
+        let nmondel = document.getElementById("tipus").value;
+        let nbrand = document.getElementById("marka").value;
+        let nyear = document.getElementById("ev").value;
+
+         if (nmondel === "" || nbrand === "" || nyear === "") {
+          alert("Minden mezőt ki kell tölteni!");
+          return;
+        }
+        
+        fetch("https://surveys-5jvt.onrender.com/api/cars/", {
+          method: "POST",
+
+          body: JSON.stringify({
+            model: nmondel,
+            brand: nbrand,
+            year: nyear,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        })
+          .then((response) => response.json())
+          .then((json) => console.log(json))
+          .then(() => getCar());
+      }
+
+      function putCar() {
+        let nmondel = document.getElementById("tipus").value;
+        let nbrand = document.getElementById("marka").value;
+        let nyear = document.getElementById("ev").value;
+        let id = document.getElementById("id").value;
+
+        if (nmondel === "" || nbrand === "" || nyear === "") {
+          alert("Minden mezőt ki kell tölteni!");
+          return;
+        }
+
+        if (id < 5) {
+          alert("Az elso 4 autót nem lehet módosítani!");
+          return;
+        }
+
+        fetch("https://surveys-5jvt.onrender.com/api/cars/" + id, {
+          method: "PUT",
+
+          body: JSON.stringify({
+            model: nmondel,
+            brand: nbrand,
+            year: nyear,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        })
+          .then((response) => response.json())
+          .then((json) => console.log(json))
+          .then(() => getCar());
+        clearInputs();
+      }
+
+      function patchCar() {
+        fetch("https://surveys-5jvt.onrender.com/api/cars/6", {
+          method: "PATCH",
+
+          body: JSON.stringify({
+            model: "Crow Victoria",
+            brand: "Ford",
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        })
+          .then((response) => response.json())
+          .then((json) => console.log(json));
+      }
+
+      function deleteCar(id) {
+        fetch("https://surveys-5jvt.onrender.com/api/cars/" + id, {
+          method: "DELETE",
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error("Network response was not OK");
+          })
+          .then((json) => console.log(json))
+          .then(() => getCar())
+          .catch((error) =>
+            console.error(
+              "There was a problem with the fetch operation!",
+              error,
+            ),
+          );
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valorant Agent Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Valorant Agent Hub</h1>
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search by name...">
+            <select id="roleFilter">
+                <option value="">All Roles</option>
+                <option value="Duelist">Duelist</option>
+                <option value="Initiator">Initiator</option>
+                <option value="Controller">Controller</option>
+                <option value="Sentinel">Sentinel</option>
+            </select>
+            <button id="addBtn">+ Add Agent</button>
+        </div>
+    </header>
+
+    <main id="agentGrid" class="grid"></main>
+
+    <div id="detailsModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModals()">&times;</span>
+            <img id="detailImg" src="" alt="Agent">
+            <h2 id="detailName"></h2>
+            <h4 id="detailRole"></h4>
+            <p id="detailDesc"></p>
+            <div class="modal-actions">
+                <button id="editBtn">Edit</button>
+                <button id="deleteBtn" class="danger">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="formModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModals()">&times;</span>
+            <h2 id="formTitle">Add New Agent</h2>
+            <form id="agentForm">
+                <input type="hidden" id="agentId">
+                <input type="text" id="name" placeholder="Agent Name" required>
+                <select id="role" required>
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="Duelist">Duelist</option>
+                    <option value="Initiator">Initiator</option>
+                    <option value="Controller">Controller</option>
+                    <option value="Sentinel">Sentinel</option>
+                </select>
+                <input type="url" id="imageUrl" placeholder="Image URL" required>
+                <textarea id="description" placeholder="Description" rows="4"></textarea>
+                <button type="submit" id="saveBtn">Save Agent</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
