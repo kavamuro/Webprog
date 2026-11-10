@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App\App.csproj" />
+    <PackageReference Include="TaskChecker.Grading" Version="2.1.1" />
+    <PackageReference Include="TaskChecker.Submitter" Version="1.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="8.0.22" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update=".feladatbeallitas.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update=".taskchecker.local.json" CopyToOutputDirectory="PreserveNewest" Condition="Exists('.taskchecker.local.json')" />
+  </ItemGroup>
+</Project>

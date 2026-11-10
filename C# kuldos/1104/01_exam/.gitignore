@@ -1,0 +1,8 @@
+bin/
+obj/
+.vs/
+*.user
+TaskChecker/
+.taskchecker.json
+.taskchecker.local.json
+submission-preview.json
