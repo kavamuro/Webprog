@@ -52,17 +52,28 @@ public class RentalsController(RentalQueryService service) : ControllerBase
     }
 
     // 06. GET api/rentals/completed/days/average
-    public Task<ActionResult<double>> GetAverageCompletedDays()
-        => Task.FromResult<ActionResult<double>>(StatusCode(501));
+    [HttpGet("completed/days/average")]
+    public async Task<ActionResult<double>> GetAverageCompletedDays()
+    {
+        var result = await _service.GetAverageCompletedDaysAsync();
+        return Ok(result);
+    }
 
     // 07. GET api/rentals/by-category/count?category=Economy&minDays=3
     // category: kötelező, nem csak szóköz; minDays >= 1, különben BadRequest.
-    public Task<ActionResult<int>> CountRentalsByCategory([FromQuery] string category, [FromQuery] int minDays)
-        => Task.FromResult<ActionResult<int>>(StatusCode(501));
+    [HttpGet("by-category/count?category=SUV&minDays=3")]
+    public async Task<ActionResult<int>> CountRentalsByCategory([FromQuery] string category, [FromQuery] int minDays)
+    {
+        var result = await _service.CountRentalsByCategoryAsync(category, minDays);
+        return Ok(result);
+    }
 
     // 08. GET api/rentals/completed/late-percentage
-    public Task<ActionResult<double>> GetLateReturnPercentage()
-        => Task.FromResult<ActionResult<double>>(StatusCode(501));
+    public async Task<ActionResult<double>> GetLateReturnPercentage()
+    {
+        var result = await _service.GetLateReturnPercentageAsync();
+        return Ok(result);
+    }
 
     // 09. GET api/rentals/profit
     public Task<ActionResult<decimal>> GetTotalProfit()

@@ -42,24 +42,22 @@ public class RentalQueryService(AppDbContext db)
     }
 
     // 06. Medium: minden Completed rekord Days átlaga; üres találati halmazon 0.
-    public virtual Task<double> GetAverageCompletedDaysAsync()
+    public virtual async Task<double> GetAverageCompletedDaysAsync()
     {
-        // TODO: cseréld az alapértéket a feladat szerinti EF Core lekérdezésre.
-        return Task.FromResult(0d);
+        return await Db.Rentals.Where(x => x.Status == RentalStatus.Completed).AverageAsync(x => (double?)x.Days) ?? 0d;
     }
 
     // 07. Medium: pontos kategóriaegyezés ÉS Days >= minDays, minden állapotból.
-    public virtual Task<int> CountRentalsByCategoryAsync(string category, int minDays)
+    public virtual async Task<int> CountRentalsByCategoryAsync(string category, int minDays)
     {
-        // TODO: cseréld az alapértéket a feladat szerinti EF Core lekérdezésre.
-        return Task.FromResult(0);
+        return await Db.Rentals.Where(x => x.Category == category && x.Days >= minDays).CountAsync();
     }
 
     // 08. Advanced: Completed között ActualDays > Days aránya, 0–100-as skálán.
-    public virtual Task<double> GetLateReturnPercentageAsync()
+    public virtual async Task<double> GetLateReturnPercentageAsync()
     {
         // TODO: cseréld az alapértéket a feladat szerinti EF Core lekérdezésre.
-        return Task.FromResult(0d);
+        return await Db.Rentals.Where(x => x.Status == RentalStatus.Completed && x.ActualDays > x.Days).CountAsync() * 100.0 / await Db.Rentals.Where(x => x.Status == RentalStatus.Completed).CountAsync();
     }
 
     // 09. Advanced: Completed ÉS IsPaid; Days * DailyRate + ExtraFee - Days * CostPerDay.
