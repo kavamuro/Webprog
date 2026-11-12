@@ -1,0 +1,31 @@
+id,name,category,brand,price,quantity
+1,Football,Ball,Adidas,8990,20
+2,Basketball,Ball,Spalding,12990,12
+3,Volleyball,Ball,Mikasa,7990,15
+4,Tennis Racket,Racket,Wilson,24990,8
+5,Badminton Racket,Racket,Yonex,15990,14
+6,Tennis Ball,Ball,Wilson,2490,50
+7,Running Shoes,Shoes,Nike,32990,10
+8,Training Shoes,Shoes,Adidas,28990,16
+9,Sports Socks,Clothing,Puma,2990,45
+10,Football Jersey,Clothing,Adidas,14990,22
+11,Training Shorts,Clothing,Nike,8990,30
+12,Gym Gloves,Accessories,Everlast,4990,18
+13,Boxing Gloves,Accessories,Everlast,18990,7
+14,Yoga Mat,Accessories,Reebok,7990,25
+15,Skipping Rope,Accessories,Domyos,2990,35
+16,Dumbbell 5kg,Fitness,Domyos,5990,12
+17,Dumbbell 10kg,Fitness,Domyos,10990,9
+18,Kettlebell 8kg,Fitness,Adidas,9990,11
+19,Resistance Band,Fitness,Reebok,3490,40
+20,Water Bottle,Accessories,Nike,3990,28
+21,Cycling Helmet,Accessories,Giro,22990,6
+22,Bicycle Gloves,Clothing,Giro,6990,13
+23,Swimming Goggles,Swimming,Arena,8990,17
+24,Swimming Cap,Swimming,Arena,2490,32
+25,Swimming Fins,Swimming,Speedo,12990,5
+26,Table Tennis Bat,Racket,Butterfly,11990,8
+27,Table Tennis Balls,Ball,Butterfly,1990,60
+28,Sports Bag,Bags,Puma,14990,19
+29,Hiking Backpack,Bags,Deuter,35990,4
+30,Protective Helmet,Accessories,Adidas,16990,0
