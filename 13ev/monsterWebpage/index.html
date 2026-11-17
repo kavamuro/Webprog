@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monster Slayer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Monster Slayer</h1>
+    </header>
+
+    <main>
+      <section class="container" id="monster">
+        <h2>Monster Health</h2>
+        <p class="health-value" id="monster-health-value">100</p>
+        <div class="healthbar">
+          <div class="healthbar__value" id="monster-health-bar"></div>
+        </div>
+      </section>
+
+      <section class="container" id="player">
+        <h2>Your Health</h2>
+        <p class="health-value" id="player-health-value">100</p>
+        <div class="healthbar">
+          <div class="healthbar__value" id="player-health-bar"></div>
+        </div>
+      </section>
+
+      <section class="container hidden" id="game-over">
+        <h2>Game Over!</h2>
+        <h3 id="game-over-message"></h3>
+        <button id="new-game-btn">Start New Game</button>
+      </section>
+
+      <section id="controls">
+        <button id="attack-btn">Attack</button>
+        <button id="special-attack-btn">Special Attack</button>
+        <button id="heal-btn">Heal</button>
+        <button id="surrender-btn">Surrender</button>
+      </section>
+
+      <section class="container" id="log">
+        <h2>Battle Log</h2>
+        <ul id="log-list"></ul>
+      </section>
+    </main>
+  </body>
+</html>
