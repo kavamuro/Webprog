@@ -1,0 +1,52 @@
+[
+  {
+    "Name": "Web API",
+    "Projects": [
+      {
+        "Path": "backend\\MyApp.WebApi\\MyApp.WebApi.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "frontend\\admin\\wpf\\MyApp.Admin.Wpf.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "frontend\\client\\wpf\\MyApp.Client.Wpf.csproj",
+        "Action": "Start"
+      }
+    ]
+  },
+  {
+    "Name": "Web API + összes felület",
+    "Projects": [
+      {
+        "Path": "backend\\MyApp.WebApi\\MyApp.WebApi.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "frontend\\client\\wpf\\MyApp.Client.Wpf.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "frontend\\client\\maui\\MyApp.Client.Maui.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "frontend\\client\\winui\\MyApp.Client.WinUI.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "frontend\\admin\\wpf\\MyApp.Admin.Wpf.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "frontend\\admin\\maui\\MyApp.Admin.Maui.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "frontend\\admin\\winui\\MyApp.Admin.WinUI.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

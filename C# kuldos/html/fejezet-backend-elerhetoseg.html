@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A backend elérhetősége · Fullstack üzleti tananyag</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#tartalom">Ugrás a tartalomra</a>
+<header class="site-header"><nav class="wrap header" aria-label="Fő navigáció"><a class="brand" href="index.html">Fullstack üzleti tananyag</a><a href="kereso.html">Kereső</a></nav></header>
+<main class="wrap" id="tartalom">
+<nav class="breadcrumbs" aria-label="Oldal helye"><a href="index.html">Kezdőlap</a></nav><div class="page-intro"><h1><code>01-starter-helty</code> · A backend elérhetősége</h1></div><section><h2>Új kompetenciák</h2><ul><li>A szerver elérhetőségének ellenőrzése</li>
+<li>A felület nyelvének váltása</li></ul></section><section><h2>Cél</h2><p>Jelezd a szerver állapotát, és jelenítsd meg a feliratokat a kiválasztott nyelven.</p></section><section>
+<h2>Feladatok</h2>
+<h3 id="inditas">1. Készíts saját munkamappát és indítsd el a projekteket</h3>
+<p><a href="../01-starter-helty/feladatmegoldas/index.html#masolas">Részletes segítség a projektváz másolásához és indításához</a></p>
+<ol>
+<li>Hozz létre egy munkamappát a saját meghajtódon.</li>
+<li>Másold bele a <code>00b-starter-projekt</code> választott <code>dotnet_08</code> vagy <code>dotnet_10</code> változatának <code>src</code> mappáját.</li>
+<li>Nyisd meg az <code>src</code> mappában lévő solutiont.</li>
+<li>Indítsd el külön a Web API-t a <code>http</code> profillal és a felhasználói WPF klienst.</li>
+<li>Ellenőrizd, hogy a <code>/weatherforecast</code> végpont válaszol, és a WPF ablak megnyílik.</li>
+</ol>
+<h3 id="feladat-01">2. <code>01-basics</code> · Jelenítsd meg a szerver állapotát</h3>
+<p><a href="feladat-szerverallapot-es-nyelvvaltas.html">Részletes feladat – szerverállapot megjelenítése</a></p>
+<ol>
+<li>A <code>MyApp.Shared</code> projektben hozd létre a <code>HealthResponse</code> DTO-t a <code>Status</code> mezővel.</li>
+<li>A Web API-ban készíts <code>GET /api/health</code> végpontot. Ellenőrizd a <code>200 OK</code> választ és az <code>ok</code> állapotot.</li>
+<li>Készíts kliensoldali API service-t, amely meghívja a végpontot és beolvassa a DTO-t. A szerver címét a saját indítási profilodból vedd.</li>
+<li>Kezeld az ellenőrzés alatt, az elérhető és a nem elérhető állapotot a <code>HealthViewModel</code>-ben.</li>
+<li>Kösd a WPF állapotsort a ViewModelhez. Betöltéskor és az <strong>Újrapróbálás</strong> gombnál ugyanazt a parancsot használd.</li>
+<li>Próbáld ki futó és leállított backenddel. Indítsd vissza, és ellenőrizd az újrapróbálást.</li>
+<li>Mutasd meg, hol készül a DTO, hol történik a HTTP-hívás, és melyik kötés jeleníti meg a feliratot.</li>
+</ol>
+<h3 id="feladat-02"><code>02-shared-state-and-localization</code> · Adj hozzá nyelvváltást</h3>
+<p><a href="feladat-kozos-allapot-es-nyelvvaltas.html">Részletes feladat – többnyelvű felület</a></p>
+<ol><li>Folytasd a működő <code>01-basics</code> megoldásodból az induláskori ellenőrzéssel és a kézi újrapróbálással.</li>
+<li>Tedd a feliratokat magyar, angol és német erőforrásfájlokba azonos kulcsokkal.</li>
+<li>Kösd be a WPF nyelvválasztót. Váltáskor a már megjelenített állapot felirata azonnal frissüljön.</li></ol>
+<p><strong>Új kompetenciák.</strong> Erőforrásalapú fordítás, kétirányú adatkötés és változásértesítés.</p>
+<p>A következő négy lecke feladata a felhasználói és az admin WPF-, MAUI- és WinUI-kliensekre is vonatkozik. Mindegyik az előző lecke kész tananyagi megoldásából indul.</p>
+<h3 id="feladat-03"><code>03-backend-configuration</code> · Állítsd be a backend címét</h3>
+<ol>
+<li>Tedd a backend alapcímét beállításfájlba. Gondoskodj róla, hogy fordításkor a fájl mindegyik alkalmazás mellé kerüljön. <a href="../01-starter-helty/03-backend-configuration/src/frontend/backend-settings.json"><code>backend-settings.json</code></a> · <a href="../01-starter-helty/03-backend-configuration/src/frontend/Directory.Build.targets"><code>Directory.Build.targets</code></a></li>
+<li>Az alkalmazás indulásakor olvasd be és ellenőrizd a címet. Ezzel az alapcímmel hozd létre a HTTP-klienst, és add át a health service-nek. <a href="../01-starter-helty/03-backend-configuration/src/shared/MyApp.Client/Configuration/BackendSettings.cs"><code>BackendSettings.cs</code></a> · <a href="../01-starter-helty/03-backend-configuration/src/shared/MyApp.Client/Services/HealthApiService.cs"><code>HealthApiService.cs</code></a></li>
+<li>Kösd be az induláskori ellenőrzést és a kézi újrapróbálást az adminfelületeken is. Módosítsd a lefordított alkalmazás mellé másolt címet egy szabad portra, majd indítsd újra a klienst. Ellenőrizd, hogy hibát jelez, és a működő cím visszaállítása után újra eléri a szervert.</li>
+</ol>
+<details>
+<summary>Módosított fájlok a hat kliensben</summary>
+<ul>
+<li>WPF felhasználó · <a href="../01-starter-helty/03-backend-configuration/src/frontend/client/wpf/App.xaml.cs"><code>App.xaml.cs</code></a> · <a href="../01-starter-helty/03-backend-configuration/src/frontend/client/wpf/MainWindow.xaml.cs"><code>MainWindow.xaml.cs</code></a></li>
+<li>WPF admin · <a href="../01-starter-helty/03-backend-configuration/src/frontend/admin/wpf/App.xaml.cs"><code>App.xaml.cs</code></a> · <a href="../01-starter-helty/03-backend-configuration/src/frontend/admin/wpf/MainWindow.xaml"><code>MainWindow.xaml</code></a> · <a href="../01-starter-helty/03-backend-configuration/src/frontend/admin/wpf/MainWindow.xaml.cs"><code>MainWindow.xaml.cs</code></a></li>
+<li>MAUI felhasználó · <a href="../01-starter-helty/03-backend-configuration/src/frontend/client/maui/App.xaml.cs"><code>App.xaml.cs</code></a> · <a href="../01-starter-helty/03-backend-configuration/src/frontend/client/maui/MainPage.xaml.cs"><code>MainPage.xaml.cs</code></a></li>
+<li>MAUI admin · <a href="../01-starter-helty/03-backend-configuration/src/frontend/admin/maui/App.xaml.cs"><code>App.xaml.cs</code></a> · <a href="../01-starter-helty/03-backend-configuration/src/frontend/admin/maui/MainPage.xaml"><code>MainPage.xaml</code></a> · <a href="../01-starter-helty/03-backend-configuration/src/frontend/admin/maui/MainPage.xaml.cs"><code>MainPage.xaml.cs</code></a></li>
+<li>WINUI felhasználó · <a href="../01-starter-helty/03-backend-configuration/src/frontend/client/winui/App.xaml.cs"><code>App.xaml.cs</code></a> · <a href="../01-starter-helty/03-backend-configuration/src/frontend/client/winui/MainWindow.xaml.cs"><code>MainWindow.xaml.cs</code></a></li>
+<li>WINUI admin · <a href="../01-starter-helty/03-backend-configuration/src/frontend/admin/winui/App.xaml.cs"><code>App.xaml.cs</code></a> · <a href="../01-starter-helty/03-backend-configuration/src/frontend/admin/winui/MainWindow.xaml"><code>MainWindow.xaml</code></a> · <a href="../01-starter-helty/03-backend-configuration/src/frontend/admin/winui/MainWindow.xaml.cs"><code>MainWindow.xaml.cs</code></a></li>
+</ul>
+</details>
+<h3 id="feladat-04"><code>04-app-version</code> · Jelenítsd meg a kliens és a szerver verzióját</h3>
+<ol>
+<li>Állíts be külön kliens- és szerververziót a projektfájlokban. A kliens a saját assemblyjéből olvassa a verzióját. <a href="../01-starter-helty/04-app-version/src/backend/MyApp.WebApi/MyApp.WebApi.csproj"><code>MyApp.WebApi.csproj</code></a> · <a href="../01-starter-helty/04-app-version/src/shared/MyApp.Shared/BuildVersion.cs"><code>BuildVersion.cs</code></a></li>
+<li>Készíts <code>GET /api/version</code> végpontot a szerver verziójához. Próbáld ki külön is a kérést. <a href="../01-starter-helty/04-app-version/src/shared/MyApp.Shared/Models/VersionResponse.cs"><code>VersionResponse.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/backend/MyApp.WebApi/Controllers/VersionController.cs"><code>VersionController.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/backend/MyApp.WebApi/MyApp.WebApi.http"><code>MyApp.WebApi.http</code></a></li>
+<li>Sikeres health check után kérd le a szerververziót. Jelenítsd meg mindkét értéket, és fordítsd le a mezők feliratait. <a href="../01-starter-helty/04-app-version/src/shared/MyApp.Client/Services/VersionApiService.cs"><code>VersionApiService.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/shared/MyApp.Client/ViewModels/HealthViewModel.cs"><code>HealthViewModel.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/shared/MyApp.Client/Resources/AppText.cs"><code>AppText.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/shared/MyApp.Client/Resources/AppResources.resx"><code>AppResources.resx</code></a> · <a href="../01-starter-helty/04-app-version/src/shared/MyApp.Client/Resources/AppResources.en.resx"><code>AppResources.en.resx</code></a> · <a href="../01-starter-helty/04-app-version/src/shared/MyApp.Client/Resources/AppResources.de.resx"><code>AppResources.de.resx</code></a></li>
+<li>Módosítsd csak a backend verzióját, majd indítsd újra a szervert és a klienst. Ellenőrizd, hogy csak a szerververzió változott. Próbáld ki a felületet leállított backend mellett és nyelvváltás után is.</li>
+</ol>
+<details>
+<summary>Módosított fájlok a hat kliensben</summary>
+<ul>
+<li>WPF felhasználó · <a href="../01-starter-helty/04-app-version/src/frontend/client/wpf/App.xaml.cs"><code>App.xaml.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/client/wpf/MainWindow.xaml"><code>MainWindow.xaml</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/client/wpf/MainWindow.xaml.cs"><code>MainWindow.xaml.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/client/wpf/MyApp.Client.Wpf.csproj"><code>MyApp.Client.Wpf.csproj</code></a></li>
+<li>WPF admin · <a href="../01-starter-helty/04-app-version/src/frontend/admin/wpf/App.xaml.cs"><code>App.xaml.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/admin/wpf/MainWindow.xaml"><code>MainWindow.xaml</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/admin/wpf/MainWindow.xaml.cs"><code>MainWindow.xaml.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/admin/wpf/MyApp.Admin.Wpf.csproj"><code>MyApp.Admin.Wpf.csproj</code></a></li>
+<li>MAUI felhasználó · <a href="../01-starter-helty/04-app-version/src/frontend/client/maui/App.xaml.cs"><code>App.xaml.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/client/maui/MainPage.xaml"><code>MainPage.xaml</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/client/maui/MainPage.xaml.cs"><code>MainPage.xaml.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/client/maui/MyApp.Client.Maui.csproj"><code>MyApp.Client.Maui.csproj</code></a></li>
+<li>MAUI admin · <a href="../01-starter-helty/04-app-version/src/frontend/admin/maui/App.xaml.cs"><code>App.xaml.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/admin/maui/MainPage.xaml"><code>MainPage.xaml</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/admin/maui/MainPage.xaml.cs"><code>MainPage.xaml.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/admin/maui/MyApp.Admin.Maui.csproj"><code>MyApp.Admin.Maui.csproj</code></a></li>
+<li>WINUI felhasználó · <a href="../01-starter-helty/04-app-version/src/frontend/client/winui/App.xaml.cs"><code>App.xaml.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/client/winui/MainWindow.xaml"><code>MainWindow.xaml</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/client/winui/MainWindow.xaml.cs"><code>MainWindow.xaml.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/client/winui/MyApp.Client.WinUI.csproj"><code>MyApp.Client.WinUI.csproj</code></a></li>
+<li>WINUI admin · <a href="../01-starter-helty/04-app-version/src/frontend/admin/winui/App.xaml.cs"><code>App.xaml.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/admin/winui/MainWindow.xaml"><code>MainWindow.xaml</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/admin/winui/MainWindow.xaml.cs"><code>MainWindow.xaml.cs</code></a> · <a href="../01-starter-helty/04-app-version/src/frontend/admin/winui/MyApp.Admin.WinUI.csproj"><code>MyApp.Admin.WinUI.csproj</code></a></li>
+</ul>
+</details>
+<h3 id="feladat-05"><code>05-client-logging</code> · Naplózd a kliensoldali hibát</h3>
+<ol>
+<li>Hozz létre alkalmazásonként külön helyi naplófájlt a <code>%LOCALAPPDATA%\MyApp\Logs</code> mappában. Az API-service rögzítse a sikertelen kérés időpontját, műveletét és technikai hibáját. <a href="../01-starter-helty/05-client-logging/src/shared/MyApp.Client/Diagnostics/ClientLog.cs"><code>ClientLog.cs</code></a> · <a href="../01-starter-helty/05-client-logging/src/shared/MyApp.Client/Services/HealthApiService.cs"><code>HealthApiService.cs</code></a> · <a href="../01-starter-helty/05-client-logging/src/shared/MyApp.Client/Services/VersionApiService.cs"><code>VersionApiService.cs</code></a></li>
+<li>Indítsd el a klienst leállított backend mellett. Hasonlítsd össze a felület lefordított hibajelzését a naplóban található <code>GET /api/health</code> bejegyzéssel.</li>
+<li>Indítsd el a backendet, majd kattints az <strong>Újrapróbálás</strong> gombra. Ellenőrizd, hogy a felület ismét elérhetőnek jelzi a szervert, miközben a korábbi hibabejegyzés megmarad a fájlban.</li>
+</ol>
+<details>
+<summary>Módosított fájlok a hat kliensben</summary>
+<ul>
+<li>WPF felhasználó · <a href="../01-starter-helty/05-client-logging/src/frontend/client/wpf/App.xaml.cs"><code>App.xaml.cs</code></a></li>
+<li>WPF admin · <a href="../01-starter-helty/05-client-logging/src/frontend/admin/wpf/App.xaml.cs"><code>App.xaml.cs</code></a></li>
+<li>MAUI felhasználó · <a href="../01-starter-helty/05-client-logging/src/frontend/client/maui/App.xaml.cs"><code>App.xaml.cs</code></a></li>
+<li>MAUI admin · <a href="../01-starter-helty/05-client-logging/src/frontend/admin/maui/App.xaml.cs"><code>App.xaml.cs</code></a></li>
+<li>WINUI felhasználó · <a href="../01-starter-helty/05-client-logging/src/frontend/client/winui/App.xaml.cs"><code>App.xaml.cs</code></a></li>
+<li>WINUI admin · <a href="../01-starter-helty/05-client-logging/src/frontend/admin/winui/App.xaml.cs"><code>App.xaml.cs</code></a></li>
+</ul>
+</details>
+<h3 id="feladat-06"><code>06-user-preferences</code> · Mentsd el a kiválasztott nyelvet</h3>
+<ol>
+<li>Nyelvváltáskor mentsd a nyelvkódot a kliens saját <code>language.txt</code> fájljába. <a href="../01-starter-helty/06-user-preferences/src/shared/MyApp.Client/Configuration/LanguagePreferences.cs"><code>LanguagePreferences.cs</code></a></li>
+<li>Induláskor, az ablak létrehozása előtt töltsd vissza a mentett nyelvet. Ha meg van adva a <code>MYAPP_UI_LANGUAGE</code> környezeti változó támogatott nyelvkóddal, az élvez elsőbbséget. <a href="../01-starter-helty/06-user-preferences/src/shared/MyApp.Client/Resources/AppText.cs"><code>AppText.cs</code></a></li>
+<li>Válassz két eltérő nyelvet a felhasználói és az adminalkalmazásban. Zárd be, majd nyisd meg mindkettőt, és ellenőrizd, hogy külön-külön megjegyezték a választást.</li>
+</ol>
+<details>
+<summary>Módosított fájlok a hat kliensben</summary>
+<ul>
+<li>WPF felhasználó · <a href="../01-starter-helty/06-user-preferences/src/frontend/client/wpf/App.xaml.cs"><code>App.xaml.cs</code></a></li>
+<li>WPF admin · <a href="../01-starter-helty/06-user-preferences/src/frontend/admin/wpf/App.xaml.cs"><code>App.xaml.cs</code></a></li>
+<li>MAUI felhasználó · <a href="../01-starter-helty/06-user-preferences/src/frontend/client/maui/App.xaml.cs"><code>App.xaml.cs</code></a></li>
+<li>MAUI admin · <a href="../01-starter-helty/06-user-preferences/src/frontend/admin/maui/App.xaml.cs"><code>App.xaml.cs</code></a></li>
+<li>WINUI felhasználó · <a href="../01-starter-helty/06-user-preferences/src/frontend/client/winui/App.xaml.cs"><code>App.xaml.cs</code></a></li>
+<li>WINUI admin · <a href="../01-starter-helty/06-user-preferences/src/frontend/admin/winui/App.xaml.cs"><code>App.xaml.cs</code></a></li>
+</ul>
+</details>
+</section>
+<section><h2>Tananyagok</h2><ul class="entries"><li><a href="kapcsolatallapot-inditas.html"><code>01-starter-helty</code> · Közös indítási útmutató</a></li>
+<li><a href="szerver-allapota.html"><code>01-basics</code> · A szerver állapotának megjelenítése</a></li>
+<li><a href="kozos-allapot-es-nyelvek.html"><code>02-shared-state-and-localization</code> · Többnyelvű felület</a></li></ul></section>
+</main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Részletes feladat – többnyelvű felület · Fullstack üzleti tananyag</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#tartalom">Ugrás a tartalomra</a>
+<header class="site-header"><nav class="wrap header" aria-label="Fő navigáció"><a class="brand" href="index.html">Fullstack üzleti tananyag</a><a href="kereso.html">Kereső</a></nav></header>
+<main class="wrap" id="tartalom">
+<nav class="breadcrumbs" aria-label="Oldal helye"><a href="index.html">Kezdőlap</a> <span aria-hidden="true">/</span> <a href="fejezet-backend-elerhetoseg.html">A backend elérhetősége</a></nav>
+<div class="page-intro">
+<h1><code>02-shared-state-and-localization</code> · Többnyelvű felület</h1>
+<p>Folytasd a saját működő 01-es megoldásodból. Az állapotsor a meglévő ellenőrzés eredményét jelenítse meg a kiválasztott nyelven.</p>
+<p><a href="../01-starter-helty/feladatmegoldas/localization.html#nyelv">Lépésenkénti segítség a bal oldali menüs útmutatóban</a> · <a href="../01-starter-helty/02-shared-state-and-localization/doc/kozos-allapot-es-nyelvek.md">Tananyag és kipróbálás</a></p>
+<p>Haladj a fejezet rövid feladatleírásából. Ha elakadsz, nyisd meg az adott lépés útmutatóját, majd ott a <strong>Mit nézz meg a kész mintában?</strong> részt. A saját projektedben ellenőrizd a működést.</p>
+</div>
+<section>
+<h2>A rétegek feladata</h2>
+<ol class="entries">
+<li><h3>Web API és kliensoldali service</h3><p><a href="../01-starter-helty/feladatmegoldas/localization.html#kiindulas">Lépésenkénti segítség</a></p><p>Használd a meglévő <code>GET /api/health</code> végpontot és a <code>HealthApiService</code>-t. Betöltéskor és a kézi újrapróbáláskor továbbra is ugyanaz a parancs hívja a service-t.</p></li>
+<li><h3>Erőforrások és nyelvválasztó</h3><p><a href="../01-starter-helty/feladatmegoldas/localization.html#nyelv">Lépésenkénti segítség</a></p><p>Használj egy-egy közös kulcsot mindhárom erőforrásfájlban. Az <code>AppText</code> válassza ki a nyelvet. A WPF nyelvválasztó <code>SelectedItem</code> értékét kétirányúan kösd a <code>SelectedLanguage</code> propertyhez. Nyelvváltáskor a ViewModelek jelezzék a feliratok változását.</p></li>
+</ol>
+<p><strong>Új kompetenciák.</strong> Erőforráskulcsok, kétirányú kötés és változásértesítés.</p>
+</section>
+<section>
+<h2>Ellenőrzés</h2>
+<p><a href="../01-starter-helty/feladatmegoldas/localization.html#ellenorzes">Ellenőrzés a menüs útmutatóban</a></p>
+<ol>
+<li>Indítsd a klienst leállított backenddel. Indítsd el a backendet, majd ellenőrizd a kézi újrapróbálást.</li>
+<li>Válts magyarra, angolra és németre. Figyeld meg, hogyan frissül ugyanannak az állapotnak a felirata.</li>
+</ol>
+</section>
+<p>Opcionális folytatás a 02-es feladat után. <a href="uzleti-kapcsolatfigyeles.html">Üzleti minta – automatikus kapcsolatfigyelés többnyelvű felületen</a></p>
+</main>
+</body>
+</html>

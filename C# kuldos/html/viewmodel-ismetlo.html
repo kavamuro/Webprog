@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ViewModel-ismétlő a közös munkához és az önálló feladathoz · Fullstack üzleti tananyag</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#tartalom">Ugrás a tartalomra</a>
+<header class="site-header"><nav class="wrap header" aria-label="Fő navigáció"><a class="brand" href="index.html">Fullstack üzleti tananyag</a><a href="kereso.html">Kereső</a></nav></header>
+<main class="wrap" id="tartalom">
+<nav class="breadcrumbs" aria-label="Oldal helye"><a href="index.html">Kezdőlap</a> / <a href="fejezet-uzleti-mvp-feladatok.html">Üzleti folyamatok és MVP-feladatok</a></nav>
+<div class="page-intro"><h1>ViewModel-ismétlő a közös munkához és az önálló feladathoz</h1></div>
+<article class="prose">
+
+<p>Az 01-es tanári bemutató és a 02-es önálló munka előtt járd végig ezt az összefoglalót. A próbákat saját gyakorlóprojektben vagy a másolt diákpéldányban végezd. A minták az összefüggéseket mutatják, a konkrét neveket mindig a kész felületből és a service-szerződésből olvasd ki.</p>
+<nav class="actions" aria-label="Ismétlő témái"><a href="#property">Propertyk</a><a href="#parancs">Parancsok</a><a href="#parameter">Paraméter</a><a href="#async">Aszinkron működés</a><a href="#lista">Lista</a><a href="#fugges">Függő értékek</a><a href="#allapot">Üzleti állapot</a></nav>
+<h2 id="property">1. A mezőből a felület által figyelt property lesz</h2>
+<p>Az ObservableObject változásértesítést ad. A partial osztályban az ObservableProperty attribútum hatására a Community Toolkit fordításkor létrehozza a publikus propertyt. A XAML ehhez kötődik, ezért a műveletekben ezt állítsd.</p>
+<pre><code>[ObservableProperty]
+private string description = string.Empty;
+
+// A műveletben a generált publikus property változik.
+Description = string.Empty;</code></pre>
+<p>A Description a felhasználó adatát tárolja. A StatusMessage, HasError és IsBusy a felület visszajelzéseit vezérli. A backendnek a kérés DTO-jában meghatározott adatokat küldjük.</p>
+<p><strong>Kis próba.</strong> Egy kötött szövegmezőben adj új értéket a generált propertynek egy gomb hatására. Figyeld meg a feliratot. Miért nem a privát mezőt állítjuk?</p>
+<h2 id="parancs">2. A metódusból parancs lesz</h2>
+<pre><code>private bool CanSubmit() =&gt; !IsBusy;
+
+[RelayCommand(CanExecute = nameof(CanSubmit))]
+private async Task SubmitAsync()
+{
+    // A művelet helye.
+}</code></pre>
+<p>A SubmitAsync metódusból SubmitCommand keletkezik. Ezt köti a gomb Command tulajdonsága. A CanExecute azt mondja meg, mikor indítható a parancs. Az IsBusy változásakor kérni kell az engedélyezési feltétel újraértékelését.</p>
+<pre><code>[ObservableProperty]
+[NotifyCanExecuteChangedFor(nameof(SubmitCommand))]
+private bool isBusy;</code></pre>
+<p><strong>Kis próba.</strong> Vizsgáld meg, mi történik a gombbal IsBusy igaz, majd hamis értékénél. Mondd el külön a RelayCommand és a NotifyCanExecuteChangedFor szerepét.</p>
+<h2 id="parameter">3. Egy sor gombja a sor adatát adja át</h2>
+<p>A listában több Lezárás gomb van. A CommandParameter adja át, melyik rekordhoz tartozó gombot nyomták meg. A WPF mintában a gomb parancskötése a szülő ViewModelre mutat, a paraméterkötés a sor objektumát adja.</p>
+<pre><code>private bool CanClose(ReportResponse? report) =&gt;
+    !IsBusy &amp;&amp; report is { IsClosed: false };</code></pre>
+<p>A kérdőjel azt jelzi, hogy a paraméter null is lehet. A feltétel csak létező, nyitott rekordnál ad igazat. A metódus elején is védd a műveletet. A mintában később használt report! a fordító figyelmeztetését kezeli, a nullérték futásidejű ellenőrzését a korábbi feltétel végzi.</p>
+<p><strong>Kis próba.</strong> Az 01-es admin XAML-ben keresd meg a Command és CommandParameter kötést. Magyarázd el, miért a rekord Id mezőjét kapja az API. Admin WPF-nézet · <a href="../02-mvp_projects/dotnet_10/exam/01_exam/frontend/admin/wpf/MainWindow.xaml">.NET 10</a> · <a href="../02-mvp_projects/dotnet_08/exam/01/frontend/admin/wpf/MainWindow.xaml">.NET 8</a></p>
+<h2 id="async">4. Az API-hívás alatt a felület állapotot jelez</h2>
+<p>A konstruktorban kapott service már rendelkezésre áll. Az await megvárja az aszinkron művelet eredményét. A try sikeres ágában kezeld az eredményt, a catch ágakban a hibát. A finally mindkét esetben visszaállítja a várakozási jelzőt.</p>
+<pre><code>if (IsBusy) return;
+
+try
+{
+    IsBusy = true;
+    HasError = false;
+    // var result = await ...;
+    // A mezők és az üzenet sikeres frissítése.
+}
+catch (ApiException exception)
+{
+    HasError = true;
+    StatusMessage = exception.Message;
+}
+catch (Exception exception)
+{
+    HasError = true;
+    StatusMessage = $"Nem sikerült kapcsolódni a backendhez: {exception.Message}";
+}
+finally
+{
+    IsBusy = false;
+}</code></pre>
+<p><strong>Kis próba.</strong> A tanári bemutatóban állítsátok le a backendet egy művelet előtt. Miért kell a finally akkor is, ha a kérés hibát dob? Hiba esetén miért marad meg a beírt adat?</p>
+<h2 id="lista">5. Teljes lista és egyetlen sor frissítése</h2>
+<p>Az ObservableCollection jelzi a sorok hozzáadását, eltávolítását és cseréjét a felületnek. Betöltéskor a visszakapott teljes listából új kollekció készül. Egy lezárásnál viszont az Id alapján megkeresett elem cserélődik le a backend friss válaszára. Ez a sor állapotát és a sorhoz kötött gomb megjelenését is frissíti.</p>
+<p><strong>Kis próba.</strong> Az 01-es megoldásban keresd meg a teljes kollekció létrehozását és a listaelem cseréjét. Mondd el, melyik miért szükséges. AdminReportsViewModel.cs · <a href="../02-mvp_projects/dotnet_10/solved/01_solved/shared/MyApp.Client/ViewModels/AdminReportsViewModel.cs">.NET 10</a> · <a href="../02-mvp_projects/dotnet_08/solved/01_solved/shared/MyApp.Client/ViewModels/AdminReportsViewModel.cs">.NET 8</a></p>
+<h2 id="fugges">6. Egy adat változása több felületi értéket érinthet</h2>
+<p>A 02-esben a CurrentQuestion tárolja az aktuális kérdést. A HasQuestion ebből számolható, ezért külön értesítést igényel, ha a CurrentQuestion megváltozik. Az ugyanettől függő parancs engedélyezését is újra kell értékelni.</p>
+<pre><code>[ObservableProperty]
+[NotifyPropertyChangedFor(nameof(HasQuestion))]
+[NotifyCanExecuteChangedFor(nameof(SubmitAnswerCommand))]
+private RandomQuestionResponse? currentQuestion;
+
+public bool HasQuestion =&gt; CurrentQuestion is not null;</code></pre>
+<p>A NotifyPropertyChangedFor a számított felületi propertyt frissíti. A NotifyCanExecuteChangedFor a parancs használhatóságát értékeli újra. A 02-esben a HasAnswered további helyi állapot, amely a már beküldött válasz ismétlését tiltja.</p>
+<p><strong>Kis próba.</strong> Írd le, mit jelent a beküldésnél a három feltétel együtt — nincs folyamatban művelet, van kérdés, még nem válaszoltál. Mi történjen új kérdés betöltésekor?</p>
+<h2 id="allapot">7. A szerver üzleti állapotot is visszaadhat</h2>
+<p>A 04-esben a SubmissionStatus enum három elnevezett értéke segíti a szerverválasz értelmezését. Egy sikeres lekérés eredménye lehet függőben lévő vagy kitiltott beküldés is.</p>
+<table><thead><tr><th>Érték</th><th>Jelentés</th><th>Adminművelet</th></tr></thead><tbody>
+<tr><td>Pending</td><td>Jóváhagyásra vár</td><td>Jóváhagyás vagy kitiltás</td></tr>
+<tr><td>Approved</td><td>Jóváhagyva</td><td>Végleges döntés</td></tr>
+<tr><td>Banned</td><td>Kitiltva</td><td>Végleges döntés</td></tr>
+</tbody></table>
+<p>A switch kifejezés minden értékhez üzenetet rendelhet. Gyakorlásként írj egy háromállapotú, saját példát, és mindegyik értékhez válassz más szöveget. Ezután olvasd el a 04-es követelményeit.</p>
+<h2>Vissza a feladatokhoz</h2>
+<p><a href="hibabejelentes-es-lezaras.html">01 · Tanári bemutató</a> · <a href="kerdesek-es-valaszok.html">02 · Vezetett gyakorlás</a></p>
+
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automatikus kapcsolatfigyelés többnyelvű felületen · Fullstack üzleti tananyag</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#tartalom">Ugrás a tartalomra</a>
+<header class="site-header"><nav class="wrap header" aria-label="Fő navigáció"><a class="brand" href="index.html">Fullstack üzleti tananyag</a><a href="kereso.html">Kereső</a></nav></header>
+<main class="wrap" id="tartalom">
+<nav class="breadcrumbs" aria-label="Oldal helye"><a href="index.html">Kezdőlap</a> <span aria-hidden="true">/</span> <a href="feladat-kozos-allapot-es-nyelvvaltas.html">02 · Többnyelvű felület</a></nav>
+<div class="page-intro">
+<h1>Üzleti minta – automatikus kapcsolatfigyelés többnyelvű felületen</h1>
+<p>Opcionális folytatás a 02-es feladat után. A példában a WPF ablak akkor is követi a backend állapotát, ha a felhasználó közben semmire sem kattint.</p>
+</div>
+<section>
+<h2>1. Figyeld meg a különbséget</h2>
+<p>Az üzleti változatból indítsd el a Web API-t és a felhasználói WPF klienst. Várd meg, amíg az állapotsor elérhetőnek jelzi a szervert, majd a kliensablakot nyitva hagyva állítsd le a Web API-t. A következő időzített ellenőrzés után megjelenik a hibajelzés és az Újrapróbálás gomb. A 02-es alapváltozat ugyanekkor az utolsó eredményt mutatja. Ott a kliens újbóli megnyitásával tudsz új ellenőrzést indítani, ha még a sikeres állapot látszik.</p>
+<p><a href="../01-starter-helty/02-shared-state-and-localization/business-solution/src/MyApp.slnx">Visual Studio-megoldás</a> · <a href="../01-starter-helty/02-shared-state-and-localization/business-solution/README.md">Projekt áttekintése</a></p>
+<p>Parancssorból az üzleti változat <code>src</code> mappájában futtasd ezt a két parancsot külön terminálban.</p>
+<pre><code>dotnet run --project backend/MyApp.WebApi --launch-profile http
+dotnet run --project frontend/client/wpf</code></pre>
+</section>
+<section>
+<h2>2. Kövesd a kódot</h2>
+<ul class="entries">
+<li><p><strong>Ki és mikor ellenőriz?</strong> A <code>MonitorAsync</code> betöltéskor azonnal lekéri az állapotot, majd egy tíz másodperces időzítő indítja a következő kéréseket. Ha épp fut egy ellenőrzés, az új kérés kimarad. Ablakbezáráskor a ViewModel megszakítja a figyelést. <a href="../01-starter-helty/02-shared-state-and-localization/business-solution/src/shared/MyApp.Client/Connectivity/BackendConnectionMonitor.cs">BackendConnectionMonitor.cs</a></p></li>
+<li><p><strong>Honnan kap adatot a két nézetrész?</strong> A WPF ablak ugyanazt a monitorpéldányt adja mindkét ViewModelnek. Az állapotsor a <code>State</code> értékét figyeli, a kapcsolati részletek panelje pedig a <code>LastCheckedAt</code> értékét. <a href="../01-starter-helty/02-shared-state-and-localization/business-solution/src/frontend/client/wpf/MainWindow.xaml.cs">WPF bekötés</a> · <a href="../01-starter-helty/02-shared-state-and-localization/business-solution/src/shared/MyApp.Client/ViewModels/HealthViewModel.cs">HealthViewModel.cs</a> · <a href="../01-starter-helty/02-shared-state-and-localization/business-solution/src/shared/MyApp.Client/ViewModels/ConnectionDetailsViewModel.cs">ConnectionDetailsViewModel.cs</a></p></li>
+<li><p><strong>Mi történik nyelvváltáskor?</strong> Az <code>AppText</code> a kiválasztott nyelv alapján adja vissza az állapot feliratát. A részletek ViewModelje ugyanezzel a kultúrával formázza az ellenőrzés idejét. Nyelvváltáskor mindkettő a monitor már meglévő adatait jeleníti meg. <a href="../01-starter-helty/02-shared-state-and-localization/business-solution/src/shared/MyApp.Client/Resources/AppText.cs">AppText.cs</a></p></li>
+</ul>
+</section>
+<section>
+<h2>3. Próbáld ki a helyreállást és a nyelvváltást</h2>
+<ol>
+<li>Amikor az állapotsor már jelzi a hibát, indítsd újra a Web API-t. Várd meg, amíg a kliens magától újra elérhetőnek jelzi a szervert. Figyeld meg az utolsó ellenőrzés idejét is.</li>
+<li>Válts magyar, angol és német között. Figyeld meg, hogyan változik ugyanannak az állapotnak a felirata és az időpont megjelenítése.</li>
+<li>Mondd el, melyik osztály küldi a kérést, melyik tárolja az eredményt, és hol lesz az állapotból lefordított felirat.</li>
+</ol>
+<p><a href="../01-starter-helty/02-shared-state-and-localization/business-solution/doc/kozos-allapot-es-nyelvek.md">Részletes magyarázat és további kipróbálási lépések</a></p>
+</section>
+</main>
+</body>
+</html>

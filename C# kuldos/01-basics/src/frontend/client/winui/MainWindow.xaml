@@ -1,0 +1,22 @@
+<Window x:Class="MyApp.Client.WinUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:MyApp.Client.WinUI"
+        Title="Kapcsolat ellenőrzése – WinUI">
+    <Grid RowDefinitions="*,Auto" Loaded="CheckConnectionOnLoad">
+        <TextBlock Text="Fullstack kiinduló alkalmazás" Margin="24" FontSize="22" />
+        <Border Grid.Row="1" MinHeight="40" Padding="12,6"
+                Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+            <StackPanel Orientation="Horizontal" Spacing="8">
+                <TextBlock Text="✓" VerticalAlignment="Center"
+                           Foreground="{ThemeResource SystemFillColorSuccessBrush}"
+                           Visibility="{x:Bind local:MainWindow.BoolToVisibility(ViewModel.IsAvailable), Mode=OneWay}" />
+                <TextBlock Text="⚠" VerticalAlignment="Center"
+                           Visibility="{x:Bind local:MainWindow.BoolToVisibility(ViewModel.HasConnectionError), Mode=OneWay}" />
+                <TextBlock Text="{x:Bind ViewModel.StatusMessage, Mode=OneWay}" VerticalAlignment="Center" />
+                <Button Content="Újrapróbálás" Command="{x:Bind ViewModel.CheckConnectionCommand}"
+                        Visibility="{x:Bind local:MainWindow.BoolToVisibility(ViewModel.HasConnectionError), Mode=OneWay}" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

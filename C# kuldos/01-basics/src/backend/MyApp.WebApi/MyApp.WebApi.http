@@ -1,0 +1,5 @@
+@host = http://localhost:5056
+
+### Él-e a backend? 200 és {"status":"ok"}
+GET {{host}}/api/health
+Accept: application/json

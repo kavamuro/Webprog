@@ -1,0 +1,19 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MyApp.Client.ViewModels;assembly=MyApp.Client"
+             x:Class="MyApp.Client.Maui.MainPage"
+             x:DataType="vm:HealthViewModel"
+             Title="Kapcsolat ellenőrzése – MAUI">
+    <Grid RowDefinitions="*,Auto">
+        <Label Text="Fullstack kiinduló alkalmazás" Margin="24" FontSize="22" />
+        <HorizontalStackLayout Grid.Row="1" Padding="12,6" Spacing="8" MinimumHeightRequest="40"
+                               BackgroundColor="{AppThemeBinding Light=#F2F2F2, Dark=#262626}">
+            <Label Text="✓" IsVisible="{Binding IsAvailable}" VerticalOptions="Center"
+                   TextColor="{AppThemeBinding Light=#137333, Dark=#81C995}" />
+            <Label Text="⚠" IsVisible="{Binding HasConnectionError}" VerticalOptions="Center" />
+            <Label Text="{Binding StatusMessage}" VerticalOptions="Center" />
+            <Button Text="Újrapróbálás" Command="{Binding CheckConnectionCommand}"
+                    IsVisible="{Binding HasConnectionError}" VerticalOptions="Center" />
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

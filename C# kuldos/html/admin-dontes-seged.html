@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Közös művelet kiemelése segédmetódusba · Fullstack üzleti tananyag</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#tartalom">Ugrás a tartalomra</a>
+<header class="site-header"><nav class="wrap header" aria-label="Fő navigáció"><a class="brand" href="index.html">Fullstack üzleti tananyag</a><a href="kereso.html">Kereső</a></nav></header>
+<main class="wrap" id="tartalom">
+<nav class="breadcrumbs" aria-label="Oldal helye"><a href="index.html">Kezdőlap</a> / <a href="fejezet-uzleti-mvp-feladatok.html">Üzleti folyamatok és MVP-feladatok</a></nav>
+<div class="page-intro"><h1>Közös művelet kiemelése segédmetódusba</h1></div>
+<article class="prose">
+
+<p>Ajánlott olvasmány a 04-es AdminSubmissionsViewModel elkészítése előtt. A jóváhagyás és a kitiltás külön metódusokban is megoldható. Ez a minta a közös lépések egy helyen történő megírását mutatja.</p>
+<h2>Melyik rész ismétlődne?</h2>
+<p>Mindkét művelet ellenőrzi a kiválasztott sort, várakozási állapotot állít be, meghívja az API-t, a válasz alapján lecseréli a lista érintett elemét, majd üzenetet ír. A hibakezelés és az IsBusy visszaállítása is azonos. Az API-művelet neve tér el.</p>
+<h2>Három metódus, két döntési lehetőség</h2>
+<p>Az ApproveAsync és a BanAsync a gombokhoz tartozó parancsmetódusok. A DecideAsync saját segédmetódus. A bool approve paraméter true értéke jóváhagyást, false értéke kitiltást jelent. A listabetöltés továbbra is külön művelet.</p>
+<pre><code>[RelayCommand(CanExecute = nameof(CanDecide))]
+private Task ApproveAsync(StudentSubmissionResponse? submission)
+    =&gt; DecideAsync(submission, approve: true);
+
+[RelayCommand(CanExecute = nameof(CanDecide))]
+private Task BanAsync(StudentSubmissionResponse? submission)
+    =&gt; DecideAsync(submission, approve: false);
+
+private async Task DecideAsync(
+    StudentSubmissionResponse? submission,
+    bool approve)
+{
+    // Ellenőrzés, várakozás, API-hívás, sorfrissítés és hibakezelés.
+}</code></pre>
+<p>A két parancs Task eredménnyel továbbadja a közös aszinkron műveletet. A RelayCommand attribútumokkal létrejön az ApproveCommand és a BanCommand. A DecideAsync közvetlenül a két metódusból hívódik.</p>
+<h2>Hogyan töltsd ki a közös részt?</h2>
+<ol>
+<li>Csak létező és Pending állapotú sor esetén kezdj műveletet. Ha IsBusy igaz, várj az aktuális művelet végéig.</li>
+<li>A try ágban állítsd be a felületi jelzőket. Az approve paraméter alapján az ApproveAsync vagy a BanAsync service-műveletet várd meg.</li>
+<li>Az eredmény Id mezőjével keresd meg a listában a korábbi elemet, és cseréld le a szerver válaszára.</li>
+<li>Az ismert catch ágakkal adj visszajelzést, a finally blokkban állítsd vissza az IsBusy értékét.</li>
+</ol>
+<p><strong>Átgondolás.</strong> Ha később változik az egységes hibajelzés, ebben a felépítésben hol kell módosítanod? Külön műveletmetódusoknál hány helyen jelenne meg ugyanaz a változtatás?</p>
+<details><summary>Kidolgozott megoldás összehasonlításhoz</summary><p>AdminSubmissionsViewModel.cs · <a href="../02-mvp_projects/dotnet_10/solved/04_solved/shared/MyApp.Client/ViewModels/AdminSubmissionsViewModel.cs">.NET 10</a> · <a href="../02-mvp_projects/dotnet_08/solved/04_solved/shared/MyApp.Client/ViewModels/AdminSubmissionsViewModel.cs">.NET 8</a></p></details>
+<p><a href="admin-dontes.html#admin">Vissza az önálló adminfeladathoz</a></p>
+
+</article>
+</main>
+</body>
+</html>

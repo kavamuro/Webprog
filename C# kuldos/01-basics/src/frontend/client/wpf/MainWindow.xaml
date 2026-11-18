@@ -1,0 +1,25 @@
+<Window x:Class="MyApp.Client.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kapcsolat ellenőrzése – WPF" Height="500" Width="800" MinWidth="410">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
+    </Window.Resources>
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom" MinHeight="40">
+            <StatusBarItem>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="✓" Foreground="ForestGreen" Margin="0,0,6,0"
+                               Visibility="{Binding IsAvailable, Converter={StaticResource BoolToVisibility}}" />
+                    <TextBlock Text="⚠" Margin="0,0,6,0"
+                               Visibility="{Binding HasConnectionError, Converter={StaticResource BoolToVisibility}}" />
+                    <TextBlock Text="{Binding StatusMessage}" />
+                </StackPanel>
+            </StatusBarItem>
+            <StatusBarItem Visibility="{Binding HasConnectionError, Converter={StaticResource BoolToVisibility}}">
+                <Button Content="Újrapróbálás" Command="{Binding CheckConnectionCommand}" />
+            </StatusBarItem>
+        </StatusBar>
+        <TextBlock Text="Fullstack kiinduló alkalmazás" Margin="24" FontSize="22" />
+    </DockPanel>
+</Window>

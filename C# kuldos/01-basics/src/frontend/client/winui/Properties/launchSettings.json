@@ -1,0 +1,5 @@
+{
+  "profiles": {
+    "MyApp.Client.WinUI": { "commandName": "Project" }
+  }
+}

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin döntés és diákazonosítás – önálló feladat · Fullstack üzleti tananyag</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#tartalom">Ugrás a tartalomra</a>
+<header class="site-header"><nav class="wrap header" aria-label="Fő navigáció"><a class="brand" href="index.html">Fullstack üzleti tananyag</a><a href="kereso.html">Kereső</a></nav></header>
+<main class="wrap mvp-lesson" id="tartalom">
+<nav class="breadcrumbs" aria-label="Oldal helye"><a href="index.html">Kezdőlap</a> / <a href="fejezet-uzleti-mvp-feladatok.html">Üzleti folyamatok és MVP-feladatok</a></nav>
+<div class="page-intro"><h1>Admin döntés és diákazonosítás – önálló feladat</h1></div>
+<article class="prose lesson-content">
+<div class="lesson-lead">
+
+<p>A kész 03-as beküldési és listázási folyamatot bővíted két admin döntéssel és a diák állapotlekérdezésével. A saját 04-es diákpéldányban a korábbi működés már szerepel, az új műveletek helye elő van készítve.</p>
+</div>
+<section class="lesson-section lesson-section-wide" aria-labelledby="teljes-folyamat"><h2 id="teljes-folyamat">A teljes üzleti folyamat</h2>
+<figure class="complete-flow"><a href="../02-mvp_projects/dotnet_08/solved/04_solved/task/uzleti-folyamat.svg" aria-label="A teljes folyamatábra megnyitása eredeti méretben"><img src="../02-mvp_projects/dotnet_08/solved/04_solved/task/uzleti-folyamat.svg" width="2440" height="1460" alt="A függő beküldés adminisztrátori jóváhagyása vagy kitiltása, majd a diák aktuális állapotának lekérdezése."></a><figcaption>A teljes ábra kattintással eredeti méretben is megnyitható. <a href="../02-mvp_projects/dotnet_08/solved/04_solved/task/uzleti-folyamat.drawio">Szerkeszthető draw.io változat</a></figcaption></figure>
+</section>
+<section class="lesson-section"><h2>Kiinduló projekt és munkafájlok</h2><p>Másold a választott diákpéldány teljes projektjét saját munkamappába. A kész backend, API-service és a hat felület mellé a két közös ViewModelben készíted el a működést.</p><p>Kiinduló solution · <a href="../02-mvp_projects/dotnet_10/exam/04_exam/MyApp.slnx">.NET 10</a> · <a href="../02-mvp_projects/dotnet_08/exam/04/MyApp.sln">.NET 8</a></p><p>Indítás és projektfelépítés · <a href="../02-mvp_projects/dotnet_10/exam/04_exam/README.md">.NET 10</a> · <a href="../02-mvp_projects/dotnet_08/exam/04/README.md">.NET 8</a></p><ul><li>StudentSubmissionViewModel.cs · <a href="../02-mvp_projects/dotnet_10/exam/04_exam/shared/MyApp.Client/ViewModels/StudentSubmissionViewModel.cs">.NET 10</a> · <a href="../02-mvp_projects/dotnet_08/exam/04/shared/MyApp.Client/ViewModels/StudentSubmissionViewModel.cs">.NET 8</a></li><li>AdminSubmissionsViewModel.cs · <a href="../02-mvp_projects/dotnet_10/exam/04_exam/shared/MyApp.Client/ViewModels/AdminSubmissionsViewModel.cs">.NET 10</a> · <a href="../02-mvp_projects/dotnet_08/exam/04/shared/MyApp.Client/ViewModels/AdminSubmissionsViewModel.cs">.NET 8</a></li></ul><p>A kész service-szerződésekben találhatók a hívható műveletek és a visszatérési típusok. IStudentApiService.cs · <a href="../02-mvp_projects/dotnet_10/exam/04_exam/shared/MyApp.Client/Services/IStudentApiService.cs">.NET 10</a> · <a href="../02-mvp_projects/dotnet_08/exam/04/shared/MyApp.Client/Services/IStudentApiService.cs">.NET 8</a> · IAdminApiService.cs · <a href="../02-mvp_projects/dotnet_10/exam/04_exam/shared/MyApp.Client/Services/IAdminApiService.cs">.NET 10</a> · <a href="../02-mvp_projects/dotnet_08/exam/04/shared/MyApp.Client/Services/IAdminApiService.cs">.NET 8</a></p>
+</section>
+<section class="lesson-section lesson-section-wide"><h2 id="kotott-tagok">A kész felület által elvárt nevek</h2><p>A táblázatok megadják a szükséges property- és parancsneveket. A parancsokat a RelayCommand attribútum generálja a megfelelő metódusokból. Az IsBusy műveleti jelzőt a ViewModel kezeli.</p>
+<div class="member-panels"><div class="member-panel"><h3>Felhasználói ViewModel</h3><div class="table-scroll"><table class="member-table"><thead><tr><th scope="col">Tag és típus</th><th scope="col">Szerepe a felületen</th></tr></thead><tbody><tr><th scope="row"><code class="member-name">StudentId</code><span class="member-type">string</span></th><td>A beküldendő azonosító.</td></tr><tr><th scope="row"><code class="member-name">StatusMessage</code><span class="member-type">string</span></th><td>A művelet üzenete.</td></tr><tr><th scope="row"><code class="member-name">HasError</code><span class="member-type">bool</span></th><td>A hibaüzenet színezése.</td></tr><tr><th scope="row"><code class="member-name">IdentificationStudentId</code><span class="member-type">string</span></th><td>Az állapotlekéréshez megadott azonosító.</td></tr><tr><th scope="row"><code class="member-name">IdentificationMessage</code><span class="member-type">string</span></th><td>Az azonosítás saját eredményüzenete.</td></tr><tr><th scope="row"><code class="member-name">HasIdentificationError</code><span class="member-type">bool</span></th><td>Az azonosítás saját hibajelzése.</td></tr><tr><th scope="row"><code class="member-name">IsBusy</code><span class="member-type">bool</span></th><td>ViewModelben tárolt műveleti jelző. A párhuzamos műveletek tiltását vezérli.</td></tr><tr><th scope="row"><code class="member-name">SubmitCommand</code><span class="member-type">parancs</span></th><td>A meglévő beküldés.</td></tr><tr><th scope="row"><code class="member-name">IdentifyCommand</code><span class="member-type">parancs</span></th><td>Az IdentifyAsync metódusból generálódik.</td></tr></tbody></table></div></div><div class="member-panel"><h3>Admin-ViewModel</h3><div class="table-scroll"><table class="member-table"><thead><tr><th scope="col">Tag és típus</th><th scope="col">Szerepe a felületen</th></tr></thead><tbody><tr><th scope="row"><code class="member-name">Submissions</code><span class="member-type">ObservableCollection&lt;<wbr>StudentSubmissionResponse<wbr>&gt;</span></th><td>A beküldések listája.</td></tr><tr><th scope="row"><code class="member-name">StatusMessage</code><span class="member-type">string</span></th><td>A művelet üzenete.</td></tr><tr><th scope="row"><code class="member-name">HasError</code><span class="member-type">bool</span></th><td>A hibaüzenet színezése.</td></tr><tr><th scope="row"><code class="member-name">IsBusy</code><span class="member-type">bool</span></th><td>ViewModelben tárolt műveleti jelző. A párhuzamos műveletek tiltását vezérli.</td></tr><tr><th scope="row"><code class="member-name">LoadSubmissionsCommand</code><span class="member-type">parancs</span></th><td>A meglévő listafrissítés.</td></tr><tr><th scope="row"><code class="member-name">ApproveCommand</code><span class="member-type">paraméteres parancs</span></th><td>A jóváhagyandó StudentSubmissionResponse sorobjektumot kapja.</td></tr><tr><th scope="row"><code class="member-name">BanCommand</code><span class="member-type">paraméteres parancs</span></th><td>A kitiltandó StudentSubmissionResponse sorobjektumot kapja.</td></tr></tbody></table></div></div></div>
+<p>A lista sorain a StudentId, CreatedAt, StatusText és IsPending a kész StudentSubmissionResponse DTO-ból érkezik. Az IsPending vezérli a döntési gombok láthatóságát, a CanExecute feltétel a használhatóságukat.</p>
+</section>
+<section class="lesson-section"><h2>Üzleti követelmények</h2>
+<table><thead><tr><th>Beküldés állapota</th><th>Admin lehetősége</th><th>A diák azonosítási eredménye</th></tr></thead><tbody>
+<tr><td>Pending</td><td>Jóváhagyás vagy kitiltás</td><td>Jóváhagyásra vár</td></tr>
+<tr><td>Approved</td><td>A döntés végleges</td><td>Sikeres belépést jelző üzenet</td></tr>
+<tr><td>Banned</td><td>A döntés végleges</td><td>Kitiltást jelző üzenet</td></tr>
+</tbody></table>
+<p>A végleges döntés ismétlését a szerver elutasítja. A diák azonosításkor mindig a szerver aktuális eredményét kapja meg. A sikeres állapotlekérés Pending vagy Banned értéket is adhat. A feladat azonosító alapján végzett állapotellenőrzést valósít meg.</p>
+<p>A <a href="viewmodel-ismetlo.html#allapot">rövid állapotkezelési ismétlőben</a> külön példán is áttekintheted az enum és a switch szerepét.</p>
+</section>
+<section class="lesson-section"><h2 id="admin">Adminfeladat</h2><figure class="question-flow" aria-label="Admin döntés a függő beküldésről"><ol class="question-flow-steps"><li><strong>Admin</strong><p>Frissíti a listát, és egy Pending soron jóváhagyást vagy kitiltást választ.</p><code>ApproveCommand · BanCommand</code></li><li><strong>Backend</strong><p>Az Id alapján véglegesen Approved vagy Banned állapotba menti a beküldést.</p><code>POST …/{id}/approve vagy …/{id}/ban</code></li><li><strong>Admin</strong><p>A frissített sor megjelenik. A döntési gombok eltűnnek.</p><code>200 OK · Status</code></li></ol><figcaption>A sor marad a listában. A ViewModel a szerver által visszaadott rekorddal frissít. Már elbírált beküldésről a backend nem fogad el új döntést.</figcaption></figure><p><a href="../02-mvp_projects/dotnet_08/solved/04_solved/task/uzleti-folyamat.svg">A megoldáshoz tartozó teljes folyamatábra</a> · <a href="../02-mvp_projects/dotnet_08/solved/04_solved/task/uzleti-folyamat.drawio">Szerkeszthető draw.io ábra</a></p>
+<p><strong>Ajánlott elolvasni az AdminSubmissionsViewModel elkészítése előtt.</strong> A <a href="admin-dontes-seged.html">közös művelet segédmetódusba emelésének mintája</a> a DecideAsync megoldást mutatja. A két döntést külön metódusban is megvalósíthatod. Az elvárt működés mindkét felépítéssel teljesíthető.</p>
+<ul>
+<li>A meglévő listabetöltés működjön tovább.</li>
+<li>Csak függőben lévő soron lehessen jóváhagyni vagy kitiltani. A művelet alatti tiltás érintse a frissítést és mindkét döntési parancsot.</li>
+<li>A sikeres szerverválasz alapján frissüljön az érintett sor. A döntési gombok tűnjenek el, az eredmény maradjon meg újabb listafrissítés után is.</li>
+<li>Hiba esetén jelenjen meg az üzenet, és lehessen újra próbálkozni.</li>
+</ul>
+</section>
+<section class="lesson-section"><h2>Diákfeladat</h2><figure class="question-flow" aria-label="A diák lekéri a beküldése állapotát"><ol class="question-flow-steps"><li><strong>Diák</strong><p>Megadja az azonosítóját, és az Azonosítás gombra kattint.</p><code>POST /student-submissions/identify</code></li><li><strong>Backend</strong><p>Megkeresi a beküldést és visszaadja a pillanatnyi állapotát.</p><code>200 OK · Status</code></li><li><strong>Diák</strong><p>Az állapotnak megfelelő üzenetet lát.</p><code>Pending · Approved · Banned</code></li></ol><figcaption>Pending esetén várakozás, Approved esetén jóváhagyás, Banned esetén kitiltás jelenik meg. A hiányzó azonosító hibaválaszt eredményez. Új azonosítással a diák a legfrissebb szerverállapotot kapja.</figcaption></figure>
+<ul>
+<li>A meglévő beküldés maradjon működőképes. Siker esetén a szerver által visszakapott azonosító kerüljön az azonosítási mezőbe is.</li>
+<li>Az azonosítási mező legyen kézzel szerkeszthető. A művelet a legfrissebb szerverállapotot kérje le.</li>
+<li>A beküldés és az azonosítás kapjon külön üzenetet és hibajelzőt. Mindkettő alatt érvényesüljön a közös várakozási tiltás.</li>
+<li>A három üzleti állapothoz a fenti táblázat szerinti eredmény tartozzon. Kezeld a nem létező azonosítót és a kapcsolati hibát is.</li>
+</ul>
+</section>
+<section class="lesson-section"><h2>Elfogadási próbák</h2>
+<ol>
+<li>ABC123 beküldése után az azonosítás jóváhagyásra váró eredményt mutat. Az admin frissített listájában döntési gombok látszanak.</li>
+<li>Az admin jóváhagyja a sort. A gombok eltűnnek, és a diák újabb azonosításkor jóváhagyott eredményt kap.</li>
+<li>DEF456 beküldése után az admin kitiltja a második sort. Azonosításkor a kitiltás eredménye jelenik meg.</li>
+<li>A már elbírált sorokon nincs új döntési lehetőség. Listafrissítéskor az állapot megmarad.</li>
+<li>Üres, nem létező és már beküldött azonosítóval is próbálkozz. A hiba az érintett művelet saját üzenetében jelenjen meg.</li>
+<li>Leállított backend mellett is próbáld ki a műveleteket. A hiba után szűnjön meg a várakozási tiltás.</li>
+<li>Próbáld ki a folyamatot a WPF-, MAUI- és WinUI-felhasználói és adminfelületeken. Backend-újraindítás után az InMemory adatok és döntések törlődnek.</li>
+</ol>
+</section>
+<section class="lesson-section"><h2>Felkészültség az önálló ViewModel-munkára</h2>
+<p>A saját megoldásodon indokold meg a parancsok engedélyezési feltételeit, a két üzenetterületet és a listaelem frissítését. Mutasd meg, hol kellene új üzenetet rendelni egy további üzleti állapothoz, és milyen változásra lenne szükség a szerződésben. A megértést a saját kódodon végzett módosítás és az adatút elmagyarázása mutatja.</p>
+<details><summary>Megoldás utáni összehasonlítás</summary><p>Előbb próbáld végig a saját programodat. Utána hasonlítsd össze a propertyket, a művelet alatti tiltást és a hibakezelést. A kódod eltérhet, ha az elvárt működést teljesíti.</p><p>StudentSubmissionViewModel.cs · <a href="../02-mvp_projects/dotnet_10/solved/04_solved/shared/MyApp.Client/ViewModels/StudentSubmissionViewModel.cs">.NET 10</a> · <a href="../02-mvp_projects/dotnet_08/solved/04_solved/shared/MyApp.Client/ViewModels/StudentSubmissionViewModel.cs">.NET 8</a></p><p>AdminSubmissionsViewModel.cs · <a href="../02-mvp_projects/dotnet_10/solved/04_solved/shared/MyApp.Client/ViewModels/AdminSubmissionsViewModel.cs">.NET 10</a> · <a href="../02-mvp_projects/dotnet_08/solved/04_solved/shared/MyApp.Client/ViewModels/AdminSubmissionsViewModel.cs">.NET 8</a></p></details>
+<p><a href="fejezet-uzleti-mvp-feladatok.html">Vissza a négy feladat áttekintéséhez</a></p>
+
+</section>
+</article>
+</main>
+</body>
+</html>

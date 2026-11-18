@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Részletes feladat – szerverállapot · Fullstack üzleti tananyag</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#tartalom">Ugrás a tartalomra</a>
+<header class="site-header"><nav class="wrap header" aria-label="Fő navigáció"><a class="brand" href="index.html">Fullstack üzleti tananyag</a><a href="kereso.html">Kereső</a></nav></header>
+<main class="wrap" id="tartalom">
+<nav class="breadcrumbs" aria-label="Oldal helye"><a href="index.html">Kezdőlap</a> <span aria-hidden="true">/</span> <a href="fejezet-backend-elerhetoseg.html">A backend elérhetősége</a></nav>
+<div class="page-intro">
+<h1><code>01-basics</code> · A szerverállapot megjelenítése</h1>
+<p>A saját .NET 8-as vagy .NET 10-es vázadba építs health ellenőrzést. Kövesd a kérés útját a WPF ablaktól a Web API-ig és vissza.</p>
+<p><a href="../01-starter-helty/feladatmegoldas/index.html#vegpont">Lépésenkénti segítség a bal oldali menüs útmutatóban</a> · <a href="../01-starter-helty/feladatmegoldas/README.md">Másolható feladatlap és ellenőrzőlista</a></p>
+<p>Haladj a fejezet rövid feladatleírásából. Ha elakadsz, nyisd meg az adott lépés útmutatóját, majd ott a <strong>Mit nézz meg a kész mintában?</strong> részt. A saját projektedben ellenőrizd a működést.</p>
+</div>
+<section>
+<h2>A rétegek feladata</h2>
+<ol class="entries">
+<li><h3>Közös DTO és Web API</h3><p><a href="../01-starter-helty/feladatmegoldas/index.html#vegpont">Lépésenkénti segítség</a></p><p>A <code>MyApp.Shared</code> projektben a <code>HealthResponse</code> adja a válasz alakját. A <code>HealthController</code> töltse ki a <code>Status</code> mezőt a <code>GET /api/health</code> kérésre. Próbáld ki a végpontot a kliens indítása előtt.</p></li>
+<li><h3>Kliensoldali API service</h3><p><a href="../01-starter-helty/feladatmegoldas/index.html#service">Lépésenkénti segítség</a></p><p>A <code>HealthApiService</code> alapcímét egyeztesd a Web API <code>http</code> profiljával. Olvasd be a JSON-t <code>HealthResponse</code> típusba, és adj kezelhető hibát a ViewModelnek.</p></li>
+<li><h3>ViewModel és WPF nézet</h3><p><a href="../01-starter-helty/feladatmegoldas/index.html#wpf">Lépésenkénti segítség</a></p><p>A <code>HealthViewModel</code> kezelje a három állapotot. Állítsd be az ablak <code>DataContext</code> értékét. Kösd a feliratot, a jelzést és az Újrapróbálás gombot, és indítsd az ellenőrzést betöltéskor.</p></li>
+</ol>
+</section>
+<section>
+<h2>Ellenőrzés</h2>
+<p><a href="../01-starter-helty/feladatmegoldas/index.html#ellenorzes">Ellenőrzés a menüs útmutatóban</a></p>
+<ol>
+<li>Indítsd külön a Web API-t és a WPF klienst. Ellenőrizd, hogy ugyanazt a címet használják.</li>
+<li>Hasonlítsd össze a futó és a leállított szerverhez tartozó feliratot. Indítsd vissza a szervert, és kattints az Újrapróbálás gombra.</li>
+<li>Mutasd meg a válasz útját a DTO-tól a WPF-kötésig.</li>
+</ol>
+</section>
+</main>
+</body>
+</html>
