@@ -1,0 +1,23 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #17232f;
+  background: #f3f5f7;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  box-sizing: border-box;
+  max-width: 52rem;
+  margin: clamp(3rem, 14vh, 9rem) auto 0;
+  padding: 2rem clamp(1rem, 6vw, 3rem);
+  border-top: 0.3rem solid #564091;
+  background: #fff;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+}

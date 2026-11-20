@@ -1,0 +1,11 @@
+{
+  "name": "myapp-frontend",
+  "private": true,
+  "engines": {
+    "node": "24.x"
+  },
+  "workspaces": ["client/react", "admin/react"],
+  "scripts": {
+    "build": "npm run build --workspaces"
+  }
+}

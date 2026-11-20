@@ -1,0 +1,12 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MyApp.Client.ViewModels;assembly=MyApp.Client"
+             x:Class="MyApp.Client.Maui.MainPage"
+             x:DataType="vm:HealthViewModel"
+             Title="Szerverállapot – MAUI">
+    <VerticalStackLayout Padding="24" Spacing="12">
+        <Button Text="Ellenőrzés" Command="{Binding CheckConnectionCommand}"
+                HorizontalOptions="Start" />
+        <Label Text="{Binding StatusMessage}" />
+    </VerticalStackLayout>
+</ContentPage>

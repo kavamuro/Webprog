@@ -1,0 +1,9 @@
+<Window x:Class="MyApp.Client.WinUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Szerverállapot – WinUI">
+    <StackPanel Margin="24" Spacing="12">
+        <Button Content="Ellenőrzés" Command="{x:Bind ViewModel.CheckConnectionCommand}" />
+        <TextBlock Text="{x:Bind ViewModel.StatusMessage, Mode=OneWay}" />
+    </StackPanel>
+</Window>

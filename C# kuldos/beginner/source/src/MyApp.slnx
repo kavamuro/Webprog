@@ -1,0 +1,49 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/backend/">
+    <Project Path="backend/MyApp.WebApi/MyApp.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/Dokumentacio/">
+    <File Path="../doc/tobbprojektes-megoldas.md" />
+    <File Path="../README.md" />
+  </Folder>
+  <Folder Name="/frontend/" />
+  <Folder Name="/frontend/admin/" />
+  <Folder Name="/frontend/admin/maui/">
+    <Project Path="frontend/admin/maui/MyApp.Admin.Maui.csproj" />
+  </Folder>
+  <Folder Name="/frontend/admin/winui/">
+    <Project Path="frontend/admin/winui/MyApp.Admin.WinUI.csproj">
+      <Platform Solution="*|Any CPU" Project="x64" />
+      <Platform Solution="*|x64" Project="x64" />
+      <Platform Solution="*|x86" Project="x86" />
+    </Project>
+  </Folder>
+  <Folder Name="/frontend/admin/wpf/">
+    <Project Path="frontend/admin/wpf/MyApp.Admin.Wpf.csproj" />
+  </Folder>
+  <Folder Name="/frontend/client/" />
+  <Folder Name="/frontend/client/maui/">
+    <Project Path="frontend/client/maui/MyApp.Client.Maui.csproj">
+      <Deploy Solution="Debug|Any CPU" />
+    </Project>
+  </Folder>
+  <Folder Name="/frontend/client/winui/">
+    <Project Path="frontend/client/winui/MyApp.Client.WinUI.csproj">
+      <Platform Solution="*|Any CPU" Project="x64" />
+      <Platform Solution="*|x64" Project="x64" />
+      <Platform Solution="*|x86" Project="x86" />
+    </Project>
+  </Folder>
+  <Folder Name="/frontend/client/wpf/">
+    <Project Path="frontend/client/wpf/MyApp.Client.Wpf.csproj" />
+  </Folder>
+  <Folder Name="/shared/">
+    <Project Path="shared/MyApp.Client/MyApp.Client.csproj" />
+    <Project Path="shared/MyApp.Shared/MyApp.Shared.csproj" />
+  </Folder>
+</Solution>

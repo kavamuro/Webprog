@@ -1,0 +1,42 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #17232f;
+  background: #f3f5f7;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  box-sizing: border-box;
+  max-width: 52rem;
+  margin: clamp(3rem, 14vh, 9rem) auto 0;
+  padding: 2rem clamp(1rem, 6vw, 3rem);
+  border-top: 0.3rem solid #176b5b;
+  background: #fff;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+}
+
+main > button {
+  margin-top: 1.5rem;
+}
+
+button {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #176b5b;
+  border-radius: 0.3rem;
+  color: #fff;
+  background: #176b5b;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
