@@ -16,7 +16,11 @@
     <div class="logo-text">Agent <span>Hub</span></div>
   </div>
   <div class="header-actions">
-    <button class="btn btn-primary" id="btn-add">+ Add Agent</button>
+    <button class="btn btn-secondary" id="btn-login">Log in</button>
+    <button class="btn btn-primary" id="btn-register">Register</button>
+    <button class="btn btn-ghost" id="btn-account" hidden></button>
+    <button class="btn btn-secondary" id="btn-logout" hidden>Log out</button>
+    <button class="btn btn-primary" id="btn-add" hidden>+ Add Agent</button>
   </div>
 </header>
 
@@ -34,6 +38,7 @@
       <span class="search-icon">⌕</span>
       <input type="text" id="search-input" placeholder="Search agent by name..." />
     </div>
+    <button class="btn btn-secondary" id="btn-mine" aria-pressed="false" hidden>My agents</button>
     <select id="role-filter">
       <option value="">All Roles</option>
       <option value="Duelist">Duelist</option>
@@ -60,10 +65,11 @@
       <div class="detail-meta">
         <span class="detail-chip chip-id" id="detail-id"></span>
         <span class="detail-chip chip-role" id="detail-role"></span>
+        <span class="detail-chip chip-id" id="detail-owner"></span>
       </div>
       <div class="detail-name" id="detail-name"></div>
       <p class="detail-desc" id="detail-desc"></p>
-      <div class="detail-actions">
+      <div class="detail-actions" id="detail-actions">
         <button class="btn btn-edit" id="detail-btn-edit">Edit Agent</button>
         <button class="btn btn-danger" id="detail-btn-delete">Delete Agent</button>
       </div>
@@ -101,15 +107,25 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="form-image">Image URL <span class="req">*</span></label>
+        <label class="form-label" for="form-file">Upload image <span class="req">*</span></label>
+        <input class="form-control" type="file" id="form-file" accept="image/png,image/jpeg,image/gif,image/webp" />
+        <label class="form-label form-label-alt" for="form-image">or image URL</label>
         <input class="form-control" type="text" id="form-image" placeholder="https://..." />
-        <div class="form-error" id="err-image">Image URL is required.</div>
+        <div class="form-error" id="err-image">Upload an image or enter an image URL.</div>
         <img class="img-preview" id="img-preview" src="" alt="Preview" />
       </div>
 
       <div class="form-group">
         <label class="form-label" for="form-desc">Description</label>
         <textarea class="form-control" id="form-desc" placeholder="Agent background..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="form-visibility">Visibility</label>
+        <select class="form-control" id="form-visibility">
+          <option value="public">Public - everyone can see it</option>
+          <option value="private">Private - only I can see it</option>
+        </select>
       </div>
 
       <div class="form-footer">
@@ -134,6 +150,58 @@
         <button class="btn btn-danger" id="btn-confirm-delete" style="font-size:.85rem; padding:8px 18px;">Delete</button>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-auth">
+  <div class="modal" style="max-width:420px;">
+    <div class="modal-header">
+      <span class="modal-title" id="auth-title">Log in</span>
+      <button class="modal-close" data-close="modal-auth">✕</button>
+    </div>
+    <form class="modal-body" id="auth-form">
+      <div class="form-group">
+        <label class="form-label" for="auth-username">Username</label>
+        <input class="form-control" type="text" id="auth-username" autocomplete="username" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="auth-password">Password</label>
+        <input class="form-control" type="password" id="auth-password" autocomplete="current-password" />
+        <div class="form-error" id="auth-error" role="alert"></div>
+      </div>
+      <div class="form-footer">
+        <button type="button" class="btn btn-ghost" id="auth-switch"></button>
+        <button type="submit" class="btn btn-primary" id="auth-submit">Log in</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-account">
+  <div class="modal" style="max-width:420px;">
+    <div class="modal-header">
+      <span class="modal-title">My <span class="accent">Account</span></span>
+      <button class="modal-close" data-close="modal-account">✕</button>
+    </div>
+    <form class="modal-body" id="account-form">
+      <div class="form-group">
+        <label class="form-label" for="account-username">Username</label>
+        <input class="form-control" type="text" id="account-username" autocomplete="username" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="account-new">New password (optional)</label>
+        <input class="form-control" type="password" id="account-new" autocomplete="new-password" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="account-current">Current password <span class="req">*</span></label>
+        <input class="form-control" type="password" id="account-current" autocomplete="current-password" />
+        <div class="form-error" id="account-error" role="alert"></div>
+      </div>
+      <div class="form-footer">
+        <button type="button" class="btn btn-danger" id="account-delete">Delete account</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </form>
   </div>
 </div>
 <div id="toast-container"></div>

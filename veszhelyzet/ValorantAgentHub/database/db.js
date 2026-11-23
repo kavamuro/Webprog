@@ -19,46 +19,95 @@ db.prepare(
   )`,
 ).run();
 
+db.exec(`
+  CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE COLLATE NOCASE,
+    passwordHash TEXT NOT NULL
+  );
+  CREATE TABLE IF NOT EXISTS sessions (
+    tokenHash TEXT PRIMARY KEY,
+    userId INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    expiresAt INTEGER NOT NULL
+  );
+  CREATE TABLE IF NOT EXISTS uploads (
+    filename TEXT PRIMARY KEY,
+    userId INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE
+  );
+`);
+
+
+const agentColumns = db.pragma("table_info(agents)").map((c) => c.name);
+if (!agentColumns.includes("userId")) {
+  db.exec(
+    "ALTER TABLE agents ADD COLUMN userId INTEGER REFERENCES users(id) ON DELETE CASCADE",
+  );
+}
+if (!agentColumns.includes("isPublic")) {
+  db.exec("ALTER TABLE agents ADD COLUMN isPublic INTEGER NOT NULL DEFAULT 1");
+}
+
+if (!agentColumns.includes("apiId")) {
+  db.exec("ALTER TABLE agents ADD COLUMN apiId TEXT");
+
+  const setApiId = db.prepare("UPDATE agents SET apiId = ? WHERE id = ?");
+  const IMAGE_URL = "https://media.valorant-api.com/agents/";
+  const used = new Set();
+  for (const { id, imageUrl } of db
+    .prepare("SELECT id, imageUrl FROM agents WHERE userId IS NULL ORDER BY id")
+    .all()) {
+    const apiId = imageUrl.startsWith(IMAGE_URL)
+      ? imageUrl.slice(IMAGE_URL.length).split("/")[0]
+      : null;
+    if (apiId && !used.has(apiId)) {
+      used.add(apiId);
+      setApiId.run(apiId, id);
+    }
+  }
+}
+db.exec("CREATE UNIQUE INDEX IF NOT EXISTS agents_apiId ON agents(apiId)");
+
 console.log("Database ready.");
 
 const API_URL = "https://valorant-api.com/v1/agents?isPlayableCharacter=true";
 
-export async function seedAgents() {
-  const { count } = db.prepare("SELECT COUNT(*) as count FROM agents").get();
 
-  if (count > 0) {
-    console.log(`Database already has ${count} agents — skipping seed.`);
-    return;
-  }
-
-  console.log("Database is empty. Fetching agents from Valorant API...");
+export async function syncAgents() {
+  console.log("Syncing agents with the Valorant API...");
 
   try {
-    const res = await fetch(API_URL);
+    const res = await fetch(API_URL, { signal: AbortSignal.timeout(5000) });
     if (!res.ok) throw new Error(`API responded with status ${res.status}`);
 
     const { data } = await res.json();
 
+    const update = db.prepare(
+      "UPDATE agents SET name = ?, role = ?, imageUrl = ?, description = ? WHERE apiId = ?",
+    );
     const insert = db.prepare(
-      "INSERT INTO agents (name, role, imageUrl, description) VALUES (?, ?, ?, ?)",
+      "INSERT INTO agents (name, role, imageUrl, description, apiId) VALUES (?, ?, ?, ?, ?)",
     );
 
-    const insertAll = db.transaction((agents) => {
+    const saveAll = db.transaction((agents) => {
       for (const agent of agents) {
-        insert.run(
+        const imageUrl = agent.fullPortrait ?? agent.displayIcon;
+        if (!agent.uuid || !agent.displayName || !imageUrl) continue;
+        const values = [
           agent.displayName,
           agent.role?.displayName ?? null,
-          agent.fullPortrait ?? agent.displayIcon,
+          imageUrl,
           agent.description ?? null,
-        );
+          agent.uuid,
+        ];
+        if (update.run(values).changes === 0) insert.run(values);
       }
     });
 
-    insertAll(data);
-    console.log(`Seeded ${data.length} agents successfully.`);
+    saveAll(data);
+    console.log(`Synced ${data.length} official agents.`);
   } catch (err) {
-    console.error("Seed failed:", err.message);
-    console.error("The app will still run — you can add agents manually.");
+    console.error("Sync failed:", err.message);
+    console.error("The app will still run with the agents it already has.");
   }
 }
 

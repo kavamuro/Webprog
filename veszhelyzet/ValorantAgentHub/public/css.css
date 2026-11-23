@@ -625,3 +625,29 @@
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--border); }
     ::-webkit-scrollbar-thumb:hover { background: var(--red); }
+
+    /* ─── USER ACCOUNTS ─── */
+    .modal input[type="text"].form-control { padding: 10px 14px; background: var(--bg3); }
+    .form-label-alt { margin-top: 10px; }
+    .btn:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+    .btn:disabled { opacity: 0.5; cursor: default; }
+    #btn-mine.active { border-color: var(--teal); color: var(--teal); }
+
+    .card-private-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 7px;
+      background: rgba(15,25,35,0.85);
+      border: 1px solid var(--yellow);
+      color: var(--yellow);
+    }
+
+    @media (max-width: 640px) {
+      header { height: auto; min-height: 64px; padding: 10px 1rem; flex-wrap: wrap; gap: 10px; }
+      .header-actions { flex-wrap: wrap; }
+    }
